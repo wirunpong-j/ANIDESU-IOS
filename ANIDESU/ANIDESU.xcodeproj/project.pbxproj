@@ -90,6 +90,9 @@
 			isa = PBXGroup;
 			children = (
 				4327141C2212C76800ACDDFF /* ANIDESU */,
+				43F00AFA2213F9AC000D9111 /* Libs */,
+				43F00AFB2213F9B1000D9111 /* Resources */,
+				43F00AFE2213F9FE000D9111 /* Supporting Files */,
 				432714312212C76900ACDDFF /* ANIDESUTests */,
 				4327141B2212C76800ACDDFF /* Products */,
 				257560A61280B297B3736F17 /* Pods */,
@@ -109,12 +112,6 @@
 		4327141C2212C76800ACDDFF /* ANIDESU */ = {
 			isa = PBXGroup;
 			children = (
-				4327141D2212C76800ACDDFF /* AppDelegate.swift */,
-				4327141F2212C76800ACDDFF /* ViewController.swift */,
-				432714212212C76800ACDDFF /* Main.storyboard */,
-				432714242212C76900ACDDFF /* Assets.xcassets */,
-				432714262212C76900ACDDFF /* LaunchScreen.storyboard */,
-				432714292212C76900ACDDFF /* Info.plist */,
 			);
 			path = ANIDESU;
 			sourceTree = "<group>";
@@ -126,6 +123,49 @@
 				432714342212C76900ACDDFF /* Info.plist */,
 			);
 			path = ANIDESUTests;
+			sourceTree = "<group>";
+		};
+		43F00AFA2213F9AC000D9111 /* Libs */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Libs;
+			sourceTree = "<group>";
+		};
+		43F00AFB2213F9B1000D9111 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				432714242212C76900ACDDFF /* Assets.xcassets */,
+				43F00AFC2213F9D1000D9111 /* Xibs */,
+				43F00AFD2213F9D8000D9111 /* Storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		43F00AFC2213F9D1000D9111 /* Xibs */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Xibs;
+			sourceTree = "<group>";
+		};
+		43F00AFD2213F9D8000D9111 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				432714212212C76800ACDDFF /* Main.storyboard */,
+				432714262212C76900ACDDFF /* LaunchScreen.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		43F00AFE2213F9FE000D9111 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4327141D2212C76800ACDDFF /* AppDelegate.swift */,
+				4327141F2212C76800ACDDFF /* ViewController.swift */,
+				432714292212C76900ACDDFF /* Info.plist */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
