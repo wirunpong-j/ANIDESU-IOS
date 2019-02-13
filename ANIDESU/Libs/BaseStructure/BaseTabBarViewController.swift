@@ -24,27 +24,26 @@ class BaseTabBarViewController: ESTabBarController {
     private func setUpTabBar() {
         if let tabBar = self.tabBar as? ESTabBar {
             tabBar.isTranslucent = false
-            tabBar.barTintColor = AnidesuColor.LightDarkBlue.color()
+            tabBar.barTintColor = AnidesuColor.DarkBlue.color()
             tabBar.itemCustomPositioning = .centered
         }
         
-        let dashboardStoryboard = UIStoryboard(name: "Dashboard", bundle: .main)
-        let favoriteStoryboard = UIStoryboard(name: "Favorite", bundle: .main)
-        let myAccountStoryboard = UIStoryboard(name: "MyProfile", bundle: .main)
-        let loginStoryboard = UIStoryboard(name: "Login", bundle: .main)
-        let settingStoryboard = UIStoryboard(name: "Setting", bundle: .main)
+        let homeVC = UIViewController()
+        let discoverVC = UIViewController()
+        let myAnimeListVC = UIViewController()
+        let reviewVC = UIViewController()
         
 //        let v1 = dashboardStoryboard.instantiateInitialViewController() as! UINavigationController
 //        let v2 = favoriteStoryboard.instantiateInitialViewController() as! UINavigationController
 //        let v3 = myAccountStoryboard.instantiateInitialViewController() as! MyProfileViewController
 //        let v4 = settingStoryboard.instantiateInitialViewController() as! UINavigationController
 //
-//        v1.tabBarItem = ESTabBarItem.init(TabBarContentView(), title: nil, image: UIImage(named: "ic_menu_home_inactive"), selectedImage: UIImage(named: "ic_menu_home_active"))
-//        v2.tabBarItem = ESTabBarItem.init(TabBarContentView(), title: nil, image: UIImage(named: "ic_menu_favorite_inactive"), selectedImage: UIImage(named: "ic_menu_favorite_active"))
-//        v3.tabBarItem = ESTabBarItem.init(TabBarContentView(), title: nil, image: UIImage(named: "ic_menu_account_inactive"), selectedImage: UIImage(named: "ic_menu_account_active"))
-//        v4.tabBarItem = ESTabBarItem.init(TabBarContentView(), title: nil, image: UIImage(named: "ic_menu_setting_inactive"), selectedImage: UIImage(named: "ic_menu_setting_active"))
-//
-//        self.viewControllers = [v1, v2, v3, v4]
+        homeVC.tabBarItem = ESTabBarItem.init(TabBarContentView(), title: nil, image: UIImage(named: "ic_home"), selectedImage: UIImage(named: "ic_home"))
+        discoverVC.tabBarItem = ESTabBarItem.init(TabBarContentView(), title: nil, image: UIImage(named: "ic_discover"), selectedImage: UIImage(named: "ic_discover"))
+        myAnimeListVC.tabBarItem = ESTabBarItem.init(TabBarContentView(), title: nil, image: UIImage(named: "ic_mylist"), selectedImage: UIImage(named: "ic_mylist"))
+        reviewVC.tabBarItem = ESTabBarItem.init(TabBarContentView(), title: nil, image: UIImage(named: "ic_review"), selectedImage: UIImage(named: "ic_review"))
+
+        self.viewControllers = [homeVC, discoverVC, myAnimeListVC, reviewVC]
         self.delegate = self
     }
     
