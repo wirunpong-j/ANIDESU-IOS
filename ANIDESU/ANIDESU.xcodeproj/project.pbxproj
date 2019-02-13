@@ -17,6 +17,8 @@
 		43F00B012213FAAE000D9111 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F00B002213FAAE000D9111 /* BaseViewController.swift */; };
 		43F00B062214048C000D9111 /* BaseTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F00B052214048C000D9111 /* BaseTabBarViewController.swift */; };
 		43F00B09221404FC000D9111 /* AnidesuColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F00B08221404FC000D9111 /* AnidesuColor.swift */; };
+		43F00B0D221408BE000D9111 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43F00B0C221408BE000D9111 /* Home.storyboard */; };
+		43F00B1022140920000D9111 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F00B0F22140920000D9111 /* HomeViewController.swift */; };
 		E55823D6BBBB3EA5D12176F2 /* Pods_ANIDESUTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCA238A31CB35B636529F581 /* Pods_ANIDESUTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +47,8 @@
 		43F00B002213FAAE000D9111 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		43F00B052214048C000D9111 /* BaseTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarViewController.swift; sourceTree = "<group>"; };
 		43F00B08221404FC000D9111 /* AnidesuColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnidesuColor.swift; sourceTree = "<group>"; };
+		43F00B0C221408BE000D9111 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		43F00B0F22140920000D9111 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		A15BC62BBB90B614F8454FE6 /* Pods-ANIDESUTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ANIDESUTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ANIDESUTests/Pods-ANIDESUTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D1FD0057695ECE1EDDF962F3 /* Pods-ANIDESU.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ANIDESU.release.xcconfig"; path = "Pods/Target Support Files/Pods-ANIDESU/Pods-ANIDESU.release.xcconfig"; sourceTree = "<group>"; };
 		D94239E2C53022FB3278024E /* Pods-ANIDESUTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ANIDESUTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ANIDESUTests/Pods-ANIDESUTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -163,6 +167,7 @@
 		43F00AFD2213F9D8000D9111 /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
+				43F00B0C221408BE000D9111 /* Home.storyboard */,
 				432714212212C76800ACDDFF /* Main.storyboard */,
 				432714262212C76900ACDDFF /* LaunchScreen.storyboard */,
 			);
@@ -191,6 +196,7 @@
 		43F00B022214003D000D9111 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				43F00B0E221408FD000D9111 /* Home */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -215,6 +221,14 @@
 				43F00B08221404FC000D9111 /* AnidesuColor.swift */,
 			);
 			path = Compontent;
+			sourceTree = "<group>";
+		};
+		43F00B0E221408FD000D9111 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				43F00B0F22140920000D9111 /* HomeViewController.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -304,6 +318,7 @@
 				432714282212C76900ACDDFF /* LaunchScreen.storyboard in Resources */,
 				432714252212C76900ACDDFF /* Assets.xcassets in Resources */,
 				432714232212C76800ACDDFF /* Main.storyboard in Resources */,
+				43F00B0D221408BE000D9111 /* Home.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -443,6 +458,7 @@
 				43F00B012213FAAE000D9111 /* BaseViewController.swift in Sources */,
 				43F00B09221404FC000D9111 /* AnidesuColor.swift in Sources */,
 				43F00B062214048C000D9111 /* BaseTabBarViewController.swift in Sources */,
+				43F00B1022140920000D9111 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

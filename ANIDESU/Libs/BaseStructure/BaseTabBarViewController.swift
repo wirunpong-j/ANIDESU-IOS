@@ -28,12 +28,12 @@ class BaseTabBarViewController: ESTabBarController {
             tabBar.itemCustomPositioning = .centered
         }
         
-        let homeVC = UIViewController()
+        let homeStoryboard = UIStoryboard(name: "Home", bundle: .main)
         let discoverVC = UIViewController()
         let myAnimeListVC = UIViewController()
         let reviewVC = UIViewController()
         
-//        let v1 = dashboardStoryboard.instantiateInitialViewController() as! UINavigationController
+        let homeVC = homeStoryboard.instantiateInitialViewController() as! UINavigationController
 //        let v2 = favoriteStoryboard.instantiateInitialViewController() as! UINavigationController
 //        let v3 = myAccountStoryboard.instantiateInitialViewController() as! MyProfileViewController
 //        let v4 = settingStoryboard.instantiateInitialViewController() as! UINavigationController
