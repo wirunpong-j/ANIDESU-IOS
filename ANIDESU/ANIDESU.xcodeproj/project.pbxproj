@@ -15,6 +15,8 @@
 		432714282212C76900ACDDFF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 432714262212C76900ACDDFF /* LaunchScreen.storyboard */; };
 		432714332212C76900ACDDFF /* ANIDESUTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432714322212C76900ACDDFF /* ANIDESUTests.swift */; };
 		43F00B012213FAAE000D9111 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F00B002213FAAE000D9111 /* BaseViewController.swift */; };
+		43F00B062214048C000D9111 /* BaseTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F00B052214048C000D9111 /* BaseTabBarViewController.swift */; };
+		43F00B09221404FC000D9111 /* AnidesuColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F00B08221404FC000D9111 /* AnidesuColor.swift */; };
 		E55823D6BBBB3EA5D12176F2 /* Pods_ANIDESUTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCA238A31CB35B636529F581 /* Pods_ANIDESUTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +43,8 @@
 		432714322212C76900ACDDFF /* ANIDESUTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ANIDESUTests.swift; sourceTree = "<group>"; };
 		432714342212C76900ACDDFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		43F00B002213FAAE000D9111 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		43F00B052214048C000D9111 /* BaseTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarViewController.swift; sourceTree = "<group>"; };
+		43F00B08221404FC000D9111 /* AnidesuColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnidesuColor.swift; sourceTree = "<group>"; };
 		A15BC62BBB90B614F8454FE6 /* Pods-ANIDESUTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ANIDESUTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ANIDESUTests/Pods-ANIDESUTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D1FD0057695ECE1EDDF962F3 /* Pods-ANIDESU.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ANIDESU.release.xcconfig"; path = "Pods/Target Support Files/Pods-ANIDESU/Pods-ANIDESU.release.xcconfig"; sourceTree = "<group>"; };
 		D94239E2C53022FB3278024E /* Pods-ANIDESUTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ANIDESUTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ANIDESUTests/Pods-ANIDESUTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -134,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				43F00AFF2213FA99000D9111 /* BaseStructure */,
+				43F00B07221404E3000D9111 /* Compontent */,
 			);
 			path = Libs;
 			sourceTree = "<group>";
@@ -178,6 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				43F00B002213FAAE000D9111 /* BaseViewController.swift */,
+				43F00B052214048C000D9111 /* BaseTabBarViewController.swift */,
 			);
 			path = BaseStructure;
 			sourceTree = "<group>";
@@ -201,6 +207,14 @@
 			children = (
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		43F00B07221404E3000D9111 /* Compontent */ = {
+			isa = PBXGroup;
+			children = (
+				43F00B08221404FC000D9111 /* AnidesuColor.swift */,
+			);
+			path = Compontent;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -427,6 +441,8 @@
 				432714202212C76800ACDDFF /* ViewController.swift in Sources */,
 				4327141E2212C76800ACDDFF /* AppDelegate.swift in Sources */,
 				43F00B012213FAAE000D9111 /* BaseViewController.swift in Sources */,
+				43F00B09221404FC000D9111 /* AnidesuColor.swift in Sources */,
+				43F00B062214048C000D9111 /* BaseTabBarViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
