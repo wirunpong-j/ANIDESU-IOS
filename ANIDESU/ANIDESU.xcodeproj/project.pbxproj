@@ -14,6 +14,7 @@
 		432714252212C76900ACDDFF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 432714242212C76900ACDDFF /* Assets.xcassets */; };
 		432714282212C76900ACDDFF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 432714262212C76900ACDDFF /* LaunchScreen.storyboard */; };
 		432714332212C76900ACDDFF /* ANIDESUTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432714322212C76900ACDDFF /* ANIDESUTests.swift */; };
+		43F00B012213FAAE000D9111 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F00B002213FAAE000D9111 /* BaseViewController.swift */; };
 		E55823D6BBBB3EA5D12176F2 /* Pods_ANIDESUTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCA238A31CB35B636529F581 /* Pods_ANIDESUTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +40,7 @@
 		4327142E2212C76900ACDDFF /* ANIDESUTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ANIDESUTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		432714322212C76900ACDDFF /* ANIDESUTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ANIDESUTests.swift; sourceTree = "<group>"; };
 		432714342212C76900ACDDFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		43F00B002213FAAE000D9111 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		A15BC62BBB90B614F8454FE6 /* Pods-ANIDESUTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ANIDESUTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ANIDESUTests/Pods-ANIDESUTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D1FD0057695ECE1EDDF962F3 /* Pods-ANIDESU.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ANIDESU.release.xcconfig"; path = "Pods/Target Support Files/Pods-ANIDESU/Pods-ANIDESU.release.xcconfig"; sourceTree = "<group>"; };
 		D94239E2C53022FB3278024E /* Pods-ANIDESUTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ANIDESUTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ANIDESUTests/Pods-ANIDESUTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -112,6 +114,9 @@
 		4327141C2212C76800ACDDFF /* ANIDESU */ = {
 			isa = PBXGroup;
 			children = (
+				43F00B0422140048000D9111 /* View */,
+				43F00B0322140043000D9111 /* ViewModel */,
+				43F00B022214003D000D9111 /* ViewController */,
 			);
 			path = ANIDESU;
 			sourceTree = "<group>";
@@ -128,6 +133,7 @@
 		43F00AFA2213F9AC000D9111 /* Libs */ = {
 			isa = PBXGroup;
 			children = (
+				43F00AFF2213FA99000D9111 /* BaseStructure */,
 			);
 			path = Libs;
 			sourceTree = "<group>";
@@ -166,6 +172,35 @@
 				432714292212C76900ACDDFF /* Info.plist */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		43F00AFF2213FA99000D9111 /* BaseStructure */ = {
+			isa = PBXGroup;
+			children = (
+				43F00B002213FAAE000D9111 /* BaseViewController.swift */,
+			);
+			path = BaseStructure;
+			sourceTree = "<group>";
+		};
+		43F00B022214003D000D9111 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		43F00B0322140043000D9111 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		43F00B0422140048000D9111 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -389,6 +424,7 @@
 			files = (
 				432714202212C76800ACDDFF /* ViewController.swift in Sources */,
 				4327141E2212C76800ACDDFF /* AppDelegate.swift in Sources */,
+				43F00B012213FAAE000D9111 /* BaseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -553,7 +589,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CHK5JYM245;
-				INFOPLIST_FILE = ANIDESU/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -572,7 +608,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CHK5JYM245;
-				INFOPLIST_FILE = ANIDESU/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
