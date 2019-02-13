@@ -9,6 +9,7 @@ target 'ANIDESU' do
   pod 'Alamofire'
   pod 'Apollo'
   pod 'Cosmos', '~> 16.0'
+  pod 'ESTabBarController-swift'
   pod 'Eureka'
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
