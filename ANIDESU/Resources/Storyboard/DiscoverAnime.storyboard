@@ -13,39 +13,11 @@
         <!--Discover Anime-->
         <scene sceneID="O1T-gl-CMg">
             <objects>
-                <viewController id="H31-2C-VAH" customClass="DiscoverAnimeViewController" customModule="ANIDESU" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="DiscoverAnimeMenuViewController" id="H31-2C-VAH" customClass="BaseTabManViewController" customModule="ANIDESU" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Hgi-OK-zeh">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="672"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="wsu-rJ-R0B">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="672"/>
-                                <color key="backgroundColor" red="0.098039215690000001" green="0.12941176469999999" blue="0.1764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="xgG-eU-IaF">
-                                    <size key="itemSize" width="50" height="50"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Nnp-9a-oPT">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </view>
-                                    </collectionViewCell>
-                                </cells>
-                            </collectionView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="wsu-rJ-R0B" firstAttribute="top" secondItem="Lg7-sA-cwA" secondAttribute="top" id="3G2-1W-clA"/>
-                            <constraint firstItem="Lg7-sA-cwA" firstAttribute="trailing" secondItem="wsu-rJ-R0B" secondAttribute="trailing" id="3sq-4n-yP6"/>
-                            <constraint firstItem="wsu-rJ-R0B" firstAttribute="leading" secondItem="Lg7-sA-cwA" secondAttribute="leading" id="dFD-Sf-MRv"/>
-                            <constraint firstItem="Lg7-sA-cwA" firstAttribute="bottom" secondItem="wsu-rJ-R0B" secondAttribute="bottom" id="vfc-kH-a3g"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Lg7-sA-cwA"/>
                     </view>
                     <navigationItem key="navigationItem" title="Discover Anime" id="933-m1-Vd4"/>
@@ -53,6 +25,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g75-Bx-EaW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="397" y="134"/>
+        </scene>
+        <!--Discover Anime View Controller-->
+        <scene sceneID="FEs-ku-Enj">
+            <objects>
+                <viewController storyboardIdentifier="DiscoverAnimeViewController" id="i5n-d2-QqS" customClass="DiscoverAnimeViewController" customModule="ANIDESU" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Uci-LU-dIp">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.50980392159999999" green="0.68627450980000004" blue="0.019607843140000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <viewLayoutGuide key="safeArea" id="9ub-rr-o24"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b0Z-lF-2GS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1252" y="133"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="M5z-Zv-8fx">

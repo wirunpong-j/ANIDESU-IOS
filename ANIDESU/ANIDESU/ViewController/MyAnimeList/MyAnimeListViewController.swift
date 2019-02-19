@@ -1,5 +1,5 @@
 //
-//  DiscoverAnimeViewController.swift
+//  MyAnimeListViewController.swift
 //  ANIDESU
 //
 //  Created by Wirunpong Jaingamlertwong on 19/2/2562 BE.
@@ -8,12 +8,12 @@
 
 import UIKit
 
-class DiscoverAnimeViewController: BaseViewController {
-    static let identifier = "DiscoverAnimeViewController"
-
+class MyAnimeListViewController: BaseViewController {
+    static let identifier = "MyAnimeListViewController"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
     }
 
 }
