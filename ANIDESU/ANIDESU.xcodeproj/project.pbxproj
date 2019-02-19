@@ -17,6 +17,8 @@
 		4399B0A8221BD3810034F854 /* CreatePostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4399B0A6221BD3800034F854 /* CreatePostCell.swift */; };
 		4399B0A9221BD3810034F854 /* CreatePostCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4399B0A7221BD3800034F854 /* CreatePostCell.xib */; };
 		4399B0AD221BD4C20034F854 /* ImageView+KF+Circular.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4399B0AC221BD4C20034F854 /* ImageView+KF+Circular.swift */; };
+		4399B0AF221BDBB50034F854 /* DiscoverAnime.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4399B0AE221BDBB50034F854 /* DiscoverAnime.storyboard */; };
+		4399B0B2221BDC4D0034F854 /* DiscoverAnimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4399B0B1221BDC4D0034F854 /* DiscoverAnimeViewController.swift */; };
 		43F00B012213FAAE000D9111 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F00B002213FAAE000D9111 /* BaseViewController.swift */; };
 		43F00B062214048C000D9111 /* BaseTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F00B052214048C000D9111 /* BaseTabBarViewController.swift */; };
 		43F00B09221404FC000D9111 /* AnidesuColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F00B08221404FC000D9111 /* AnidesuColor.swift */; };
@@ -50,6 +52,8 @@
 		4399B0A6221BD3800034F854 /* CreatePostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostCell.swift; sourceTree = "<group>"; };
 		4399B0A7221BD3800034F854 /* CreatePostCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreatePostCell.xib; sourceTree = "<group>"; };
 		4399B0AC221BD4C20034F854 /* ImageView+KF+Circular.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageView+KF+Circular.swift"; sourceTree = "<group>"; };
+		4399B0AE221BDBB50034F854 /* DiscoverAnime.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DiscoverAnime.storyboard; sourceTree = "<group>"; };
+		4399B0B1221BDC4D0034F854 /* DiscoverAnimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverAnimeViewController.swift; sourceTree = "<group>"; };
 		43F00B002213FAAE000D9111 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		43F00B052214048C000D9111 /* BaseTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarViewController.swift; sourceTree = "<group>"; };
 		43F00B08221404FC000D9111 /* AnidesuColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnidesuColor.swift; sourceTree = "<group>"; };
@@ -168,6 +172,14 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		4399B0B0221BDC350034F854 /* DiscoverAnime */ = {
+			isa = PBXGroup;
+			children = (
+				4399B0B1221BDC4D0034F854 /* DiscoverAnimeViewController.swift */,
+			);
+			path = DiscoverAnime;
+			sourceTree = "<group>";
+		};
 		43F00AFA2213F9AC000D9111 /* Libs */ = {
 			isa = PBXGroup;
 			children = (
@@ -199,6 +211,7 @@
 		43F00AFD2213F9D8000D9111 /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
+				4399B0AE221BDBB50034F854 /* DiscoverAnime.storyboard */,
 				43F00B0C221408BE000D9111 /* Home.storyboard */,
 				432714212212C76800ACDDFF /* Main.storyboard */,
 				432714262212C76900ACDDFF /* LaunchScreen.storyboard */,
@@ -228,6 +241,7 @@
 		43F00B022214003D000D9111 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				4399B0B0221BDC350034F854 /* DiscoverAnime */,
 				43F00B0E221408FD000D9111 /* Home */,
 			);
 			path = ViewController;
@@ -348,6 +362,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4399B0AF221BDBB50034F854 /* DiscoverAnime.storyboard in Resources */,
 				432714282212C76900ACDDFF /* LaunchScreen.storyboard in Resources */,
 				4399B0A9221BD3810034F854 /* CreatePostCell.xib in Resources */,
 				432714252212C76900ACDDFF /* Assets.xcassets in Resources */,
@@ -495,6 +510,7 @@
 				43F00B062214048C000D9111 /* BaseTabBarViewController.swift in Sources */,
 				43F00B1022140920000D9111 /* HomeViewController.swift in Sources */,
 				4399B0AD221BD4C20034F854 /* ImageView+KF+Circular.swift in Sources */,
+				4399B0B2221BDC4D0034F854 /* DiscoverAnimeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

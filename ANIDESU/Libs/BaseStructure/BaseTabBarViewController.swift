@@ -29,12 +29,12 @@ class BaseTabBarViewController: ESTabBarController {
         }
         
         let homeStoryboard = UIStoryboard(name: "Home", bundle: .main)
-        let discoverVC = UIViewController()
+        let discoverAnimeStoryboard = UIStoryboard(name: "DiscoverAnime", bundle: .main)
         let myAnimeListVC = UIViewController()
         let reviewVC = UIViewController()
         
         let homeVC = homeStoryboard.instantiateInitialViewController() as! UINavigationController
-//        let v2 = favoriteStoryboard.instantiateInitialViewController() as! UINavigationController
+        let discoverVC = discoverAnimeStoryboard.instantiateInitialViewController() as! UINavigationController
 //        let v3 = myAccountStoryboard.instantiateInitialViewController() as! MyProfileViewController
 //        let v4 = settingStoryboard.instantiateInitialViewController() as! UINavigationController
 //

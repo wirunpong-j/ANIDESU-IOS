@@ -17,6 +17,7 @@ target 'ANIDESU' do
   pod 'Firebase/Storage'
   pod 'Firebase/Firestore'
   pod 'Hero'
+  pod 'IGListKit', '~> 3.0'
   pod 'IHKeyboardAvoiding'
   pod 'MBProgressHUD'
   pod 'Kingfisher'
