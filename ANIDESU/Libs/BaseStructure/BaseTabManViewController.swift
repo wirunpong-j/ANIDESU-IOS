@@ -60,7 +60,7 @@ class BaseTabManViewController: TabmanViewController {
         case discoverAnimeMenuIdentifier:
             for season in ALL_SEASON {
                 let viewController = self.storyboard?.instantiateViewController(withIdentifier: DiscoverAnimeViewController.identifier) as? DiscoverAnimeViewController
-//                viewController?.animeSeason = season
+                viewController?.animeSeason = season
                 self.menus.append(viewController!)
             }
         case myAnimeListMenuIdentifier:

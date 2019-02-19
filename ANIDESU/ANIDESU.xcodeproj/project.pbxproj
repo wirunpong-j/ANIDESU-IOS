@@ -24,6 +24,13 @@
 		4399B0BD221BF4D70034F854 /* MyAnimeListType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4399B0BC221BF4D70034F854 /* MyAnimeListType.swift */; };
 		4399B0C0221BF5FF0034F854 /* MyAnimeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4399B0BF221BF5FF0034F854 /* MyAnimeListViewController.swift */; };
 		4399B0C2221BF73D0034F854 /* MyAnimeList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4399B0C1221BF73D0034F854 /* MyAnimeList.storyboard */; };
+		4399B0C4221BFA100034F854 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4399B0C3221BFA100034F854 /* APIManager.swift */; };
+		4399B0C6221BFA960034F854 /* BaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4399B0C5221BFA960034F854 /* BaseResponse.swift */; };
+		4399B0C8221BFAD60034F854 /* BaseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4399B0C7221BFAD60034F854 /* BaseRouter.swift */; };
+		4399B0CA221BFD9F0034F854 /* AnilistRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4399B0C9221BFD9F0034F854 /* AnilistRouter.swift */; };
+		4399B0CC221BFF150034F854 /* APIManager+Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4399B0CB221BFF150034F854 /* APIManager+Log.swift */; };
+		4399B0CF221C01BC0034F854 /* DiscoverAnimeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4399B0CE221C01BC0034F854 /* DiscoverAnimeViewModel.swift */; };
+		4399B0D1221C02360034F854 /* AnilistManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4399B0D0221C02360034F854 /* AnilistManager.swift */; };
 		43F00B012213FAAE000D9111 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F00B002213FAAE000D9111 /* BaseViewController.swift */; };
 		43F00B062214048C000D9111 /* BaseTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F00B052214048C000D9111 /* BaseTabBarViewController.swift */; };
 		43F00B09221404FC000D9111 /* AnidesuColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F00B08221404FC000D9111 /* AnidesuColor.swift */; };
@@ -64,6 +71,13 @@
 		4399B0BC221BF4D70034F854 /* MyAnimeListType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAnimeListType.swift; sourceTree = "<group>"; };
 		4399B0BF221BF5FF0034F854 /* MyAnimeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAnimeListViewController.swift; sourceTree = "<group>"; };
 		4399B0C1221BF73D0034F854 /* MyAnimeList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyAnimeList.storyboard; sourceTree = "<group>"; };
+		4399B0C3221BFA100034F854 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		4399B0C5221BFA960034F854 /* BaseResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseResponse.swift; sourceTree = "<group>"; };
+		4399B0C7221BFAD60034F854 /* BaseRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRouter.swift; sourceTree = "<group>"; };
+		4399B0C9221BFD9F0034F854 /* AnilistRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnilistRouter.swift; sourceTree = "<group>"; };
+		4399B0CB221BFF150034F854 /* APIManager+Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIManager+Log.swift"; sourceTree = "<group>"; };
+		4399B0CE221C01BC0034F854 /* DiscoverAnimeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverAnimeViewModel.swift; sourceTree = "<group>"; };
+		4399B0D0221C02360034F854 /* AnilistManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnilistManager.swift; sourceTree = "<group>"; };
 		43F00B002213FAAE000D9111 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		43F00B052214048C000D9111 /* BaseTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarViewController.swift; sourceTree = "<group>"; };
 		43F00B08221404FC000D9111 /* AnidesuColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnidesuColor.swift; sourceTree = "<group>"; };
@@ -204,6 +218,8 @@
 		4399B0B6221BF3EF0034F854 /* Router */ = {
 			isa = PBXGroup;
 			children = (
+				4399B0C7221BFAD60034F854 /* BaseRouter.swift */,
+				4399B0C9221BFD9F0034F854 /* AnilistRouter.swift */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -211,6 +227,9 @@
 		4399B0B7221BF3FB0034F854 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+				4399B0C3221BFA100034F854 /* APIManager.swift */,
+				4399B0CB221BFF150034F854 /* APIManager+Log.swift */,
+				4399B0D0221C02360034F854 /* AnilistManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -218,6 +237,7 @@
 		4399B0B8221BF4040034F854 /* Response */ = {
 			isa = PBXGroup;
 			children = (
+				4399B0C5221BFA960034F854 /* BaseResponse.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -314,6 +334,7 @@
 		43F00B0322140043000D9111 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				4399B0CE221C01BC0034F854 /* DiscoverAnimeViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -567,19 +588,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4399B0C6221BFA960034F854 /* BaseResponse.swift in Sources */,
 				432714202212C76800ACDDFF /* ViewController.swift in Sources */,
 				4399B0A8221BD3810034F854 /* CreatePostCell.swift in Sources */,
 				4327141E2212C76800ACDDFF /* AppDelegate.swift in Sources */,
 				4399B0BB221BF4570034F854 /* AnimeSeason.swift in Sources */,
+				4399B0CF221C01BC0034F854 /* DiscoverAnimeViewModel.swift in Sources */,
 				43F00B012213FAAE000D9111 /* BaseViewController.swift in Sources */,
 				4399B0B4221BF3500034F854 /* BaseTabManViewController.swift in Sources */,
+				4399B0C4221BFA100034F854 /* APIManager.swift in Sources */,
+				4399B0C8221BFAD60034F854 /* BaseRouter.swift in Sources */,
+				4399B0CA221BFD9F0034F854 /* AnilistRouter.swift in Sources */,
 				4399B0BD221BF4D70034F854 /* MyAnimeListType.swift in Sources */,
 				43F00B09221404FC000D9111 /* AnidesuColor.swift in Sources */,
 				43F00B062214048C000D9111 /* BaseTabBarViewController.swift in Sources */,
+				4399B0D1221C02360034F854 /* AnilistManager.swift in Sources */,
 				43F00B1022140920000D9111 /* HomeViewController.swift in Sources */,
 				4399B0C0221BF5FF0034F854 /* MyAnimeListViewController.swift in Sources */,
 				4399B0AD221BD4C20034F854 /* ImageView+KF+Circular.swift in Sources */,
 				4399B0B2221BDC4D0034F854 /* DiscoverAnimeViewController.swift in Sources */,
+				4399B0CC221BFF150034F854 /* APIManager+Log.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
