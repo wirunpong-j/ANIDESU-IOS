@@ -44,23 +44,27 @@ class DiscoverAnimeViewController: BaseViewController {
         }).disposed(by: disposedBag)
         
         viewModel.isCompleted.subscribe(onNext: { (isCompleted) in
-            self.showAlert(title: "Completed", message: "\(isCompleted)", completion: nil)
+            self.adapter.reloadData(completion: nil)
         }).disposed(by: disposedBag)
     }
     
     private func setUpView() {
-        viewModel.getAnimeListBySeason(season: .Winter)
+        viewModel.getAnimeListBySeason(season: animeSeason)
     }
 
 }
 
 extension DiscoverAnimeViewController: ListAdapterDataSource {
     func objects(for listAdapter: ListAdapter) -> [ListDiffable] {
-        return [ListDiffable]()
+        var animeList = [AnimeResponse]()
+        for page in viewModel.animePage {
+            animeList.append(contentsOf: page.anime!)
+        }
+        return [AnimePageDiffable(anime: animeList)]
     }
     
     func listAdapter(_ listAdapter: ListAdapter, sectionControllerFor object: Any) -> ListSectionController {
-        return ListSectionController()
+        return AnimeListSectionController()
     }
     
     func emptyView(for listAdapter: ListAdapter) -> UIView? {

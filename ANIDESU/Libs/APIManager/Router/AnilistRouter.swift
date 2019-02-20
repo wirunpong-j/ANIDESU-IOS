@@ -43,7 +43,7 @@ query {
       hasNextPage
       perPage
     }
-    media (season: \(params.season)) {
+    media (season: \(params.season), isAdult: false, sort: ID_DESC) {
       id
       format
       title {

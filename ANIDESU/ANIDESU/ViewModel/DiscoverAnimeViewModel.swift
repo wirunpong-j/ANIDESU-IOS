@@ -12,12 +12,15 @@ import RxSwift
 class DiscoverAnimeViewModel {
     var anilistManager = AnilistManager()
     
+    var animePage = [AnimePageResponse]()
+    
     let isLoading = PublishSubject<Bool>()
     let error = PublishSubject<String>()
     let isCompleted = PublishSubject<Bool>()
     
     func getAnimeListBySeason(season: AnimeSeason) {
         anilistManager.getAnimeListBySeason(page: 1, season: season.rawValue.uppercased(), completion: { (response) in
+            self.animePage.append(response)
             self.isCompleted.onNext(true)
         }) { (errorObj) in
             self.error.onNext(errorObj.errorMessage)

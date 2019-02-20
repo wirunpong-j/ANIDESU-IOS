@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AnimeCoverCell" id="X0q-LV-SIN" customClass="AnimeCoverCell" customModule="ANIDESU" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="150" height="200"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="150" height="200"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="STc-xi-N10">
+                        <rect key="frame" x="2" y="4" width="148" height="196"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="animeImage" translatesAutoresizingMaskIntoConstraints="NO" id="vrL-Mc-g6H">
+                                <rect key="frame" x="0.0" y="0.0" width="148" height="196"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabledForSubviews" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="animeCoverImageView"/>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="brC-uW-wbl">
+                                <rect key="frame" x="0.0" y="140" width="148" height="56"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="G3D-Ds-8wJ">
+                                        <rect key="frame" x="8" y="8" width="132" height="40"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Danganronpa V3: Killing Harmony " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="19w-Xl-aar">
+                                                <rect key="frame" x="0.0" y="0.0" width="132" height="40"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                                <color key="shadowColor" red="0.17254901959999999" green="0.24313725489999999" blue="0.31372549020000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <size key="shadowOffset" width="1" height="0.0"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstItem="G3D-Ds-8wJ" firstAttribute="leading" secondItem="brC-uW-wbl" secondAttribute="leading" constant="8" id="2lh-HN-ima"/>
+                                    <constraint firstItem="G3D-Ds-8wJ" firstAttribute="top" secondItem="brC-uW-wbl" secondAttribute="top" constant="8" id="6BX-ed-nW3"/>
+                                    <constraint firstAttribute="bottom" secondItem="G3D-Ds-8wJ" secondAttribute="bottom" constant="8" id="KV7-tg-hBT"/>
+                                    <constraint firstAttribute="trailing" secondItem="G3D-Ds-8wJ" secondAttribute="trailing" constant="8" id="dEo-UB-JQb"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="vrL-Mc-g6H" secondAttribute="trailing" id="2N5-sw-bVl"/>
+                            <constraint firstAttribute="bottom" secondItem="vrL-Mc-g6H" secondAttribute="bottom" id="57q-KB-9v9"/>
+                            <constraint firstAttribute="trailing" secondItem="brC-uW-wbl" secondAttribute="trailing" id="HKE-fL-Wgw"/>
+                            <constraint firstItem="vrL-Mc-g6H" firstAttribute="top" secondItem="STc-xi-N10" secondAttribute="top" id="J5j-T0-Njy"/>
+                            <constraint firstAttribute="bottom" secondItem="brC-uW-wbl" secondAttribute="bottom" id="d1A-2l-JEm"/>
+                            <constraint firstItem="vrL-Mc-g6H" firstAttribute="leading" secondItem="STc-xi-N10" secondAttribute="leading" id="eOe-Fy-Aza"/>
+                            <constraint firstItem="brC-uW-wbl" firstAttribute="leading" secondItem="STc-xi-N10" secondAttribute="leading" id="ls3-6U-S0l"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="STc-xi-N10" firstAttribute="top" secondItem="X0q-LV-SIN" secondAttribute="top" constant="4" id="7Wm-6s-lhw"/>
+                <constraint firstAttribute="bottom" secondItem="STc-xi-N10" secondAttribute="bottom" id="Mbp-2u-GSK"/>
+                <constraint firstItem="STc-xi-N10" firstAttribute="leading" secondItem="X0q-LV-SIN" secondAttribute="leading" constant="2" id="bZg-f0-DpL"/>
+                <constraint firstAttribute="trailing" secondItem="STc-xi-N10" secondAttribute="trailing" id="puy-pK-xIh"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="m8a-h9-ACZ"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabledForSubviews" value="YES"/>
+                <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+            </userDefinedRuntimeAttributes>
+            <connections>
+                <outlet property="animeTitleLabel" destination="19w-Xl-aar" id="U7J-1i-vM9"/>
+                <outlet property="coverImage" destination="vrL-Mc-g6H" id="fR3-z0-gYF"/>
+            </connections>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="animeImage" width="16" height="16"/>
+    </resources>
+</document>

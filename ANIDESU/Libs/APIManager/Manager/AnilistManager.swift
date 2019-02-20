@@ -9,11 +9,11 @@
 import Foundation
 
 class AnilistManager {
-    func getAnimeListBySeason(page: Int, season: String, completion: @escaping (BaseResponse) -> (), onFailure: @escaping (BaseError) -> ()) {
+    func getAnimeListBySeason(page: Int, season: String, completion: @escaping (AnimePageResponse) -> (), onFailure: @escaping (BaseError) -> ()) {
         
         let router = AnilistRouter.getAnimeListBySeason(page: page, season: season)
         
-        APIManager.request(withRouter: router, responseType: BaseResponse.self, completion: { (response) in
+        APIManager.request(withRouter: router, responseType: AnimePageResponse.self, completion: { (response) in
             completion(response)
         }) { (error) in
             onFailure(error)
