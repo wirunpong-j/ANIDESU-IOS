@@ -50,6 +50,13 @@ query {
         english
         romaji
       }
+      coverImage {
+        extraLarge
+        large
+        medium
+        color
+      }
+      bannerImage
       episodes
       status
       isAdult

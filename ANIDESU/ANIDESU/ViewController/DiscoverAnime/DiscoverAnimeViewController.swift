@@ -7,16 +7,20 @@
 //
 
 import UIKit
+import IGListKit
 import RxCocoa
 import RxSwift
 
 class DiscoverAnimeViewController: BaseViewController {
     static let identifier = "DiscoverAnimeViewController"
     
+    @IBOutlet weak var animeListCollectionView: UICollectionView!
+    
+    var adapter: ListAdapter!
     var animeSeason: AnimeSeason!
     let viewModel = DiscoverAnimeViewModel()
     let disposedBag = DisposeBag()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setUpCollectionView()
@@ -25,7 +29,9 @@ class DiscoverAnimeViewController: BaseViewController {
     }
     
     private func setUpCollectionView() {
-        
+        self.adapter = ListAdapter(updater: ListAdapterUpdater(), viewController: self)
+        self.adapter.collectionView = animeListCollectionView
+        self.adapter.dataSource = self
     }
     
     private func setUpViewModel() {
@@ -46,4 +52,18 @@ class DiscoverAnimeViewController: BaseViewController {
         viewModel.getAnimeListBySeason(season: .Winter)
     }
 
+}
+
+extension DiscoverAnimeViewController: ListAdapterDataSource {
+    func objects(for listAdapter: ListAdapter) -> [ListDiffable] {
+        return [ListDiffable]()
+    }
+    
+    func listAdapter(_ listAdapter: ListAdapter, sectionControllerFor object: Any) -> ListSectionController {
+        return ListSectionController()
+    }
+    
+    func emptyView(for listAdapter: ListAdapter) -> UIView? {
+        return nil
+    }
 }

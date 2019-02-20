@@ -116,6 +116,11 @@ PODS:
   - gRPC-Core/Interface (1.17.0)
   - GTMSessionFetcher/Core (1.2.1)
   - Hero (1.4.0)
+  - IGListKit (3.4.0):
+    - IGListKit/Default (= 3.4.0)
+  - IGListKit/Default (3.4.0):
+    - IGListKit/Diffing
+  - IGListKit/Diffing (3.4.0)
   - IHKeyboardAvoiding (4.6)
   - Kingfisher (5.1.1)
   - leveldb-library (1.20)
@@ -125,7 +130,7 @@ PODS:
     - nanopb/encode (= 0.3.901)
   - nanopb/decode (0.3.901)
   - nanopb/encode (0.3.901)
-  - Pageboy (3.0.2)
+  - Pageboy (3.0.4)
   - Protobuf (3.6.1)
   - RxAtomic (4.4.1)
   - RxCocoa (4.4.1):
@@ -150,6 +155,7 @@ DEPENDENCIES:
   - Firebase/Firestore
   - Firebase/Storage
   - Hero
+  - IGListKit (~> 3.0)
   - IHKeyboardAvoiding
   - Kingfisher
   - MBProgressHUD
@@ -183,6 +189,7 @@ SPEC REPOS:
     - gRPC-Core
     - GTMSessionFetcher
     - Hero
+    - IGListKit
     - IHKeyboardAvoiding
     - Kingfisher
     - leveldb-library
@@ -220,12 +227,13 @@ SPEC CHECKSUMS:
   gRPC-Core: 4028031ed2c5267cca0d846c876d8046b1ecb9b6
   GTMSessionFetcher: 32aeca0aa144acea523e1c8e053089dec2cb98ca
   Hero: bac92350d7201a1a940003e0767c7b52ce7c99a1
+  IGListKit: 7a5d788e9fb746bcd402baa8e8b24bc3bd2a5a07
   IHKeyboardAvoiding: 2a664fdb5f964359fa7ec8fc5c9aebb447583ff8
   Kingfisher: 2558186963e5be42d98c5b110ccb3130148b77e4
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
-  Pageboy: 0e955738f7a46d617e8f6ee11c77f1658bb878c2
+  Pageboy: 0ab0515c657bf551a26e58e434f718a7ebc5819b
   Protobuf: 1eb9700044745f00181c136ef21b8ff3ad5a0fd5
   RxAtomic: f8d6adc1ccb87a767811269e4875887bc74dbf19
   RxCocoa: 2f35a76bf8887872e28a1914112395b11b8e0e64
@@ -234,6 +242,6 @@ SPEC CHECKSUMS:
   "UITextView+Placeholder": 0c3efd97f37ea64bde7f34cc6e90fe02e87b3909
   WCLShineButton: d8b979b6f6f9f6709f9e241e6e1a4712a1a9b36b
 
-PODFILE CHECKSUM: e38151678784f6d799dd3f9a481570b8283ea5a1
+PODFILE CHECKSUM: 625030916ceff28f57a1a429f0aa1b7ff42e5896
 
 COCOAPODS: 1.5.3
