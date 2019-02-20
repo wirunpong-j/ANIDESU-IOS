@@ -51,7 +51,6 @@ class DiscoverAnimeViewController: BaseViewController {
     private func setUpView() {
         viewModel.getAnimeListBySeason(season: animeSeason)
     }
-
 }
 
 extension DiscoverAnimeViewController: ListAdapterDataSource {

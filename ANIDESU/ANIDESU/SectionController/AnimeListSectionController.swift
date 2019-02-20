@@ -39,6 +39,12 @@ class AnimeListSectionController: ListSectionController {
     }
     
     override func didSelectItem(at index: Int) {
-        
+        let storyboard = UIStoryboard(name: "AnimeDetail", bundle: Bundle.main)
+        if let viewController = storyboard.instantiateInitialViewController() as? AnimeDetailViewController {
+            if let anime = animePageDiffable?.anime?[index] {
+                viewController.anime = anime
+            }
+            self.viewController?.present(viewController, animated: true, completion: nil)
+        }
     }
 }

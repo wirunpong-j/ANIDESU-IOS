@@ -24,6 +24,8 @@
 		437CC22F221D37BB00F197C8 /* AnimeCoverCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 437CC22D221D37BB00F197C8 /* AnimeCoverCell.xib */; };
 		437CC233221D396200F197C8 /* AnimeListSectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437CC232221D396200F197C8 /* AnimeListSectionController.swift */; };
 		437CC235221D39B700F197C8 /* AnimePageDiffable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437CC234221D39B700F197C8 /* AnimePageDiffable.swift */; };
+		437CC237221D43D900F197C8 /* AnimeDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 437CC236221D43D900F197C8 /* AnimeDetail.storyboard */; };
+		437CC239221D441C00F197C8 /* AnimeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437CC238221D441C00F197C8 /* AnimeDetailViewController.swift */; };
 		4399B0A8221BD3810034F854 /* CreatePostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4399B0A6221BD3800034F854 /* CreatePostCell.swift */; };
 		4399B0A9221BD3810034F854 /* CreatePostCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4399B0A7221BD3800034F854 /* CreatePostCell.xib */; };
 		4399B0AD221BD4C20034F854 /* ImageView+KF+Circular.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4399B0AC221BD4C20034F854 /* ImageView+KF+Circular.swift */; };
@@ -81,6 +83,8 @@
 		437CC22D221D37BB00F197C8 /* AnimeCoverCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnimeCoverCell.xib; sourceTree = "<group>"; };
 		437CC232221D396200F197C8 /* AnimeListSectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimeListSectionController.swift; sourceTree = "<group>"; };
 		437CC234221D39B700F197C8 /* AnimePageDiffable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimePageDiffable.swift; sourceTree = "<group>"; };
+		437CC236221D43D900F197C8 /* AnimeDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AnimeDetail.storyboard; sourceTree = "<group>"; };
+		437CC238221D441C00F197C8 /* AnimeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimeDetailViewController.swift; sourceTree = "<group>"; };
 		4399B0A6221BD3800034F854 /* CreatePostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostCell.swift; sourceTree = "<group>"; };
 		4399B0A7221BD3800034F854 /* CreatePostCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreatePostCell.xib; sourceTree = "<group>"; };
 		4399B0AC221BD4C20034F854 /* ImageView+KF+Circular.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageView+KF+Circular.swift"; sourceTree = "<group>"; };
@@ -254,6 +258,7 @@
 			isa = PBXGroup;
 			children = (
 				4399B0B1221BDC4D0034F854 /* DiscoverAnimeViewController.swift */,
+				437CC238221D441C00F197C8 /* AnimeDetailViewController.swift */,
 			);
 			path = DiscoverAnime;
 			sourceTree = "<group>";
@@ -358,6 +363,7 @@
 				432714212212C76800ACDDFF /* Main.storyboard */,
 				4399B0C1221BF73D0034F854 /* MyAnimeList.storyboard */,
 				432714262212C76900ACDDFF /* LaunchScreen.storyboard */,
+				437CC236221D43D900F197C8 /* AnimeDetail.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -513,6 +519,7 @@
 				4399B0AF221BDBB50034F854 /* DiscoverAnime.storyboard in Resources */,
 				432714282212C76900ACDDFF /* LaunchScreen.storyboard in Resources */,
 				4399B0A9221BD3810034F854 /* CreatePostCell.xib in Resources */,
+				437CC237221D43D900F197C8 /* AnimeDetail.storyboard in Resources */,
 				437CC22F221D37BB00F197C8 /* AnimeCoverCell.xib in Resources */,
 				432714252212C76900ACDDFF /* Assets.xcassets in Resources */,
 				432714232212C76800ACDDFF /* Main.storyboard in Resources */,
@@ -665,6 +672,7 @@
 				4399B0CF221C01BC0034F854 /* DiscoverAnimeViewModel.swift in Sources */,
 				43F00B012213FAAE000D9111 /* BaseViewController.swift in Sources */,
 				4399B0B4221BF3500034F854 /* BaseTabManViewController.swift in Sources */,
+				437CC239221D441C00F197C8 /* AnimeDetailViewController.swift in Sources */,
 				437CC22A221D357200F197C8 /* AnimeCoverImageResponse.swift in Sources */,
 				4399B0C4221BFA100034F854 /* APIManager.swift in Sources */,
 				437CC22E221D37BB00F197C8 /* AnimeCoverCell.swift in Sources */,
