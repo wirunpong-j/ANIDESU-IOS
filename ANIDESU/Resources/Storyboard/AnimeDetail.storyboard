@@ -45,9 +45,6 @@
                                     <navigationItem id="uLh-0t-qj6">
                                         <barButtonItem key="leftBarButtonItem" image="ic_back" id="AMV-Rd-uKW">
                                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <connections>
-                                                <action selector="backButtonTapped:" destination="3Ab-Kt-GqL" id="Hqm-P4-BFr"/>
-                                            </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>

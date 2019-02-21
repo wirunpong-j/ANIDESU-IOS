@@ -33,15 +33,19 @@ class AnimeDetailViewController: BaseViewController {
         navbar.shadowImage = UIImage()
         navbar.isTranslucent = true
         navbar.backgroundColor = .clear
-        
+        self.setUpBackButtonView()
+    }
+    
+    func setUpBackButtonView() {
         let button = UIButton(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
         button.setImage(UIImage(named: "ic_back"), for: .normal)
         button.tintColor = AnidesuColor.White.color()
         button.layer.shadowColor = AnidesuColor.Black.color().cgColor
         button.layer.shadowOffset = CGSize(width: 0, height: 2)
         button.layer.shadowOpacity = 0.5
-        button.layer.shadowRadius = 0.25
+        button.layer.shadowRadius = 1
         button.layer.masksToBounds = false
+        button.addTarget(self, action: #selector(self.backButtonTapped), for: .touchUpInside)
         backButton.customView = button
     }
     
@@ -53,7 +57,7 @@ class AnimeDetailViewController: BaseViewController {
         }
     }
 
-    @IBAction func backButtonTapped(_ sender: Any) {
+    @objc func backButtonTapped() {
         self.dismiss(animated: true, completion: nil)
     }
 }
