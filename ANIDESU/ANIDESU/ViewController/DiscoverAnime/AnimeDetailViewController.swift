@@ -16,6 +16,7 @@ class AnimeDetailViewController: BaseViewController {
     @IBOutlet weak var navbar: UINavigationBar!
     @IBOutlet weak var backButton: UIBarButtonItem!
     @IBOutlet weak var bgView: UIView!
+    @IBOutlet weak var gradientView: AnidesuGradientView!
     
     var anime: AnimeResponse?
     
@@ -64,7 +65,13 @@ class AnimeDetailViewController: BaseViewController {
         } else {
             bannerImageView.setImage(urlStr: (anime?.coverImage?.sizeXLarge)!)
         }
-        bgView.backgroundColor = UIColor().hexStringToUIColor(hex: (anime?.coverImage?.color)!)
+        
+        var animeColor = AnidesuColor.Black.color()
+        if let _color = anime?.coverImage?.color {
+            animeColor = UIColor().hexStringToUIColor(hex: (_color))
+        }
+        bgView.backgroundColor = animeColor
+        gradientView.setUpColor(startColor: AnidesuColor.Clear.color(), endColor: animeColor)
     }
 
     @objc func backButtonTapped() {

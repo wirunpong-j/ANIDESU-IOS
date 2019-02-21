@@ -27,12 +27,34 @@
                                             <constraint firstAttribute="height" constant="300" id="6dx-II-hva"/>
                                         </constraints>
                                     </imageView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="07F-qB-vTG" customClass="AnidesuGradientView" customModule="ANIDESU" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="startColor">
+                                                <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="endColor">
+                                                <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="startLocation">
+                                                <real key="value" value="0.20000000000000001"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="endLocation">
+                                                <real key="value" value="0.80000000000000004"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="FwT-2F-3qP" secondAttribute="trailing" id="dTp-Jl-dy0"/>
-                                    <constraint firstItem="FwT-2F-3qP" firstAttribute="leading" secondItem="N6h-cO-91n" secondAttribute="leading" id="kYQ-V4-MrT"/>
-                                    <constraint firstItem="FwT-2F-3qP" firstAttribute="top" secondItem="N6h-cO-91n" secondAttribute="top" id="ziB-XD-qWj"/>
+                                    <constraint firstItem="FwT-2F-3qP" firstAttribute="top" secondItem="N6h-cO-91n" secondAttribute="top" id="3Ds-xZ-SOx"/>
+                                    <constraint firstAttribute="trailing" secondItem="FwT-2F-3qP" secondAttribute="trailing" id="SrA-i6-E2Q"/>
+                                    <constraint firstItem="07F-qB-vTG" firstAttribute="leading" secondItem="N6h-cO-91n" secondAttribute="leading" id="bkn-GE-uAX"/>
+                                    <constraint firstItem="07F-qB-vTG" firstAttribute="top" secondItem="N6h-cO-91n" secondAttribute="top" id="dNE-or-a5Y"/>
+                                    <constraint firstItem="FwT-2F-3qP" firstAttribute="leading" secondItem="N6h-cO-91n" secondAttribute="leading" id="f3l-W1-cX7"/>
+                                    <constraint firstAttribute="trailing" secondItem="07F-qB-vTG" secondAttribute="trailing" id="gsG-MI-VRi"/>
+                                    <constraint firstItem="07F-qB-vTG" firstAttribute="height" secondItem="FwT-2F-3qP" secondAttribute="height" id="i5f-0u-MJh"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="c5F-Gr-Sac">
@@ -71,6 +93,7 @@
                         <outlet property="bannerImageView" destination="FwT-2F-3qP" id="oof-bU-MKI"/>
                         <outlet property="bgView" destination="N6h-cO-91n" id="UGS-83-lhh"/>
                         <outlet property="detailTableView" destination="c5F-Gr-Sac" id="12e-pm-bUt"/>
+                        <outlet property="gradientView" destination="07F-qB-vTG" id="VpB-Pt-DSR"/>
                         <outlet property="navbar" destination="mkr-rJ-XEl" id="wuY-mN-bp0"/>
                     </connections>
                 </viewController>
