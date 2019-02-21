@@ -15,11 +15,16 @@ class AnimeDetailViewController: BaseViewController {
     @IBOutlet weak var detailTableView: UITableView!
     @IBOutlet weak var navbar: UINavigationBar!
     @IBOutlet weak var backButton: UIBarButtonItem!
+    @IBOutlet weak var bgView: UIView!
     
     var anime: AnimeResponse?
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
+    }
+    
+    private enum Rows: Int {
+        case header
     }
     
     override func viewDidLoad() {
@@ -50,14 +55,38 @@ class AnimeDetailViewController: BaseViewController {
     }
     
     func setUpView() {
+        self.detailTableView.delegate = self
+        self.detailTableView.dataSource = self
+        self.detailTableView.register(AnimeHeaderCell.nibFile, forCellReuseIdentifier: AnimeHeaderCell.identifier)
+        
         if let imageUrl = anime?.bannerImage {
             bannerImageView.setImage(urlStr: imageUrl)
         } else {
             bannerImageView.setImage(urlStr: (anime?.coverImage?.sizeXLarge)!)
         }
+        bgView.backgroundColor = UIColor().hexStringToUIColor(hex: (anime?.coverImage?.color)!)
     }
 
     @objc func backButtonTapped() {
         self.dismiss(animated: true, completion: nil)
+    }
+}
+
+extension AnimeDetailViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        switch Rows(rawValue: indexPath.row)! {
+        case .header:
+            if let cell = tableView.dequeueReusableCell(withIdentifier: AnimeHeaderCell.identifier) as? AnimeHeaderCell {
+                if let anime = self.anime {
+                    cell.setUpCell(anime: anime)
+                }
+                return cell
+            }
+        }
+        return UITableViewCell()
     }
 }

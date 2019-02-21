@@ -28,6 +28,8 @@
 		4374DB72221ED05E0092DA6F /* Mitr-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4374DB6C221ED0570092DA6F /* Mitr-Regular.ttf */; };
 		4374DB73221ED05E0092DA6F /* Mitr-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4374DB6D221ED05A0092DA6F /* Mitr-ExtraLight.ttf */; };
 		4374DB74221ED05E0092DA6F /* Mitr-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4374DB6E221ED05E0092DA6F /* Mitr-SemiBold.ttf */; };
+		4374DB76221ED8ED0092DA6F /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4374DB75221ED8ED0092DA6F /* UIColor+Hex.swift */; };
+		4374DB78221EDCB80092DA6F /* AnidesuGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4374DB77221EDCB80092DA6F /* AnidesuGradientView.swift */; };
 		437CC220221D26E100F197C8 /* AnimeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437CC21F221D26E100F197C8 /* AnimeResponse.swift */; };
 		437CC222221D279900F197C8 /* AnimePageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437CC221221D279900F197C8 /* AnimePageResponse.swift */; };
 		437CC224221D31C100F197C8 /* AnimeTitleResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437CC223221D31C100F197C8 /* AnimeTitleResponse.swift */; };
@@ -101,6 +103,8 @@
 		4374DB6C221ED0570092DA6F /* Mitr-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mitr-Regular.ttf"; sourceTree = "<group>"; };
 		4374DB6D221ED05A0092DA6F /* Mitr-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mitr-ExtraLight.ttf"; sourceTree = "<group>"; };
 		4374DB6E221ED05E0092DA6F /* Mitr-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mitr-SemiBold.ttf"; sourceTree = "<group>"; };
+		4374DB75221ED8ED0092DA6F /* UIColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
+		4374DB77221EDCB80092DA6F /* AnidesuGradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnidesuGradientView.swift; sourceTree = "<group>"; };
 		437CC21F221D26E100F197C8 /* AnimeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimeResponse.swift; sourceTree = "<group>"; };
 		437CC221221D279900F197C8 /* AnimePageResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimePageResponse.swift; sourceTree = "<group>"; };
 		437CC223221D31C100F197C8 /* AnimeTitleResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimeTitleResponse.swift; sourceTree = "<group>"; };
@@ -304,6 +308,7 @@
 			isa = PBXGroup;
 			children = (
 				4399B0AC221BD4C20034F854 /* ImageView+KF+Circular.swift */,
+				4374DB75221ED8ED0092DA6F /* UIColor+Hex.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -477,6 +482,7 @@
 				43F00B08221404FC000D9111 /* AnidesuColor.swift */,
 				4374DB5B221ECDBB0092DA6F /* AnidesuLabel.swift */,
 				4374DB66221ECE730092DA6F /* AnidesuFont.swift */,
+				4374DB77221EDCB80092DA6F /* AnidesuGradientView.swift */,
 			);
 			path = Compontent;
 			sourceTree = "<group>";
@@ -751,6 +757,7 @@
 				4374DB59221ECCCA0092DA6F /* AnimeHeaderCell.swift in Sources */,
 				43F00B062214048C000D9111 /* BaseTabBarViewController.swift in Sources */,
 				4374DB5C221ECDBB0092DA6F /* AnidesuLabel.swift in Sources */,
+				4374DB78221EDCB80092DA6F /* AnidesuGradientView.swift in Sources */,
 				4374DB63221ECE2A0092DA6F /* LocalizeSwift.swift in Sources */,
 				4399B0D1221C02360034F854 /* AnilistManager.swift in Sources */,
 				437CC233221D396200F197C8 /* AnimeListSectionController.swift in Sources */,
@@ -758,6 +765,7 @@
 				437CC220221D26E100F197C8 /* AnimeResponse.swift in Sources */,
 				4399B0C0221BF5FF0034F854 /* MyAnimeListViewController.swift in Sources */,
 				4399B0AD221BD4C20034F854 /* ImageView+KF+Circular.swift in Sources */,
+				4374DB76221ED8ED0092DA6F /* UIColor+Hex.swift in Sources */,
 				4374DB67221ECE730092DA6F /* AnidesuFont.swift in Sources */,
 				4399B0B2221BDC4D0034F854 /* DiscoverAnimeViewController.swift in Sources */,
 				4399B0CC221BFF150034F854 /* APIManager+Log.swift in Sources */,

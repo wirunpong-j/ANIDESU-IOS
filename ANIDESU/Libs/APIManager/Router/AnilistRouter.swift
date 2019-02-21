@@ -50,6 +50,7 @@ query {
         english
         romaji
       }
+      description
       coverImage {
         extraLarge
         large

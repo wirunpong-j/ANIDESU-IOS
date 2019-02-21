@@ -12,9 +12,13 @@ class AnimeHeaderCell: UITableViewCell {
     static let nibFile = UINib(nibName: "AnimeHeaderCell", bundle: .main)
     static let identifier = "AnimeHeaderCell"
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    @IBOutlet weak var titleLabel: AnidesuLabel!
+    @IBOutlet weak var studioTitleLabel: AnidesuLabel!
+    @IBOutlet weak var descLabel: AnidesuLabel!
+    
+    func setUpCell(anime: AnimeResponse) {
+        self.titleLabel.text = anime.title?.romanjiTitle ?? "N/A"
+        self.descLabel.text = anime.description ?? "N/A"
     }
     
 }

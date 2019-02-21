@@ -11,6 +11,7 @@ import Foundation
 class AnimeResponse: BaseResponse {
     var id: Int?
     var title: AnimeTitleResponse?
+    var description: String?
     var bannerImage: String?
     var coverImage: AnimeCoverImageResponse?
     var status: String?
@@ -22,7 +23,7 @@ class AnimeResponse: BaseResponse {
     var nextAiringEpisode: AnimeAiringResponse?
     
     private enum DataKeys: String, CodingKey {
-        case id, title, bannerImage, coverImage, status,
+        case id, title, description, bannerImage, coverImage, status,
         format, isAdult, episodes, genres, tags, nextAiringEpisode
     }
     
@@ -31,6 +32,7 @@ class AnimeResponse: BaseResponse {
         if let dataContainer = try? decoder.container(keyedBy: DataKeys.self), !dataContainer.allKeys.isEmpty {
             self.id = try? dataContainer.decode(Int.self, forKey: .id)
             self.title = try? dataContainer.decode(AnimeTitleResponse.self, forKey: .title)
+            self.description = try? dataContainer.decode(String.self, forKey: .description)
             self.bannerImage = try? dataContainer.decode(String.self, forKey: .bannerImage)
             self.coverImage = try? dataContainer.decode(AnimeCoverImageResponse.self, forKey: .coverImage)
             self.status = try? dataContainer.decode(String.self, forKey: .status)
