@@ -43,71 +43,71 @@ enum AnidesuFontSize: String {
     func getFont() -> UIFont {
         switch self {
         case .ExtraExtraExtraTiny:
-            return AnidesuFont.Mitr.ExtraExtraExtraTiny(type: .ExtraLight)
+            return AnidesuFont.NotoSansThai.ExtraExtraExtraTiny(type: .Light)
         case .ExtraExtraExtraTinyMed:
-            return AnidesuFont.Mitr.ExtraExtraExtraTiny(type: .Light)
+            return AnidesuFont.NotoSansThai.ExtraExtraExtraTiny(type: .Medium)
         case .ExtraExtraExtraTinyBold:
-            return AnidesuFont.Mitr.ExtraExtraExtraTiny(type: .Regular)
+            return AnidesuFont.NotoSansThai.ExtraExtraExtraTiny(type: .Bold)
         case .ExtraExtraTiny:
-            return AnidesuFont.Mitr.ExtraExtraTiny(type: .ExtraLight)
+            return AnidesuFont.NotoSansThai.ExtraExtraTiny(type: .Light)
         case .ExtraExtraTinyMed:
-            return AnidesuFont.Mitr.ExtraExtraTiny(type: .Light)
+            return AnidesuFont.NotoSansThai.ExtraExtraTiny(type: .Medium)
         case .ExtraExtraTinyBold:
-            return AnidesuFont.Mitr.ExtraExtraTiny(type: .Regular)
+            return AnidesuFont.NotoSansThai.ExtraExtraTiny(type: .Bold)
         case .ExtraTiny:
-            return AnidesuFont.Mitr.ExtraTiny(type: .ExtraLight)
+            return AnidesuFont.NotoSansThai.ExtraTiny(type: .Light)
         case .ExtraTinyMed:
-            return AnidesuFont.Mitr.ExtraTiny(type: .Light)
+            return AnidesuFont.NotoSansThai.ExtraTiny(type: .Medium)
         case .ExtraTinyBold:
-            return AnidesuFont.Mitr.ExtraTiny(type: .Regular)
+            return AnidesuFont.NotoSansThai.ExtraTiny(type: .Bold)
         case .Tiny:
-            return AnidesuFont.Mitr.Tiny(type: .ExtraLight)
+            return AnidesuFont.NotoSansThai.Tiny(type: .Light)
         case .TinyMed:
-            return AnidesuFont.Mitr.Tiny(type: .Light)
+            return AnidesuFont.NotoSansThai.Tiny(type: .Medium)
         case .TinyBold:
-            return AnidesuFont.Mitr.Tiny(type: .Regular)
+            return AnidesuFont.NotoSansThai.Tiny(type: .Bold)
         case .ExtraSmall:
-            return AnidesuFont.Mitr.ExtraSmall(type: .ExtraLight)
+            return AnidesuFont.NotoSansThai.ExtraSmall(type: .Light)
         case .ExtraSmallMed:
-            return AnidesuFont.Mitr.ExtraSmall(type: .Light)
+            return AnidesuFont.NotoSansThai.ExtraSmall(type: .Medium)
         case .ExtraSmallBold:
-            return AnidesuFont.Mitr.ExtraSmall(type: .Regular)
+            return AnidesuFont.NotoSansThai.ExtraSmall(type: .Bold)
         case .Small:
-            return AnidesuFont.Mitr.Small(type: .ExtraLight)
+            return AnidesuFont.NotoSansThai.Small(type: .Light)
         case .SmallMed:
-            return AnidesuFont.Mitr.Small(type: .Light)
+            return AnidesuFont.NotoSansThai.Small(type: .Medium)
         case .SmallBold:
-            return AnidesuFont.Mitr.Small(type: .Regular)
+            return AnidesuFont.NotoSansThai.Small(type: .Bold)
         case .Medium:
-            return AnidesuFont.Mitr.Medium(type: .ExtraLight)
+            return AnidesuFont.NotoSansThai.Medium(type: .Light)
         case .MediumMed:
-            return AnidesuFont.Mitr.Medium(type: .Light)
+            return AnidesuFont.NotoSansThai.Medium(type: .Medium)
         case .MediumBold:
-            return AnidesuFont.Mitr.Medium(type: .Regular)
+            return AnidesuFont.NotoSansThai.Medium(type: .Bold)
         case .Large:
-            return AnidesuFont.Mitr.Large(type: .ExtraLight)
+            return AnidesuFont.NotoSansThai.Large(type: .Light)
         case .LargeMed:
-            return AnidesuFont.Mitr.Large(type: .Light)
+            return AnidesuFont.NotoSansThai.Large(type: .Medium)
         case .LargeBold:
-            return AnidesuFont.Mitr.Large(type: .Regular)
+            return AnidesuFont.NotoSansThai.Large(type: .Bold)
         case .ExtraLarge:
-            return AnidesuFont.Mitr.ExtraLarge(type: .ExtraLight)
+            return AnidesuFont.NotoSansThai.ExtraLarge(type: .Light)
         case .ExtraLargeMed:
-            return AnidesuFont.Mitr.ExtraLarge(type: .Light)
+            return AnidesuFont.NotoSansThai.ExtraLarge(type: .Medium)
         case .ExtraLargeBold:
-            return AnidesuFont.Mitr.ExtraLarge(type: .Regular)
+            return AnidesuFont.NotoSansThai.ExtraLarge(type: .Bold)
         case .Huge:
-            return AnidesuFont.Mitr.Huge(type: .ExtraLight)
+            return AnidesuFont.NotoSansThai.Huge(type: .Light)
         case .HugeMed:
-            return AnidesuFont.Mitr.Huge(type: .Light)
+            return AnidesuFont.NotoSansThai.Huge(type: .Medium)
         case .HugeBold:
-            return AnidesuFont.Mitr.Huge(type: .Regular)
+            return AnidesuFont.NotoSansThai.Huge(type: .Bold)
         }
     }
 }
 
-enum AnidesuFont {
-    case Mitr
+public enum AnidesuFont {
+    case NotoSansThai
     
     static let ExtraExtraExtraTiny: CGFloat = 8
     static let ExtraExtraTiny:      CGFloat = 10
@@ -171,15 +171,18 @@ enum AnidesuFont {
     }
     
     private func getFontWithSize(type: FontType, size: CGFloat) -> UIFont {
-        return UIFont(name: "Mitr-\(type.rawValue)", size: size)!
+        return UIFont(name: "NotoSansThai-\(type.rawValue)", size: size)!
     }
 }
 
 public enum FontType: String {
     case Regular = "Regular"
-    case ExtraLight = "ExtraLight"
-    case Light = "Light"
+    case Black = "Black"
+    case ExtraBold = "ExtraBold"
+    case Bold = "Bold"
     case Medium = "Medium"
     case SemiBold = "SemiBold"
-    case Bold = "Bold"
+    case Light = "Light"
+    case ExtraLight = "ExtraLight"
+    case Thin = "Thin"
 }
