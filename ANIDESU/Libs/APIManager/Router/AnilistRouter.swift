@@ -51,6 +51,17 @@ query {
         romaji
       }
       description
+      season
+      startDate {
+        year
+        month
+        day
+      }
+      endDate {
+        year
+        month
+        day
+      }
       coverImage {
         extraLarge
         large

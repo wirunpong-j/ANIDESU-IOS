@@ -12,6 +12,9 @@ class AnimeResponse: BaseResponse {
     var id: Int?
     var title: AnimeTitleResponse?
     var description: String?
+    var season: String?
+    var startDate: AnimeDateResponse?
+    var endDate: AnimeDateResponse?
     var bannerImage: String?
     var coverImage: AnimeCoverImageResponse?
     var status: String?
@@ -23,8 +26,8 @@ class AnimeResponse: BaseResponse {
     var nextAiringEpisode: AnimeAiringResponse?
     
     private enum DataKeys: String, CodingKey {
-        case id, title, description, bannerImage, coverImage, status,
-        format, isAdult, episodes, genres, tags, nextAiringEpisode
+        case id, title, description, season, startDate, endDate, bannerImage,
+        coverImage, status, format, isAdult, episodes, genres, tags, nextAiringEpisode
     }
     
     public required init(from decoder: Decoder) throws {
@@ -33,6 +36,9 @@ class AnimeResponse: BaseResponse {
             self.id = try? dataContainer.decode(Int.self, forKey: .id)
             self.title = try? dataContainer.decode(AnimeTitleResponse.self, forKey: .title)
             self.description = try? dataContainer.decode(String.self, forKey: .description)
+            self.season = try? dataContainer.decode(String.self, forKey: .season)
+            self.startDate = try? dataContainer.decode(AnimeDateResponse.self, forKey: .startDate)
+            self.endDate = try? dataContainer.decode(AnimeDateResponse.self, forKey: .endDate)
             self.bannerImage = try? dataContainer.decode(String.self, forKey: .bannerImage)
             self.coverImage = try? dataContainer.decode(AnimeCoverImageResponse.self, forKey: .coverImage)
             self.status = try? dataContainer.decode(String.self, forKey: .status)

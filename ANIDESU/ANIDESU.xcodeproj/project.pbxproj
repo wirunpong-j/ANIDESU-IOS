@@ -23,6 +23,7 @@
 		434E1873221FD74E0041432F /* NotoSansThai-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 434E1867221FD6CC0041432F /* NotoSansThai-Regular.ttf */; };
 		434E1874221FD74E0041432F /* NotoSansThai-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 434E186B221FD6D60041432F /* NotoSansThai-SemiBold.ttf */; };
 		434E1875221FD74E0041432F /* NotoSansThaiUI-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 434E1869221FD6D00041432F /* NotoSansThaiUI-Thin.ttf */; };
+		434E1877221FF3D00041432F /* AnimeDateResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434E1876221FF3CF0041432F /* AnimeDateResponse.swift */; };
 		4374DB59221ECCCA0092DA6F /* AnimeHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4374DB57221ECCCA0092DA6F /* AnimeHeaderCell.swift */; };
 		4374DB5A221ECCCA0092DA6F /* AnimeHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4374DB58221ECCCA0092DA6F /* AnimeHeaderCell.xib */; };
 		4374DB5C221ECDBB0092DA6F /* AnidesuLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4374DB5B221ECDBB0092DA6F /* AnidesuLabel.swift */; };
@@ -101,6 +102,7 @@
 		434E186A221FD6D20041432F /* NotoSansThai-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansThai-ExtraLight.ttf"; sourceTree = "<group>"; };
 		434E186B221FD6D60041432F /* NotoSansThai-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansThai-SemiBold.ttf"; sourceTree = "<group>"; };
 		434E186C221FD6DA0041432F /* NotoSansThai-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansThai-Medium.ttf"; sourceTree = "<group>"; };
+		434E1876221FF3CF0041432F /* AnimeDateResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimeDateResponse.swift; sourceTree = "<group>"; };
 		4374DB57221ECCCA0092DA6F /* AnimeHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimeHeaderCell.swift; sourceTree = "<group>"; };
 		4374DB58221ECCCA0092DA6F /* AnimeHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnimeHeaderCell.xib; sourceTree = "<group>"; };
 		4374DB5B221ECDBB0092DA6F /* AnidesuLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnidesuLabel.swift; sourceTree = "<group>"; };
@@ -370,6 +372,7 @@
 				437CC225221D340400F197C8 /* AnimeAiringResponse.swift */,
 				437CC227221D349200F197C8 /* AnimeTagResponse.swift */,
 				437CC229221D357200F197C8 /* AnimeCoverImageResponse.swift */,
+				434E1876221FF3CF0041432F /* AnimeDateResponse.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -760,6 +763,7 @@
 				437CC22A221D357200F197C8 /* AnimeCoverImageResponse.swift in Sources */,
 				4399B0C4221BFA100034F854 /* APIManager.swift in Sources */,
 				437CC22E221D37BB00F197C8 /* AnimeCoverCell.swift in Sources */,
+				434E1877221FF3D00041432F /* AnimeDateResponse.swift in Sources */,
 				4399B0C8221BFAD60034F854 /* BaseRouter.swift in Sources */,
 				4399B0CA221BFD9F0034F854 /* AnilistRouter.swift in Sources */,
 				4399B0BD221BF4D70034F854 /* MyAnimeListType.swift in Sources */,
