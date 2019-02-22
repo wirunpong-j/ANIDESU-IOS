@@ -36,4 +36,15 @@ extension UIImageView {
         self.contentMode = .scaleAspectFill
         self.clipsToBounds = true
     }
+    
+    func setRoundImageView(urlStr: String, borderColor: AnidesuColor, borderWidth: CGFloat, radius: CGFloat) {
+        let url = URL(string: urlStr)
+        self.kf.setImage(with: url)
+        self.layer.borderWidth = borderWidth
+        self.layer.masksToBounds = false
+        self.layer.borderColor = borderColor.color().cgColor
+        self.layer.cornerRadius = radius
+        self.contentMode = .scaleAspectFill
+        self.clipsToBounds = true
+    }
 }
