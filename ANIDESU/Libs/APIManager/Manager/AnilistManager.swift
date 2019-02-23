@@ -19,4 +19,15 @@ class AnilistManager {
             onFailure(error)
         }
     }
+    
+    func getAnimeByID(id: Int, completion: @escaping (AnimeResponse) -> (), onFailure: @escaping (BaseError) -> ()) {
+        
+        let router = AnilistRouter.getAnimeByID(id: id)
+        
+        APIManager.request(withRouter: router, responseType: AnimeResponse.self, completion: { (response) in
+            completion(response)
+        }) { (error) in
+            onFailure(error)
+        }
+    }
 }

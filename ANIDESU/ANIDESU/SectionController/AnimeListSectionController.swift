@@ -42,7 +42,7 @@ class AnimeListSectionController: ListSectionController {
         let storyboard = UIStoryboard(name: "AnimeDetail", bundle: Bundle.main)
         if let viewController = storyboard.instantiateInitialViewController() as? AnimeDetailViewController {
             if let anime = animePageDiffable?.anime?[index] {
-                viewController.anime = anime
+                viewController.animeID = anime.id
             }
             self.viewController?.present(viewController, animated: true, completion: nil)
         }

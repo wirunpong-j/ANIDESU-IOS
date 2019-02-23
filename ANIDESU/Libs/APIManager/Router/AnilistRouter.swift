@@ -11,6 +11,7 @@ import Alamofire
 
 enum AnilistRouter: BaseRouter {
     case getAnimeListBySeason(page: Int, season: String)
+    case getAnimeByID(id: Int)
     
     func asURLRequest() throws -> URLRequest {
         let url = URL(string: apiUrl)
@@ -24,7 +25,7 @@ enum AnilistRouter: BaseRouter {
     
     var method: Alamofire.HTTPMethod {
         switch self {
-        case .getAnimeListBySeason:
+        default:
             return .post
         }
     }
@@ -50,7 +51,6 @@ query {
         english
         romaji
       }
-      description
       season
       startDate {
         year
@@ -68,14 +68,8 @@ query {
         medium
         color
       }
-      bannerImage
       episodes
       status
-      isAdult
-      genres
-      tags {
-        name
-      }
       nextAiringEpisode {
         episode
         timeUntilAiring
@@ -84,6 +78,62 @@ query {
   }
 }
 """
+            return ["query": query]
+        case .getAnimeByID(let id):
+            let query = """
+            query {
+                Media (id: \(id), type: ANIME) {
+                    id
+                    title {
+                        romaji
+                        english
+                        native
+                        userPreferred
+                    }
+                    type
+                    format
+                    season
+                    description
+                    startDate {
+                        year
+                        month
+                        day
+                    }
+                    endDate {
+                        year
+                        month
+                        day
+                    }
+                    coverImage {
+                        extraLarge
+                        large
+                        medium
+                        color
+                    }
+                    bannerImage
+                    characters {
+                        nodes {
+                            id
+                            name {
+                                first
+                                last
+                                native
+                            }
+                            image {
+                                large
+                                medium
+                            }
+                        }
+                    }
+                    studios {
+                        nodes {
+                            id
+                            name
+                        }
+                    }
+                }
+            }
+            """
             return ["query": query]
         }
     }

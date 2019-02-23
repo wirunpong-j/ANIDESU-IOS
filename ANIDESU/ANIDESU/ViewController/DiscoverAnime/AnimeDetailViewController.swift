@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import RxCocoa
+import RxSwift
 
 class AnimeDetailViewController: BaseViewController {
     static let identifier = "AnimeDetailViewController"
@@ -18,7 +20,9 @@ class AnimeDetailViewController: BaseViewController {
     @IBOutlet weak var bgView: UIView!
     @IBOutlet weak var gradientView: AnidesuGradientView!
     
-    var anime: AnimeResponse?
+    var viewModel = AnimeDetailViewModel()
+    let disposedBag = DisposeBag()
+    var animeID: Int?
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
@@ -30,11 +34,38 @@ class AnimeDetailViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.setUpTableView()
+        self.setUpViewModel()
         self.setUpNavbar()
-        self.setUpView()
     }
     
-    func setUpNavbar() {
+    private func setUpTableView() {
+        self.detailTableView.delegate = self
+        self.detailTableView.dataSource = self
+        self.detailTableView.register(AnimeHeaderCell.nibFile, forCellReuseIdentifier: AnimeHeaderCell.identifier)
+    }
+    
+    private func setUpViewModel() {
+        viewModel.error.subscribe(onNext: { (errorMessage) in
+            self.showAlert(title: "Error", message: errorMessage, completion: nil)
+        }).disposed(by: disposedBag)
+        
+        viewModel.isLoading.subscribe(onNext: { (isLoading) in
+            if isLoading {
+                self.showLoading()
+            } else {
+                self.hideLoading()
+            }
+        }).disposed(by: disposedBag)
+        
+        viewModel.isCompleted.subscribe(onNext: { (isCompleted) in
+            self.setUpView()
+        }).disposed(by: disposedBag)
+        
+        viewModel.getAnimeByID(id: animeID!)
+    }
+    
+    private func setUpNavbar() {
         navbar.setBackgroundImage(UIImage(), for: .default)
         navbar.shadowImage = UIImage()
         navbar.isTranslucent = true
@@ -42,7 +73,7 @@ class AnimeDetailViewController: BaseViewController {
         self.setUpBackButtonView()
     }
     
-    func setUpBackButtonView() {
+    private func setUpBackButtonView() {
         let button = UIButton(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
         button.setImage(UIImage(named: "ic_back"), for: .normal)
         button.tintColor = AnidesuColor.White.color()
@@ -56,22 +87,19 @@ class AnimeDetailViewController: BaseViewController {
     }
     
     func setUpView() {
-        self.detailTableView.delegate = self
-        self.detailTableView.dataSource = self
-        self.detailTableView.register(AnimeHeaderCell.nibFile, forCellReuseIdentifier: AnimeHeaderCell.identifier)
-        
-        if let imageUrl = anime?.bannerImage {
+        if let imageUrl = viewModel.anime?.bannerImage {
             bannerImageView.setImage(urlStr: imageUrl)
         } else {
-            bannerImageView.setImage(urlStr: (anime?.coverImage?.sizeXLarge)!)
+            bannerImageView.setImage(urlStr: (viewModel.anime?.coverImage?.sizeXLarge)!)
         }
         
         var animeColor = AnidesuColor.Black.color()
-        if let _color = anime?.coverImage?.color {
+        if let _color = viewModel.anime?.coverImage?.color {
             animeColor = UIColor().hexStringToUIColor(hex: (_color))
         }
         bgView.backgroundColor = animeColor
         gradientView.setUpColor(startColor: AnidesuColor.Clear.color(), endColor: animeColor)
+        detailTableView.reloadData()
     }
 
     @objc func backButtonTapped() {
@@ -88,7 +116,7 @@ extension AnimeDetailViewController: UITableViewDelegate, UITableViewDataSource 
         switch Rows(rawValue: indexPath.row)! {
         case .header:
             if let cell = tableView.dequeueReusableCell(withIdentifier: AnimeHeaderCell.identifier) as? AnimeHeaderCell {
-                if let anime = self.anime {
+                if let anime = self.viewModel.anime {
                     cell.setUpCell(anime: anime)
                 }
                 return cell
