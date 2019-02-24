@@ -41,36 +41,39 @@ class PostCell: UITableViewCell {
         // Initialization code
     }
 
-//    func setUpCell(post: PostResponse, isBorder: Bool) {
-//        profileImage.setImageWithRounded(urlStr: (post.user?.image_url_profile)!, borderColor: AnidesuColor.Clear)
-//        displayNameLabel.text = (post.user?.display_name)!
-//        dateTimeLabel.text = AnidesuConverter.showAnidesuDateTime(timeStr: post.post_date!)
-//        messageLabel.text = post.message!
-//        likeCountBtn.text = "\(post.like_count!) Likes"
-//        likeBtn.addTarget(self, action: #selector(likeBtnPressed), for: .valueChanged)
-//        self.separatorView.isHidden = true
-//
-//        if isBorder {
-//            self.setUpBorder()
-//        } else {
-//            self.bgViewBottomConstraint.constant = 0
-//            self.bgViewRightConstraint.constant = 0
-//            self.bgViewTopConstraint.constant = 0
-//            self.bgViewLeftConstraint.constant = 0
-//            self.separatorView.isHidden = false
-//        }
-//    }
-//
-//    private func setUpBorder() {
-//        bgView.layer.shadowColor = AnidesuColor.Black.color().cgColor
-//        bgView.layer.shadowOffset = CGSize(width: 0, height: 5)
-//        bgView.layer.shadowOpacity = 0.1
-//        bgView.layer.shadowRadius = 5
-//    }
-//
-//    @objc func likeBtnPressed() {
-//        self.postCellDidTapDelegate?.likeBtnDidTap()
-//    }
+    func setUpCell(post: PostResponse, useFrame: Bool) {
+        if let user = post.user, let imageUrl = post.user?.profileImageUrl {
+            profileImageView.setCircularImage(urlStr: imageUrl, borderColor: .Clear)
+            displayNameLabel.text = user.displayName ?? "-"
+            postDateLabel.text = post.date ?? "-"
+            contentLabel.text = post.content ?? "-"
+            likeCountLabel.text = "\(post.likeCount!) Likes"
+        }
+        
+        likeButton.addTarget(self, action: #selector(likeBtnPressed), for: .valueChanged)
+        seperatorView.isHidden = true
+
+        if useFrame {
+            setUpBorder()
+        } else {
+            bgViewBottomConstraint.constant = 0
+            bgViewRightConstraint.constant = 0
+            bgViewTopConstraint.constant = 0
+            bgViewLeftConstraint.constant = 0
+            seperatorView.isHidden = false
+        }
+    }
+
+    private func setUpBorder() {
+        bgView.layer.shadowColor = AnidesuColor.Black.color().cgColor
+        bgView.layer.shadowOffset = CGSize(width: 0, height: 5)
+        bgView.layer.shadowOpacity = 0.1
+        bgView.layer.shadowRadius = 5
+    }
+
+    @objc func likeBtnPressed() {
+        self.postCellDidTapDelegate?.likeBtnDidTap()
+    }
     
     @IBAction func commentButtonTapped(_ sender: Any) {
     }

@@ -7,11 +7,16 @@
 //
 
 import UIKit
+import RxCocoa
+import RxSwift
 
 class HomeViewController: BaseViewController {
     static let identifier = "HomeViewController"
     
     @IBOutlet weak var feedTableView: UITableView!
+    
+    let viewModel = HomeViewModel()
+    let disposedBag = DisposeBag()
     
     private enum HomeSections: Int {
         case createPost, allPost
@@ -25,17 +30,34 @@ class HomeViewController: BaseViewController {
     }
     
     private func setUpTableView() {
-        self.feedTableView.delegate = self
-        self.feedTableView.dataSource = self
-        self.feedTableView.register(CreatePostCell.nibFile, forCellReuseIdentifier: CreatePostCell.identifier)
+        feedTableView.delegate = self
+        feedTableView.dataSource = self
+        feedTableView.register(CreatePostCell.nibFile, forCellReuseIdentifier: CreatePostCell.identifier)
+        feedTableView.register(PostCell.nibFile, forCellReuseIdentifier: PostCell.identifier)
     }
     
     private func setUpViewModel() {
+        viewModel.error.subscribe(onNext: { (errorMessage) in
+            self.showAlert(title: "Errro", message: errorMessage, completion: nil)
+        }).disposed(by: disposedBag)
         
+        viewModel.isLoading.subscribe(onNext: { (isLoading) in
+            if isLoading {
+                self.showLoading()
+            } else {
+                self.hideLoading()
+            }
+        }).disposed(by: disposedBag)
+        
+        viewModel.fetchAllPostCompleted.subscribe(onNext: { (isCompleted) in
+            self.setUpView()
+        }).disposed(by: disposedBag)
+        
+        viewModel.fetchAllPost()
     }
     
     private func setUpView() {
-        
+        feedTableView.reloadData()
     }
 
 }
@@ -50,7 +72,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         case .createPost:
             return 1
         case .allPost:
-            return 0
+            return viewModel.posts.count
         }
     }
     
@@ -60,7 +82,9 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: CreatePostCell.identifier) as! CreatePostCell
             return cell
         case .allPost:
-            return UITableViewCell()
+            let cell = tableView.dequeueReusableCell(withIdentifier: PostCell.identifier) as! PostCell
+            cell.setUpCell(post: viewModel.posts[indexPath.row], useFrame: true)
+            return cell
         }
     }
 }
