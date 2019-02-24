@@ -20,22 +20,22 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>UIAppFonts</key>
+	<array>
+		<string>NotoSansThai-Black.ttf</string>
+		<string>NotoSansThai-Bold.ttf</string>
+		<string>NotoSansThai-ExtraBold.ttf</string>
+		<string>NotoSansThai-ExtraLight.ttf</string>
+		<string>NotoSansThai-Light.ttf</string>
+		<string>NotoSansThai-Medium.ttf</string>
+		<string>NotoSansThai-Regular.ttf</string>
+		<string>NotoSansThai-SemiBold.ttf</string>
+		<string>NotoSansThaiUI-Thin.ttf</string>
+	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
-	<key>UIAppFonts</key>
-	<array>
-        <string>NotoSansThai-Black.ttf</string>
-        <string>NotoSansThai-Bold.ttf</string>
-        <string>NotoSansThai-ExtraBold.ttf</string>
-        <string>NotoSansThai-ExtraLight.ttf</string>
-        <string>NotoSansThai-Light.ttf</string>
-        <string>NotoSansThai-Medium.ttf</string>
-        <string>NotoSansThai-Regular.ttf</string>
-        <string>NotoSansThai-SemiBold.ttf</string>
-        <string>NotoSansThaiUI-Thin.ttf</string>
-	</array>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
