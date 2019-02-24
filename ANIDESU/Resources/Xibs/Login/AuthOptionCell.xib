@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="AuthOptionCell" rowHeight="50" id="KGk-i7-Jjw" customClass="AuthOptionCell" customModule="ANIDESU" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="49.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vBa-uL-0sa">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49.5"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="23" translatesAutoresizingMaskIntoConstraints="NO" id="T3T-uV-wdP">
+                                <rect key="frame" x="0.0" y="8" width="320" height="33.5"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hi9-Ma-3XP">
+                                        <rect key="frame" x="0.0" y="0.0" width="148.5" height="33.5"/>
+                                        <state key="normal" title="Sign In">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="authButtonTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="0Vj-F7-FWn"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Udj-tU-K56">
+                                        <rect key="frame" x="171.5" y="0.0" width="148.5" height="33.5"/>
+                                        <state key="normal" title="Sign Up">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="authButtonTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="m4U-YV-1Y0"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.098039215690000001" green="0.12941176469999999" blue="0.1764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="T3T-uV-wdP" secondAttribute="trailing" id="3X5-D9-cb8"/>
+                            <constraint firstItem="T3T-uV-wdP" firstAttribute="leading" secondItem="vBa-uL-0sa" secondAttribute="leading" id="8HT-OG-i1f"/>
+                            <constraint firstAttribute="bottom" secondItem="T3T-uV-wdP" secondAttribute="bottom" constant="8" id="XdZ-I4-pSj"/>
+                            <constraint firstItem="T3T-uV-wdP" firstAttribute="top" secondItem="vBa-uL-0sa" secondAttribute="top" constant="8" id="kdX-iv-fnl"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="vBa-uL-0sa" secondAttribute="bottom" id="09c-G1-6dk"/>
+                    <constraint firstItem="vBa-uL-0sa" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Ht1-tf-p0U"/>
+                    <constraint firstAttribute="trailing" secondItem="vBa-uL-0sa" secondAttribute="trailing" id="jB5-29-O7i"/>
+                    <constraint firstItem="vBa-uL-0sa" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="kwd-aW-RpD"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="signInButton" destination="hi9-Ma-3XP" id="t1U-ua-7k6"/>
+                <outlet property="signUpButton" destination="Udj-tU-K56" id="fUs-ka-jlk"/>
+            </connections>
+            <point key="canvasLocation" x="129.59999999999999" y="189.3553223388306"/>
+        </tableViewCell>
+    </objects>
+</document>

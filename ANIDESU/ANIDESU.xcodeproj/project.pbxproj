@@ -76,6 +76,14 @@
 		43E7D32922225F8E0004B385 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E7D32822225F8E0004B385 /* FirebaseManager.swift */; };
 		43E7D32B22225FED0004B385 /* FirestoreRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E7D32A22225FED0004B385 /* FirestoreRouter.swift */; };
 		43E7D32D2222615D0004B385 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E7D32C2222615D0004B385 /* HomeViewModel.swift */; };
+		43E7D32F222275360004B385 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43E7D32E222275360004B385 /* Login.storyboard */; };
+		43E7D332222275950004B385 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E7D331222275950004B385 /* LoginViewController.swift */; };
+		43E7D33622227D390004B385 /* AuthOptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E7D33422227D380004B385 /* AuthOptionCell.swift */; };
+		43E7D33722227D390004B385 /* AuthOptionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43E7D33522227D380004B385 /* AuthOptionCell.xib */; };
+		43E7D33A222280650004B385 /* BaseNavbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E7D339222280650004B385 /* BaseNavbarViewController.swift */; };
+		43E7D33D2222873B0004B385 /* SignInViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E7D33B2222873B0004B385 /* SignInViewCell.swift */; };
+		43E7D33E2222873B0004B385 /* SignInViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43E7D33C2222873B0004B385 /* SignInViewCell.xib */; };
+		43E7D340222287F00004B385 /* AnidesuTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E7D33F222287F00004B385 /* AnidesuTextField.swift */; };
 		43F00B012213FAAE000D9111 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F00B002213FAAE000D9111 /* BaseViewController.swift */; };
 		43F00B062214048C000D9111 /* BaseTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F00B052214048C000D9111 /* BaseTabBarViewController.swift */; };
 		43F00B09221404FC000D9111 /* AnidesuColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F00B08221404FC000D9111 /* AnidesuColor.swift */; };
@@ -168,6 +176,14 @@
 		43E7D32822225F8E0004B385 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		43E7D32A22225FED0004B385 /* FirestoreRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreRouter.swift; sourceTree = "<group>"; };
 		43E7D32C2222615D0004B385 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		43E7D32E222275360004B385 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		43E7D331222275950004B385 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		43E7D33422227D380004B385 /* AuthOptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthOptionCell.swift; sourceTree = "<group>"; };
+		43E7D33522227D380004B385 /* AuthOptionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthOptionCell.xib; sourceTree = "<group>"; };
+		43E7D339222280650004B385 /* BaseNavbarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavbarViewController.swift; sourceTree = "<group>"; };
+		43E7D33B2222873B0004B385 /* SignInViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewCell.swift; sourceTree = "<group>"; };
+		43E7D33C2222873B0004B385 /* SignInViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignInViewCell.xib; sourceTree = "<group>"; };
+		43E7D33F222287F00004B385 /* AnidesuTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnidesuTextField.swift; sourceTree = "<group>"; };
 		43F00B002213FAAE000D9111 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		43F00B052214048C000D9111 /* BaseTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarViewController.swift; sourceTree = "<group>"; };
 		43F00B08221404FC000D9111 /* AnidesuColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnidesuColor.swift; sourceTree = "<group>"; };
@@ -447,6 +463,32 @@
 			path = Anilist;
 			sourceTree = "<group>";
 		};
+		43E7D3302222757A0004B385 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				43E7D331222275950004B385 /* LoginViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		43E7D33322227D130004B385 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				43E7D33522227D380004B385 /* AuthOptionCell.xib */,
+				43E7D33C2222873B0004B385 /* SignInViewCell.xib */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		43E7D33822227D590004B385 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				43E7D33422227D380004B385 /* AuthOptionCell.swift */,
+				43E7D33B2222873B0004B385 /* SignInViewCell.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		43F00AFA2213F9AC000D9111 /* Libs */ = {
 			isa = PBXGroup;
 			children = (
@@ -475,6 +517,7 @@
 			isa = PBXGroup;
 			children = (
 				437CC22B221D379D00F197C8 /* DiscoverAnime */,
+				43E7D33322227D130004B385 /* Login */,
 				4399B0A5221BD3660034F854 /* Home */,
 			);
 			path = Xibs;
@@ -489,6 +532,7 @@
 				4399B0C1221BF73D0034F854 /* MyAnimeList.storyboard */,
 				432714262212C76900ACDDFF /* LaunchScreen.storyboard */,
 				437CC236221D43D900F197C8 /* AnimeDetail.storyboard */,
+				43E7D32E222275360004B385 /* Login.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -510,6 +554,7 @@
 				43F00B002213FAAE000D9111 /* BaseViewController.swift */,
 				43F00B052214048C000D9111 /* BaseTabBarViewController.swift */,
 				4399B0B3221BF3500034F854 /* BaseTabManViewController.swift */,
+				43E7D339222280650004B385 /* BaseNavbarViewController.swift */,
 			);
 			path = BaseStructure;
 			sourceTree = "<group>";
@@ -519,6 +564,7 @@
 			children = (
 				4399B0B0221BDC350034F854 /* DiscoverAnime */,
 				43F00B0E221408FD000D9111 /* Home */,
+				43E7D3302222757A0004B385 /* Login */,
 				4399B0BE221BF5C20034F854 /* MyAnimeList */,
 			);
 			path = ViewController;
@@ -539,6 +585,7 @@
 			children = (
 				437CC230221D37D400F197C8 /* DiscoverAnime */,
 				4399B0AA221BD38B0034F854 /* Home */,
+				43E7D33822227D590004B385 /* Login */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -550,6 +597,7 @@
 				4374DB5B221ECDBB0092DA6F /* AnidesuLabel.swift */,
 				4374DB66221ECE730092DA6F /* AnidesuFont.swift */,
 				4374DB77221EDCB80092DA6F /* AnidesuGradientView.swift */,
+				43E7D33F222287F00004B385 /* AnidesuTextField.swift */,
 			);
 			path = Compontent;
 			sourceTree = "<group>";
@@ -652,10 +700,12 @@
 				434E1870221FD74E0041432F /* NotoSansThai-ExtraLight.ttf in Resources */,
 				434E1871221FD74E0041432F /* NotoSansThai-Light.ttf in Resources */,
 				434E1872221FD74E0041432F /* NotoSansThai-Medium.ttf in Resources */,
+				43E7D33E2222873B0004B385 /* SignInViewCell.xib in Resources */,
 				434E1873221FD74E0041432F /* NotoSansThai-Regular.ttf in Resources */,
 				43E7D31D222258250004B385 /* PostCell.xib in Resources */,
 				434E1874221FD74E0041432F /* NotoSansThai-SemiBold.ttf in Resources */,
 				434E1875221FD74E0041432F /* NotoSansThaiUI-Thin.ttf in Resources */,
+				43E7D32F222275360004B385 /* Login.storyboard in Resources */,
 				4399B0C2221BF73D0034F854 /* MyAnimeList.storyboard in Resources */,
 				4399B0AF221BDBB50034F854 /* DiscoverAnime.storyboard in Resources */,
 				432714282212C76900ACDDFF /* LaunchScreen.storyboard in Resources */,
@@ -666,6 +716,7 @@
 				4374DB5A221ECCCA0092DA6F /* AnimeHeaderCell.xib in Resources */,
 				432714232212C76800ACDDFF /* Main.storyboard in Resources */,
 				43F00B0D221408BE000D9111 /* Home.storyboard in Resources */,
+				43E7D33722227D390004B385 /* AuthOptionCell.xib in Resources */,
 				43E7D31F22225B870004B385 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -806,6 +857,7 @@
 				4399B0C6221BFA960034F854 /* BaseResponse.swift in Sources */,
 				432714202212C76800ACDDFF /* ViewController.swift in Sources */,
 				4374DB62221ECE2A0092DA6F /* String+LocalizeTableName.swift in Sources */,
+				43E7D340222287F00004B385 /* AnidesuTextField.swift in Sources */,
 				437CC228221D349200F197C8 /* AnimeTagResponse.swift in Sources */,
 				437CC222221D279900F197C8 /* AnimePageResponse.swift in Sources */,
 				4399B0A8221BD3810034F854 /* CreatePostCell.swift in Sources */,
@@ -816,17 +868,21 @@
 				437CC224221D31C100F197C8 /* AnimeTitleResponse.swift in Sources */,
 				43E7D32722225CEB0004B385 /* UserResponse.swift in Sources */,
 				4399B0CF221C01BC0034F854 /* DiscoverAnimeViewModel.swift in Sources */,
+				43E7D33D2222873B0004B385 /* SignInViewCell.swift in Sources */,
 				43C393D622212F3C00FDC777 /* AnimeCharacterResponse.swift in Sources */,
 				43F00B012213FAAE000D9111 /* BaseViewController.swift in Sources */,
+				43E7D33A222280650004B385 /* BaseNavbarViewController.swift in Sources */,
 				43E7D31C222258250004B385 /* PostCell.swift in Sources */,
 				4399B0B4221BF3500034F854 /* BaseTabManViewController.swift in Sources */,
 				437CC239221D441C00F197C8 /* AnimeDetailViewController.swift in Sources */,
 				437CC22A221D357200F197C8 /* AnimeCoverImageResponse.swift in Sources */,
+				43E7D33622227D390004B385 /* AuthOptionCell.swift in Sources */,
 				4399B0C4221BFA100034F854 /* APIManager.swift in Sources */,
 				437CC22E221D37BB00F197C8 /* AnimeCoverCell.swift in Sources */,
 				434E1877221FF3D00041432F /* AnimeDateResponse.swift in Sources */,
 				4399B0C8221BFAD60034F854 /* BaseRouter.swift in Sources */,
 				4399B0CA221BFD9F0034F854 /* AnilistRouter.swift in Sources */,
+				43E7D332222275950004B385 /* LoginViewController.swift in Sources */,
 				4399B0BD221BF4D70034F854 /* MyAnimeListType.swift in Sources */,
 				43E7D32322225CAF0004B385 /* PostResponse.swift in Sources */,
 				4374DB65221ECE2A0092DA6F /* String+LocalizedBundleTableName.swift in Sources */,
