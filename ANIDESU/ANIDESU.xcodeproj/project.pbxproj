@@ -70,6 +70,9 @@
 		43E7D31C222258250004B385 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E7D31A222258250004B385 /* PostCell.swift */; };
 		43E7D31D222258250004B385 /* PostCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43E7D31B222258250004B385 /* PostCell.xib */; };
 		43E7D31F22225B870004B385 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 43E7D31E22225B870004B385 /* GoogleService-Info.plist */; };
+		43E7D32322225CAF0004B385 /* PostResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E7D32222225CAF0004B385 /* PostResponse.swift */; };
+		43E7D32522225CBD0004B385 /* CommentResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E7D32422225CBD0004B385 /* CommentResponse.swift */; };
+		43E7D32722225CEB0004B385 /* UserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E7D32622225CEB0004B385 /* UserResponse.swift */; };
 		43F00B012213FAAE000D9111 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F00B002213FAAE000D9111 /* BaseViewController.swift */; };
 		43F00B062214048C000D9111 /* BaseTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F00B052214048C000D9111 /* BaseTabBarViewController.swift */; };
 		43F00B09221404FC000D9111 /* AnidesuColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F00B08221404FC000D9111 /* AnidesuColor.swift */; };
@@ -156,6 +159,9 @@
 		43E7D31A222258250004B385 /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		43E7D31B222258250004B385 /* PostCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostCell.xib; sourceTree = "<group>"; };
 		43E7D31E22225B870004B385 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		43E7D32222225CAF0004B385 /* PostResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostResponse.swift; sourceTree = "<group>"; };
+		43E7D32422225CBD0004B385 /* CommentResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentResponse.swift; sourceTree = "<group>"; };
+		43E7D32622225CEB0004B385 /* UserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResponse.swift; sourceTree = "<group>"; };
 		43F00B002213FAAE000D9111 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		43F00B052214048C000D9111 /* BaseTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarViewController.swift; sourceTree = "<group>"; };
 		43F00B08221404FC000D9111 /* AnidesuColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnidesuColor.swift; sourceTree = "<group>"; };
@@ -409,6 +415,9 @@
 		43E7D32022225C240004B385 /* Firebase */ = {
 			isa = PBXGroup;
 			children = (
+				43E7D32222225CAF0004B385 /* PostResponse.swift */,
+				43E7D32422225CBD0004B385 /* CommentResponse.swift */,
+				43E7D32622225CEB0004B385 /* UserResponse.swift */,
 			);
 			path = Firebase;
 			sourceTree = "<group>";
@@ -796,6 +805,7 @@
 				4327141E2212C76800ACDDFF /* AppDelegate.swift in Sources */,
 				4399B0BB221BF4570034F854 /* AnimeSeason.swift in Sources */,
 				437CC224221D31C100F197C8 /* AnimeTitleResponse.swift in Sources */,
+				43E7D32722225CEB0004B385 /* UserResponse.swift in Sources */,
 				4399B0CF221C01BC0034F854 /* DiscoverAnimeViewModel.swift in Sources */,
 				43C393D622212F3C00FDC777 /* AnimeCharacterResponse.swift in Sources */,
 				43F00B012213FAAE000D9111 /* BaseViewController.swift in Sources */,
@@ -809,6 +819,7 @@
 				4399B0C8221BFAD60034F854 /* BaseRouter.swift in Sources */,
 				4399B0CA221BFD9F0034F854 /* AnilistRouter.swift in Sources */,
 				4399B0BD221BF4D70034F854 /* MyAnimeListType.swift in Sources */,
+				43E7D32322225CAF0004B385 /* PostResponse.swift in Sources */,
 				4374DB65221ECE2A0092DA6F /* String+LocalizedBundleTableName.swift in Sources */,
 				43F00B09221404FC000D9111 /* AnidesuColor.swift in Sources */,
 				4374DB64221ECE2A0092DA6F /* String+LocalizeBundle.swift in Sources */,
@@ -830,6 +841,7 @@
 				4399B0B2221BDC4D0034F854 /* DiscoverAnimeViewController.swift in Sources */,
 				4399B0CC221BFF150034F854 /* APIManager+Log.swift in Sources */,
 				437CC226221D340400F197C8 /* AnimeAiringResponse.swift in Sources */,
+				43E7D32522225CBD0004B385 /* CommentResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
