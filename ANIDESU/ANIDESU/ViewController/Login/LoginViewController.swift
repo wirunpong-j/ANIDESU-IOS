@@ -15,6 +15,7 @@ class LoginViewController: BaseViewController {
     
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var authTableView: UITableView!
+    @IBOutlet weak var videoView: UIView!
     
     @IBOutlet weak var tableViewHeight: NSLayoutConstraint!
     
