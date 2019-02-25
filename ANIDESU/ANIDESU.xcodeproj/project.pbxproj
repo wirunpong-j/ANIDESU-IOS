@@ -86,6 +86,8 @@
 		43E7D340222287F00004B385 /* AnidesuTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E7D33F222287F00004B385 /* AnidesuTextField.swift */; };
 		43E7D3422222906C0004B385 /* AnidesuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E7D3412222906C0004B385 /* AnidesuButton.swift */; };
 		43E7D344222291450004B385 /* UILabel+Underline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E7D343222291450004B385 /* UILabel+Underline.swift */; };
+		43E7D347222299380004B385 /* SignUpViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E7D345222299380004B385 /* SignUpViewCell.swift */; };
+		43E7D348222299380004B385 /* SignUpViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43E7D346222299380004B385 /* SignUpViewCell.xib */; };
 		43F00B012213FAAE000D9111 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F00B002213FAAE000D9111 /* BaseViewController.swift */; };
 		43F00B062214048C000D9111 /* BaseTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F00B052214048C000D9111 /* BaseTabBarViewController.swift */; };
 		43F00B09221404FC000D9111 /* AnidesuColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F00B08221404FC000D9111 /* AnidesuColor.swift */; };
@@ -188,6 +190,8 @@
 		43E7D33F222287F00004B385 /* AnidesuTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnidesuTextField.swift; sourceTree = "<group>"; };
 		43E7D3412222906C0004B385 /* AnidesuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnidesuButton.swift; sourceTree = "<group>"; };
 		43E7D343222291450004B385 /* UILabel+Underline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Underline.swift"; sourceTree = "<group>"; };
+		43E7D345222299380004B385 /* SignUpViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewCell.swift; sourceTree = "<group>"; };
+		43E7D346222299380004B385 /* SignUpViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUpViewCell.xib; sourceTree = "<group>"; };
 		43F00B002213FAAE000D9111 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		43F00B052214048C000D9111 /* BaseTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarViewController.swift; sourceTree = "<group>"; };
 		43F00B08221404FC000D9111 /* AnidesuColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnidesuColor.swift; sourceTree = "<group>"; };
@@ -481,6 +485,7 @@
 			children = (
 				43E7D33522227D380004B385 /* AuthOptionCell.xib */,
 				43E7D33C2222873B0004B385 /* SignInViewCell.xib */,
+				43E7D346222299380004B385 /* SignUpViewCell.xib */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -490,6 +495,7 @@
 			children = (
 				43E7D33422227D380004B385 /* AuthOptionCell.swift */,
 				43E7D33B2222873B0004B385 /* SignInViewCell.swift */,
+				43E7D345222299380004B385 /* SignUpViewCell.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -713,6 +719,7 @@
 				434E1875221FD74E0041432F /* NotoSansThaiUI-Thin.ttf in Resources */,
 				43E7D32F222275360004B385 /* Login.storyboard in Resources */,
 				4399B0C2221BF73D0034F854 /* MyAnimeList.storyboard in Resources */,
+				43E7D348222299380004B385 /* SignUpViewCell.xib in Resources */,
 				4399B0AF221BDBB50034F854 /* DiscoverAnime.storyboard in Resources */,
 				432714282212C76900ACDDFF /* LaunchScreen.storyboard in Resources */,
 				4399B0A9221BD3810034F854 /* CreatePostCell.xib in Resources */,
@@ -905,6 +912,7 @@
 				4399B0D1221C02360034F854 /* AnilistManager.swift in Sources */,
 				437CC233221D396200F197C8 /* AnimeListSectionController.swift in Sources */,
 				43F00B1022140920000D9111 /* HomeViewController.swift in Sources */,
+				43E7D347222299380004B385 /* SignUpViewCell.swift in Sources */,
 				43E7D32922225F8E0004B385 /* FirebaseManager.swift in Sources */,
 				437CC220221D26E100F197C8 /* AnimeResponse.swift in Sources */,
 				43C393DA2221303A00FDC777 /* AnilistImageResponse.swift in Sources */,

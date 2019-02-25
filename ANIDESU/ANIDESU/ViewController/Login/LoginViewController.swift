@@ -16,9 +16,21 @@ class LoginViewController: BaseViewController {
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var authTableView: UITableView!
     
+    @IBOutlet weak var tableViewHeight: NSLayoutConstraint!
+    
     private enum Sections: Int {
         case option, field
     }
+    
+    private enum Rows: Int {
+        case signIn, signUp
+    }
+    
+    private enum AuthOptions {
+        case signIn, signUp
+    }
+    
+    private var option = AuthOptions.signIn
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +43,8 @@ class LoginViewController: BaseViewController {
         authTableView.dataSource = self
         authTableView.register(AuthOptionCell.nibFile, forCellReuseIdentifier: AuthOptionCell.identifier)
         authTableView.register(SignInViewCell.nibFile, forCellReuseIdentifier: SignInViewCell.identifier)
+        authTableView.register(SignUpViewCell.nibFile, forCellReuseIdentifier: SignUpViewCell.identifier)
+
     }
     
     private func setUpView() {
@@ -52,6 +66,39 @@ class LoginViewController: BaseViewController {
     }
 }
 
+extension LoginViewController: AuthOptionCellDelegate {
+    func signInTapped() {
+        if option == .signUp {
+            option = .signIn
+            authTableView.reloadSections([Sections.field.rawValue], with: .automatic)
+            self.animateTableViewContract()
+        }
+    }
+    
+    func signUpTapped() {
+        if option == .signIn {
+            option = .signUp
+            authTableView.reloadSections([Sections.field.rawValue], with: .automatic)
+            self.animateTableViewExtend()
+        }
+    }
+    
+    private func animateTableViewExtend() {
+        self.tableViewHeight.constant = 500
+        UIView.animate(withDuration: 0.25) {
+            self.view.layoutIfNeeded()
+        }
+    }
+    
+    private func animateTableViewContract() {
+        self.tableViewHeight.constant = 320
+        UIView.animate(withDuration: 0.25) {
+            self.view.layoutIfNeeded()
+        }
+    }
+    
+}
+
 extension LoginViewController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2
@@ -70,10 +117,17 @@ extension LoginViewController: UITableViewDelegate, UITableViewDataSource {
         switch Sections(rawValue: indexPath.section)! {
         case .option:
             let cell = tableView.dequeueReusableCell(withIdentifier: AuthOptionCell.identifier) as! AuthOptionCell
+            cell.delegate = self
             return cell
         case .field:
-            let cell = tableView.dequeueReusableCell(withIdentifier: SignInViewCell.identifier) as! SignInViewCell
-            return cell
+            switch option {
+            case .signIn:
+                let cell = tableView.dequeueReusableCell(withIdentifier: SignInViewCell.identifier) as! SignInViewCell
+                return cell
+            case .signUp:
+                let cell = tableView.dequeueReusableCell(withIdentifier: SignUpViewCell.identifier) as! SignUpViewCell
+                return cell
+            }
         }
     }
 }

@@ -25,20 +25,28 @@
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="23" translatesAutoresizingMaskIntoConstraints="NO" id="T3T-uV-wdP">
                                 <rect key="frame" x="0.0" y="8" width="320" height="33.5"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hi9-Ma-3XP">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hi9-Ma-3XP" customClass="AnidesuButton" customModule="ANIDESU" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="148.5" height="33.5"/>
                                         <state key="normal" title="Sign In">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="key" value="Sign In"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="fontSize" value="ExtraSmallBold"/>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="authButtonTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="0Vj-F7-FWn"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Udj-tU-K56">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Udj-tU-K56" customClass="AnidesuButton" customModule="ANIDESU" customModuleProvider="target">
                                         <rect key="frame" x="171.5" y="0.0" width="148.5" height="33.5"/>
                                         <state key="normal" title="Sign Up">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="key" value="Sign Up"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="fontSize" value="ExtraSmallBold"/>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="authButtonTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="m4U-YV-1Y0"/>
                                         </connections>

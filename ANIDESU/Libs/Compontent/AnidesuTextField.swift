@@ -125,6 +125,11 @@ class AnidesuTextField: UITextField {
         }
     }
     
+    func setPlaceholder(text: String) {
+        let text = Localize.main(key: text)
+        self.attributedPlaceholder = NSAttributedString(string: text, attributes: [NSAttributedString.Key.foregroundColor: AnidesuColor.DarkGray.color().cgColor])
+    }
+    
     override func textRect(forBounds bounds: CGRect) -> CGRect {
         return bounds.inset(by: self.padding)
     }
