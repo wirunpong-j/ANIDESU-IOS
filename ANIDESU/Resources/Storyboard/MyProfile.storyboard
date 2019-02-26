@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="78J-Ik-QJo">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--My Profile View Controller-->
+        <scene sceneID="g8g-yg-VAj">
+            <objects>
+                <viewController id="78J-Ik-QJo" customClass="MyProfileViewController" customModule="ANIDESU" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fkd-tC-u7M">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_banner" translatesAutoresizingMaskIntoConstraints="NO" id="6lg-yw-3Pa">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="PSp-Yy-fmx"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="02W-8g-Zp1" customClass="AnidesuGradientView" customModule="ANIDESU" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="startColor">
+                                        <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="endColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="startLocation">
+                                        <real key="value" value="0.20000000000000001"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="endLocation">
+                                        <real key="value" value="0.80000000000000004"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0xK-hM-y9X">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <items>
+                                    <navigationItem id="PhC-nD-65g">
+                                        <barButtonItem key="leftBarButtonItem" image="ic_back" id="UfL-0m-FA6">
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" image="ic_dots" id="O3w-tD-oLN">
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nIj-C4-Ug3">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="02W-8g-Zp1" firstAttribute="height" secondItem="6lg-yw-3Pa" secondAttribute="height" id="168-zu-YoF"/>
+                            <constraint firstItem="02W-8g-Zp1" firstAttribute="trailing" secondItem="RuW-jc-v4I" secondAttribute="trailing" id="4Og-Xh-Jkc"/>
+                            <constraint firstItem="02W-8g-Zp1" firstAttribute="top" secondItem="fkd-tC-u7M" secondAttribute="top" id="80t-2b-Raz"/>
+                            <constraint firstItem="0xK-hM-y9X" firstAttribute="top" secondItem="RuW-jc-v4I" secondAttribute="top" id="BuV-Rb-P6m"/>
+                            <constraint firstItem="nIj-C4-Ug3" firstAttribute="leading" secondItem="RuW-jc-v4I" secondAttribute="leading" id="H2p-oh-eaG"/>
+                            <constraint firstItem="6lg-yw-3Pa" firstAttribute="top" secondItem="fkd-tC-u7M" secondAttribute="top" id="KML-Pk-MuH"/>
+                            <constraint firstItem="0xK-hM-y9X" firstAttribute="trailing" secondItem="RuW-jc-v4I" secondAttribute="trailing" id="NAz-tH-vRj"/>
+                            <constraint firstItem="6lg-yw-3Pa" firstAttribute="trailing" secondItem="RuW-jc-v4I" secondAttribute="trailing" id="Sqe-53-2sL"/>
+                            <constraint firstItem="nIj-C4-Ug3" firstAttribute="trailing" secondItem="RuW-jc-v4I" secondAttribute="trailing" id="bl3-KN-t9j"/>
+                            <constraint firstItem="nIj-C4-Ug3" firstAttribute="bottom" secondItem="RuW-jc-v4I" secondAttribute="bottom" id="h2L-EU-NXQ"/>
+                            <constraint firstItem="6lg-yw-3Pa" firstAttribute="leading" secondItem="RuW-jc-v4I" secondAttribute="leading" id="rY1-D5-pO7"/>
+                            <constraint firstItem="0xK-hM-y9X" firstAttribute="leading" secondItem="RuW-jc-v4I" secondAttribute="leading" id="ubN-1k-vR8"/>
+                            <constraint firstItem="nIj-C4-Ug3" firstAttribute="top" secondItem="0xK-hM-y9X" secondAttribute="bottom" id="vNm-jI-dEM"/>
+                            <constraint firstItem="02W-8g-Zp1" firstAttribute="leading" secondItem="RuW-jc-v4I" secondAttribute="leading" id="xrF-c7-b74"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="RuW-jc-v4I"/>
+                    </view>
+                    <connections>
+                        <outlet property="backButton" destination="UfL-0m-FA6" id="sXp-sJ-osJ"/>
+                        <outlet property="bannerImageView" destination="6lg-yw-3Pa" id="z6K-w5-SLB"/>
+                        <outlet property="grandientView" destination="02W-8g-Zp1" id="zaK-4N-3uN"/>
+                        <outlet property="navbar" destination="0xK-hM-y9X" id="Skt-Nz-pLh"/>
+                        <outlet property="profileTableView" destination="nIj-C4-Ug3" id="Y9f-uu-Kzz"/>
+                        <outlet property="settingButton" destination="O3w-tD-oLN" id="waH-p0-Hk4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bjh-zF-tPo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-114.40000000000001" y="157.87106446776613"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="ic_back" width="180" height="180"/>
+        <image name="ic_dots" width="37.5" height="37.5"/>
+        <image name="img_banner" width="3000" height="1687"/>
+    </resources>
+</document>

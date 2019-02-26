@@ -24,7 +24,7 @@ class CreatePostCell: UITableViewCell {
     
     private func setUpView() {
 //        profileImage.setCircularImage(urlStr: "", borderColor: .Clear)
-        profileImage.setCircularImage(image: UIImage(named: "ic_user_default")!, borderColor: .Clear)
+        profileImage.setCircularImage(image: UIImage(named: "ic_user_default")!, borderWidth: 1, borderColor: .Clear)
         displayNameLabel.text = "Name"
         aboutLabel.text = "About"
         self.setBorderView()

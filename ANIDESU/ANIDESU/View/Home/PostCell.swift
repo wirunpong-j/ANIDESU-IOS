@@ -43,7 +43,7 @@ class PostCell: UITableViewCell {
 
     func setUpCell(post: PostResponse, useFrame: Bool) {
         if let user = post.user, let imageUrl = post.user?.profileImageUrl {
-            profileImageView.setCircularImage(urlStr: imageUrl, borderColor: .Clear)
+            profileImageView.setCircularImage(urlStr: imageUrl, borderWidth: 1, borderColor: .Clear)
             displayNameLabel.text = user.displayName ?? "-"
             postDateLabel.text = post.date ?? "-"
             contentLabel.text = post.content ?? "-"

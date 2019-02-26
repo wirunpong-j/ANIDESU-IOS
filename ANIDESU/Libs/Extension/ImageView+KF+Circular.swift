@@ -16,10 +16,10 @@ extension UIImageView {
         self.kf.setImage(with: url)
     }
     
-    func setCircularImage(urlStr: String, borderColor: AnidesuColor) {
+    func setCircularImage(urlStr: String, borderWidth: CGFloat, borderColor: AnidesuColor) {
         let url = URL(string: urlStr)
         self.kf.setImage(with: url)
-        self.layer.borderWidth = 1
+        self.layer.borderWidth = borderWidth
         self.layer.masksToBounds = false
         self.layer.borderColor = borderColor.color().cgColor
         self.layer.cornerRadius = self.frame.height / 2
@@ -27,9 +27,9 @@ extension UIImageView {
         self.clipsToBounds = true
     }
     
-    func setCircularImage(image: UIImage, borderColor: AnidesuColor) {
+    func setCircularImage(image: UIImage, borderWidth: CGFloat, borderColor: AnidesuColor) {
         self.image = image
-        self.layer.borderWidth = 1
+        self.layer.borderWidth = borderWidth
         self.layer.masksToBounds = false
         self.layer.borderColor = borderColor.color().cgColor
         self.layer.cornerRadius = self.frame.height / 2

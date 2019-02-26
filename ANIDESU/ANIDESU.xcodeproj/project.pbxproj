@@ -38,6 +38,11 @@
 		43757DBC22252262002E442C /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43757DBB22252262002E442C /* UserData.swift */; };
 		43757DBE2225230A002E442C /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43757DBD2225230A002E442C /* UserManager.swift */; };
 		43757DC022252521002E442C /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43757DBF22252521002E442C /* LoginViewModel.swift */; };
+		43757DC422253FAE002E442C /* MyProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43757DC322253FAE002E442C /* MyProfile.storyboard */; };
+		43757DC62225419C002E442C /* MyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43757DC52225419C002E442C /* MyProfileViewController.swift */; };
+		43757DC8222542CF002E442C /* MyProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43757DC7222542CF002E442C /* MyProfileViewModel.swift */; };
+		43757DCD22254734002E442C /* MyProfileHeaderViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43757DCB22254734002E442C /* MyProfileHeaderViewCell.swift */; };
+		43757DCE22254734002E442C /* MyProfileHeaderViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43757DCC22254734002E442C /* MyProfileHeaderViewCell.xib */; };
 		437CC220221D26E100F197C8 /* AnimeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437CC21F221D26E100F197C8 /* AnimeResponse.swift */; };
 		437CC222221D279900F197C8 /* AnimePageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437CC221221D279900F197C8 /* AnimePageResponse.swift */; };
 		437CC224221D31C100F197C8 /* AnimeTitleResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437CC223221D31C100F197C8 /* AnimeTitleResponse.swift */; };
@@ -146,6 +151,11 @@
 		43757DBB22252262002E442C /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		43757DBD2225230A002E442C /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		43757DBF22252521002E442C /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		43757DC322253FAE002E442C /* MyProfile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyProfile.storyboard; sourceTree = "<group>"; };
+		43757DC52225419C002E442C /* MyProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileViewController.swift; sourceTree = "<group>"; };
+		43757DC7222542CF002E442C /* MyProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileViewModel.swift; sourceTree = "<group>"; };
+		43757DCB22254734002E442C /* MyProfileHeaderViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileHeaderViewCell.swift; sourceTree = "<group>"; };
+		43757DCC22254734002E442C /* MyProfileHeaderViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyProfileHeaderViewCell.xib; sourceTree = "<group>"; };
 		437CC21F221D26E100F197C8 /* AnimeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimeResponse.swift; sourceTree = "<group>"; };
 		437CC221221D279900F197C8 /* AnimePageResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimePageResponse.swift; sourceTree = "<group>"; };
 		437CC223221D31C100F197C8 /* AnimeTitleResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimeTitleResponse.swift; sourceTree = "<group>"; };
@@ -501,6 +511,7 @@
 			isa = PBXGroup;
 			children = (
 				43E7D331222275950004B385 /* LoginViewController.swift */,
+				43757DC52225419C002E442C /* MyProfileViewController.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -511,6 +522,7 @@
 				43E7D33522227D380004B385 /* AuthOptionCell.xib */,
 				43E7D33C2222873B0004B385 /* SignInViewCell.xib */,
 				43E7D346222299380004B385 /* SignUpViewCell.xib */,
+				43757DCC22254734002E442C /* MyProfileHeaderViewCell.xib */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -519,6 +531,7 @@
 			isa = PBXGroup;
 			children = (
 				43E7D33422227D380004B385 /* AuthOptionCell.swift */,
+				43757DCB22254734002E442C /* MyProfileHeaderViewCell.swift */,
 				43E7D33B2222873B0004B385 /* SignInViewCell.swift */,
 				43E7D345222299380004B385 /* SignUpViewCell.swift */,
 			);
@@ -564,13 +577,14 @@
 		43F00AFD2213F9D8000D9111 /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
+				437CC236221D43D900F197C8 /* AnimeDetail.storyboard */,
 				4399B0AE221BDBB50034F854 /* DiscoverAnime.storyboard */,
 				43F00B0C221408BE000D9111 /* Home.storyboard */,
+				432714262212C76900ACDDFF /* LaunchScreen.storyboard */,
+				43E7D32E222275360004B385 /* Login.storyboard */,
 				432714212212C76800ACDDFF /* Main.storyboard */,
 				4399B0C1221BF73D0034F854 /* MyAnimeList.storyboard */,
-				432714262212C76900ACDDFF /* LaunchScreen.storyboard */,
-				437CC236221D43D900F197C8 /* AnimeDetail.storyboard */,
-				43E7D32E222275360004B385 /* Login.storyboard */,
+				43757DC322253FAE002E442C /* MyProfile.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -615,6 +629,7 @@
 				4399B0CE221C01BC0034F854 /* DiscoverAnimeViewModel.swift */,
 				43E7D32C2222615D0004B385 /* HomeViewModel.swift */,
 				43757DBF22252521002E442C /* LoginViewModel.swift */,
+				43757DC7222542CF002E442C /* MyProfileViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -736,6 +751,7 @@
 			files = (
 				434E186D221FD74E0041432F /* NotoSansThai-Black.ttf in Resources */,
 				434E186E221FD74E0041432F /* NotoSansThai-Bold.ttf in Resources */,
+				43757DC422253FAE002E442C /* MyProfile.storyboard in Resources */,
 				434E186F221FD74E0041432F /* NotoSansThai-ExtraBold.ttf in Resources */,
 				434E1870221FD74E0041432F /* NotoSansThai-ExtraLight.ttf in Resources */,
 				434E1871221FD74E0041432F /* NotoSansThai-Light.ttf in Resources */,
@@ -756,6 +772,7 @@
 				437CC22F221D37BB00F197C8 /* AnimeCoverCell.xib in Resources */,
 				432714252212C76900ACDDFF /* Assets.xcassets in Resources */,
 				4374DB5A221ECCCA0092DA6F /* AnimeHeaderCell.xib in Resources */,
+				43757DCE22254734002E442C /* MyProfileHeaderViewCell.xib in Resources */,
 				432714232212C76800ACDDFF /* Main.storyboard in Resources */,
 				43F00B0D221408BE000D9111 /* Home.storyboard in Resources */,
 				43E7D33722227D390004B385 /* AuthOptionCell.xib in Resources */,
@@ -914,6 +931,7 @@
 				43C393DC222135AC00FDC777 /* AnimeDetailViewModel.swift in Sources */,
 				437CC235221D39B700F197C8 /* AnimePageDiffable.swift in Sources */,
 				4327141E2212C76800ACDDFF /* AppDelegate.swift in Sources */,
+				43757DCD22254734002E442C /* MyProfileHeaderViewCell.swift in Sources */,
 				43E7D3422222906C0004B385 /* AnidesuButton.swift in Sources */,
 				4399B0BB221BF4570034F854 /* AnimeSeason.swift in Sources */,
 				437CC224221D31C100F197C8 /* AnimeTitleResponse.swift in Sources */,
@@ -926,6 +944,7 @@
 				43E7D33A222280650004B385 /* BaseNavbarViewController.swift in Sources */,
 				43E7D31C222258250004B385 /* PostCell.swift in Sources */,
 				4399B0B4221BF3500034F854 /* BaseTabManViewController.swift in Sources */,
+				43757DC8222542CF002E442C /* MyProfileViewModel.swift in Sources */,
 				437CC239221D441C00F197C8 /* AnimeDetailViewController.swift in Sources */,
 				437CC22A221D357200F197C8 /* AnimeCoverImageResponse.swift in Sources */,
 				43E7D33622227D390004B385 /* AuthOptionCell.swift in Sources */,
@@ -934,6 +953,7 @@
 				434E1877221FF3D00041432F /* AnimeDateResponse.swift in Sources */,
 				4399B0C8221BFAD60034F854 /* BaseRouter.swift in Sources */,
 				4399B0CA221BFD9F0034F854 /* AnilistRouter.swift in Sources */,
+				43757DC62225419C002E442C /* MyProfileViewController.swift in Sources */,
 				43E7D332222275950004B385 /* LoginViewController.swift in Sources */,
 				4399B0BD221BF4D70034F854 /* MyAnimeListType.swift in Sources */,
 				43E7D32322225CAF0004B385 /* PostResponse.swift in Sources */,

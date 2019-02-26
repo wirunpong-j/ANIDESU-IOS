@@ -27,6 +27,15 @@ class UserManager {
         }
     }
     
+    func signOut(completion: @escaping () -> (), onFailure: @escaping (BaseError) -> ()) {
+        do {
+            try Auth.auth().signOut()
+            completion()
+        } catch {
+            onFailure(BaseError(message: error.localizedDescription))
+        }
+    }
+    
     func signUp(email: String, password: String, completion: @escaping (String) -> (), onFailure: @escaping (BaseError) -> ()) {
         Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
             if let error = error {

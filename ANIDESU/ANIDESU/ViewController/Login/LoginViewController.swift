@@ -60,7 +60,6 @@ class LoginViewController: BaseViewController {
             self.showAlert(title: "Error", message: errorMessage, completion: nil)
         }).disposed(by: disposedBag)
         
-        
         viewModel.isLoading.subscribe(onNext: { (isLoading) in
             if isLoading {
                 self.showLoading()
