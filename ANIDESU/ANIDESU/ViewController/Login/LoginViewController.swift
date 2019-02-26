@@ -9,6 +9,7 @@
 import UIKit
 import RxCocoa
 import RxSwift
+import Player
 
 class LoginViewController: BaseViewController {
     static let identifier = "LoginViewController"
@@ -18,6 +19,7 @@ class LoginViewController: BaseViewController {
     @IBOutlet weak var videoView: UIView!
     
     @IBOutlet weak var tableViewHeight: NSLayoutConstraint!
+    var videoPlayer = Player()
     
     private enum Sections: Int {
         case option, field
@@ -50,6 +52,7 @@ class LoginViewController: BaseViewController {
     
     private func setUpView() {
         self.setUpBackButton()
+        self.playVideo()
     }
     
     private func setUpBackButton() {
@@ -60,6 +63,17 @@ class LoginViewController: BaseViewController {
         backButton.layer.shadowOpacity = 0.5
         backButton.layer.shadowRadius = 1
         backButton.layer.masksToBounds = false
+    }
+    
+    private func playVideo() {
+        videoView.layoutIfNeeded()
+        videoPlayer.view.frame = videoView.bounds
+        videoPlayer.url = URL(string: "https://firebasestorage.googleapis.com/v0/b/anidesu-bell.appspot.com/o/anime-bg-vdo.mp4?alt=media&token=b36aeaf7-b8f8-4df4-a83a-a8c5607f8d3f")!
+        videoPlayer.muted = true
+        videoPlayer.playbackLoops = true
+        videoPlayer.fillMode = .resizeAspectFill
+        videoView.addSubview(videoPlayer.view)
+        videoPlayer.playFromBeginning()
     }
     
     @IBAction func backButtonTapped(_ sender: Any) {

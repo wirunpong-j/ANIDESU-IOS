@@ -21,6 +21,7 @@ target 'ANIDESU' do
   pod 'IHKeyboardAvoiding'
   pod 'MBProgressHUD'
   pod 'Kingfisher'
+  pod 'Player', '~> 0.12.0'
   pod 'RxCocoa'
   pod 'RxSwift'
   pod 'Tabman', '~> 2.1'

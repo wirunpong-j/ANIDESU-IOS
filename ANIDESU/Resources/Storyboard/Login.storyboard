@@ -20,7 +20,7 @@
                         <subviews>
                             <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Ta-aj-Sgn">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="367"/>
-                                <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jtS-6o-GtZ">
                                 <rect key="frame" x="0.0" y="347" width="375" height="320"/>
@@ -49,9 +49,9 @@
                             <constraint firstItem="jtS-6o-GtZ" firstAttribute="leading" secondItem="vfX-fP-crk" secondAttribute="leading" id="6EA-Pe-Q4z"/>
                             <constraint firstItem="3Ta-aj-Sgn" firstAttribute="top" secondItem="Ypr-3D-uFc" secondAttribute="top" id="HWx-vZ-4JV"/>
                             <constraint firstItem="vfX-fP-crk" firstAttribute="bottom" secondItem="3Ta-aj-Sgn" secondAttribute="bottom" constant="300" id="RXi-tY-zgG"/>
-                            <constraint firstItem="3Ta-aj-Sgn" firstAttribute="trailing" secondItem="vfX-fP-crk" secondAttribute="trailing" id="bwe-jf-ZEk"/>
+                            <constraint firstItem="vfX-fP-crk" firstAttribute="trailing" secondItem="3Ta-aj-Sgn" secondAttribute="trailing" id="SQV-aO-JjD"/>
                             <constraint firstItem="Lqu-7d-gKA" firstAttribute="leading" secondItem="vfX-fP-crk" secondAttribute="leading" constant="16" id="cu5-It-kid"/>
-                            <constraint firstItem="3Ta-aj-Sgn" firstAttribute="leading" secondItem="vfX-fP-crk" secondAttribute="leading" id="iKZ-Ob-dld"/>
+                            <constraint firstItem="3Ta-aj-Sgn" firstAttribute="leading" secondItem="vfX-fP-crk" secondAttribute="leading" id="iy9-cj-yoa"/>
                             <constraint firstItem="vfX-fP-crk" firstAttribute="trailing" secondItem="jtS-6o-GtZ" secondAttribute="trailing" id="xEM-q4-3ic"/>
                             <constraint firstItem="Lqu-7d-gKA" firstAttribute="top" secondItem="vfX-fP-crk" secondAttribute="top" id="yMc-PM-neS"/>
                             <constraint firstItem="vfX-fP-crk" firstAttribute="bottom" secondItem="jtS-6o-GtZ" secondAttribute="bottom" id="yt7-7b-8yz"/>
@@ -62,7 +62,7 @@
                         <outlet property="authTableView" destination="jtS-6o-GtZ" id="Y5t-Ps-rUM"/>
                         <outlet property="backButton" destination="Lqu-7d-gKA" id="bdK-6W-uLI"/>
                         <outlet property="tableViewHeight" destination="Y3D-ma-qgx" id="kMQ-yI-1vr"/>
-                        <outlet property="videoView" destination="3Ta-aj-Sgn" id="erw-dp-d7l"/>
+                        <outlet property="videoView" destination="3Ta-aj-Sgn" id="H5d-a5-UB7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IS0-7y-jXA" userLabel="First Responder" sceneMemberID="firstResponder"/>
