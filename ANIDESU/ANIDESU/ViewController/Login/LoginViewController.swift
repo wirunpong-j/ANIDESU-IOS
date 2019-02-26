@@ -68,7 +68,11 @@ class LoginViewController: BaseViewController {
     private func playVideo() {
         videoView.layoutIfNeeded()
         videoPlayer.view.frame = videoView.bounds
-        videoPlayer.url = URL(string: "https://firebasestorage.googleapis.com/v0/b/anidesu-bell.appspot.com/o/anime-bg-vdo.mp4?alt=media&token=b36aeaf7-b8f8-4df4-a83a-a8c5607f8d3f")!
+        guard let path = Bundle.main.path(forResource: "anime-bg-vdo", ofType: "mp4") else {
+            debugPrint("video.m4v not found")
+            return
+        }
+        videoPlayer.url = URL(fileURLWithPath: path)
         videoPlayer.muted = true
         videoPlayer.playbackLoops = true
         videoPlayer.fillMode = .resizeAspectFill

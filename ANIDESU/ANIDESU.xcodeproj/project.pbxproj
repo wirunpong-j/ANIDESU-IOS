@@ -34,6 +34,7 @@
 		4374DB67221ECE730092DA6F /* AnidesuFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4374DB66221ECE730092DA6F /* AnidesuFont.swift */; };
 		4374DB76221ED8ED0092DA6F /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4374DB75221ED8ED0092DA6F /* UIColor+Hex.swift */; };
 		4374DB78221EDCB80092DA6F /* AnidesuGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4374DB77221EDCB80092DA6F /* AnidesuGradientView.swift */; };
+		43757DB922252049002E442C /* anime-bg-vdo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 43757DB822252049002E442C /* anime-bg-vdo.mp4 */; };
 		437CC220221D26E100F197C8 /* AnimeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437CC21F221D26E100F197C8 /* AnimeResponse.swift */; };
 		437CC222221D279900F197C8 /* AnimePageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437CC221221D279900F197C8 /* AnimePageResponse.swift */; };
 		437CC224221D31C100F197C8 /* AnimeTitleResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437CC223221D31C100F197C8 /* AnimeTitleResponse.swift */; };
@@ -138,6 +139,7 @@
 		4374DB66221ECE730092DA6F /* AnidesuFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnidesuFont.swift; sourceTree = "<group>"; };
 		4374DB75221ED8ED0092DA6F /* UIColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
 		4374DB77221EDCB80092DA6F /* AnidesuGradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnidesuGradientView.swift; sourceTree = "<group>"; };
+		43757DB822252049002E442C /* anime-bg-vdo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "anime-bg-vdo.mp4"; sourceTree = "<group>"; };
 		437CC21F221D26E100F197C8 /* AnimeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimeResponse.swift; sourceTree = "<group>"; };
 		437CC221221D279900F197C8 /* AnimePageResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimePageResponse.swift; sourceTree = "<group>"; };
 		437CC223221D31C100F197C8 /* AnimeTitleResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimeTitleResponse.swift; sourceTree = "<group>"; };
@@ -313,6 +315,14 @@
 				434E1869221FD6D00041432F /* NotoSansThaiUI-Thin.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		43757DB722252032002E442C /* Video */ = {
+			isa = PBXGroup;
+			children = (
+				43757DB822252049002E442C /* anime-bg-vdo.mp4 */,
+			);
+			path = Video;
 			sourceTree = "<group>";
 		};
 		437CC21E221D268900F197C8 /* ListDiffable */ = {
@@ -520,6 +530,7 @@
 				4374DB68221ED0300092DA6F /* Fonts */,
 				43F00AFC2213F9D1000D9111 /* Xibs */,
 				43F00AFD2213F9D8000D9111 /* Storyboard */,
+				43757DB722252032002E442C /* Video */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -719,6 +730,7 @@
 				434E1875221FD74E0041432F /* NotoSansThaiUI-Thin.ttf in Resources */,
 				43E7D32F222275360004B385 /* Login.storyboard in Resources */,
 				4399B0C2221BF73D0034F854 /* MyAnimeList.storyboard in Resources */,
+				43757DB922252049002E442C /* anime-bg-vdo.mp4 in Resources */,
 				43E7D348222299380004B385 /* SignUpViewCell.xib in Resources */,
 				4399B0AF221BDBB50034F854 /* DiscoverAnime.storyboard in Resources */,
 				432714282212C76900ACDDFF /* LaunchScreen.storyboard in Resources */,
