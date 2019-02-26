@@ -43,7 +43,7 @@ class FirebaseManager {
                         let post = try! JSONDecoder().decode(PostResponse.self, from: jsonData)
                         post.key = data.documentID
                         
-                        self.fetchUserData(uid: post.uid!, completion: { (userResponse) in
+                        self.getUserInfo(uid: post.uid!, completion: { (userResponse) in
                             post.user = userResponse
                             allPost.append(post)
 
@@ -62,19 +62,36 @@ class FirebaseManager {
         }
     }
     
-    func fetchUserData(uid: String, completion: @escaping (UserResponse) -> (), onFailure: @escaping (BaseError) -> ()) {
+    func getUserInfo(uid: String, completion: @escaping (UserResponse) -> (), onFailure: @escaping (BaseError) -> ()) {
         let db = Firestore.firestore()
         let router = FirestoreRouter.fetchUserData(uid: uid)
+        print("|-------------------------------------------------")
+        print("REQUEST: \(router.path)")
+        print("-------------------------------------------------|")
         
         db.document(router.path).getDocument { (snapshot, error) in
             if let error = error {
                 onFailure(BaseError(message: error.localizedDescription))
             } else {
+                self.showLog(path: router.path, data: snapshot?.data())
                 let jsonData = try! JSONSerialization.data(withJSONObject: snapshot!.data())
                 let userResponse = try! JSONDecoder().decode(UserResponse.self, from: jsonData)
                 
                 completion(userResponse)
             }
         }
+    }
+    
+    func showLog(path: String, data: [String: Any]?) {
+        print("|-------------------------------------------------")
+        print("RESPONSE: \(path)")
+        if let pretty = try? JSONSerialization.data(withJSONObject: data, options: .prettyPrinted) {
+            if let string = String(data: pretty, encoding: .utf8) {
+                print("JSON: \(string)")
+            }
+        } else {
+            print("ERROR: Couldn't create json object from returned data")
+        }
+        print("-------------------------------------------------|")
     }
 }

@@ -71,6 +71,9 @@
                             </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="string" keyPath="key" value="Sign in your account"/>
                         </userDefinedRuntimeAttributes>
+                        <connections>
+                            <action selector="signInTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="YW8-sf-6yq"/>
+                        </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hWg-ZQ-Yhr" customClass="AnidesuButton" customModule="ANIDESU" customModuleProvider="target">
                         <rect key="frame" x="16" y="160" width="222" height="40"/>
@@ -94,6 +97,9 @@
                             </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="string" keyPath="key" value="Sign in with Facebook"/>
                         </userDefinedRuntimeAttributes>
+                        <connections>
+                            <action selector="facebookTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="qnd-f1-NlO"/>
+                        </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FKG-Lp-Kqz" customClass="AnidesuButton" customModule="ANIDESU" customModuleProvider="target">
                         <rect key="frame" x="16" y="216" width="222" height="30"/>
@@ -108,6 +114,9 @@
                             <userDefinedRuntimeAttribute type="string" keyPath="key" value="Forgot password"/>
                             <userDefinedRuntimeAttribute type="string" keyPath="fontSize" value="tinymed"/>
                         </userDefinedRuntimeAttributes>
+                        <connections>
+                            <action selector="forgotPasswordTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="YTZ-Gd-5f5"/>
+                        </connections>
                     </button>
                 </subviews>
                 <color key="backgroundColor" red="0.098039215690000001" green="0.12941176469999999" blue="0.1764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -131,6 +140,10 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="emailTextField" destination="Nhm-dC-CVx" id="OTM-cc-OUF"/>
+                <outlet property="passwordTextField" destination="DZ4-K2-8hs" id="pz4-ne-evv"/>
+            </connections>
             <point key="canvasLocation" x="260.80000000000001" y="195.6521739130435"/>
         </tableViewCell>
     </objects>

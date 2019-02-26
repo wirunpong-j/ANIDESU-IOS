@@ -10,6 +10,8 @@ import UIKit
 import RxCocoa
 import RxSwift
 import Player
+import FBSDKLoginKit
+import FBSDKCoreKit
 
 class LoginViewController: BaseViewController {
     static let identifier = "LoginViewController"
@@ -19,7 +21,10 @@ class LoginViewController: BaseViewController {
     @IBOutlet weak var videoView: UIView!
     
     @IBOutlet weak var tableViewHeight: NSLayoutConstraint!
+    
     var videoPlayer = Player()
+    let viewModel = LoginViewModel()
+    let disposedBag = DisposeBag()
     
     private enum Sections: Int {
         case option, field
@@ -38,6 +43,7 @@ class LoginViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setUpTableView()
+        self.setUpViewModel()
         self.setUpView()
     }
     
@@ -47,7 +53,25 @@ class LoginViewController: BaseViewController {
         authTableView.register(AuthOptionCell.nibFile, forCellReuseIdentifier: AuthOptionCell.identifier)
         authTableView.register(SignInViewCell.nibFile, forCellReuseIdentifier: SignInViewCell.identifier)
         authTableView.register(SignUpViewCell.nibFile, forCellReuseIdentifier: SignUpViewCell.identifier)
-
+    }
+    
+    private func setUpViewModel() {
+        viewModel.error.subscribe(onNext: { (errorMessage) in
+            self.showAlert(title: "Error", message: errorMessage, completion: nil)
+        }).disposed(by: disposedBag)
+        
+        
+        viewModel.isLoading.subscribe(onNext: { (isLoading) in
+            if isLoading {
+                self.showLoading()
+            } else {
+                self.hideLoading()
+            }
+        }).disposed(by: disposedBag)
+        
+        viewModel.loginIsCompleted.subscribe(onNext: { (isCompleted) in
+            self.dismiss(animated: true, completion: nil)
+        }).disposed(by: disposedBag)
     }
     
     private func setUpView() {
@@ -82,6 +106,30 @@ class LoginViewController: BaseViewController {
     
     @IBAction func backButtonTapped(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
+    }
+}
+
+extension LoginViewController: SignInViewCellDelegate {
+    func signIn() {
+        
+    }
+    
+    func signInWithFacebook() {
+        let fbLoginManager = FBSDKLoginManager()
+        fbLoginManager.logOut()
+        
+        fbLoginManager.logIn(withReadPermissions: ["public_profile", "email"], from: self) { (result, error) in
+            
+            if let error = error {
+                self.viewModel.error.onNext(error.localizedDescription)
+            } else if !(result?.isCancelled)! {
+                self.viewModel.loginWithFacebook()
+            }
+        }
+    }
+    
+    func forgotPassword() {
+        
     }
 }
 
@@ -142,6 +190,7 @@ extension LoginViewController: UITableViewDelegate, UITableViewDataSource {
             switch option {
             case .signIn:
                 let cell = tableView.dequeueReusableCell(withIdentifier: SignInViewCell.identifier) as! SignInViewCell
+                cell.delegate = self
                 return cell
             case .signUp:
                 let cell = tableView.dequeueReusableCell(withIdentifier: SignUpViewCell.identifier) as! SignUpViewCell
