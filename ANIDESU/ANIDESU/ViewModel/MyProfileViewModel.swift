@@ -20,7 +20,7 @@ class MyProfileViewModel {
     
     func getUserData() {
         self.isLoading.onNext(true)
-        firebaseManager.getUserInfo(uid: UserData.sharedInstance.uid!, completion: { (response) in
+        firebaseManager.getUserInfo(uid: (UserData.sharedInstance.info?.uid)!, completion: { (response) in
             UserData.sharedInstance.info = response
             self.isLoading.onNext(false)
             self.getUserDataCompleted.onNext(true)
@@ -33,7 +33,6 @@ class MyProfileViewModel {
     func logout() {
         self.isLoading.onNext(true)
         userManager.signOut(completion: {
-            UserData.sharedInstance.logout()
             self.isLoading.onNext(false)
             self.logoutIsCompleted.onNext(true)
         }) { (errorObj) in

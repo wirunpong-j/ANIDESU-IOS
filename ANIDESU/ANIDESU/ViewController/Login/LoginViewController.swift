@@ -69,6 +69,7 @@ class LoginViewController: BaseViewController {
         }).disposed(by: disposedBag)
         
         viewModel.loginIsCompleted.subscribe(onNext: { (isCompleted) in
+            NotificationCenter.default.post(name: NSNotification.Name(BaseNavbarViewController.NOTI_PROFILE_IMAGE_CHANGE), object: nil)
             self.dismiss(animated: true, completion: nil)
         }).disposed(by: disposedBag)
     }
@@ -150,7 +151,7 @@ extension LoginViewController: AuthOptionCellDelegate {
     }
     
     private func animateTableViewExtend() {
-        self.tableViewHeight.constant = 500
+        self.tableViewHeight.constant = 420
         UIView.animate(withDuration: 0.25) {
             self.view.layoutIfNeeded()
         }

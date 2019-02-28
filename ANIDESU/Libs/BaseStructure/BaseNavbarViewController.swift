@@ -9,9 +9,13 @@
 import UIKit
 
 class BaseNavbarViewController: UINavigationController {
+    static let NOTI_PROFILE_IMAGE_CHANGE = "NOTI_PROFILE_IMAGE_CHANGE"
+    
+    private var profileImage: UIImageView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.addObservers()
         self.setUpNavBar()
         self.setUpProfileImage()
     }
@@ -21,11 +25,17 @@ class BaseNavbarViewController: UINavigationController {
         self.navigationItem.backBarButtonItem?.tintColor = AnidesuColor.White.color()
     }
     
+    private func addObservers() {
+        NotificationCenter.default.addObserver(
+            self, selector: #selector(self.profileImageChanged),
+            name: NSNotification.Name(rawValue: BaseNavbarViewController.NOTI_PROFILE_IMAGE_CHANGE), object: nil)
+    }
+    
     func setUpProfileImage() {
         let containView = UIView(frame: CGRect(x: 0, y: 0, width: 35, height: 35))
-        let image = UIImageView(frame: CGRect(x: 0, y: 0, width: 35, height: 35))
-        image.setCircularImage(image: UIImage(named: "ic_user_default")!, borderWidth: 1,  borderColor: .White)
-        containView.addSubview(image)
+        profileImage = UIImageView(frame: CGRect(x: 0, y: 0, width: 35, height: 35))
+        self.profileImageChanged()
+        containView.addSubview(profileImage)
         containView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.profileImageAction(sender:))))
         let rightBarButton = UIBarButtonItem(customView: containView)
         self.navigationBar.topItem?.rightBarButtonItem = rightBarButton
@@ -40,5 +50,12 @@ class BaseNavbarViewController: UINavigationController {
         let vc = storyboard.instantiateInitialViewController()!
         self.present(vc, animated: true)
     }
-
+    
+    @objc func profileImageChanged() {
+        if let imageUrl = UserData.sharedInstance.info?.profileImageUrl {
+            profileImage.setCircularImage(urlStr: imageUrl, borderWidth: 1, borderColor: .White)
+        } else {
+            profileImage.setCircularImage(image: UIImage(named: "ic_user_default")!, borderWidth: 1,  borderColor: .White)
+        }
+    }
 }

@@ -9,13 +9,15 @@
 import UIKit
 import RxCocoa
 import RxSwift
+import Firebase
 
 class HomeViewController: BaseViewController {
     static let identifier = "HomeViewController"
     
     @IBOutlet weak var feedTableView: UITableView!
     
-    let viewModel = HomeViewModel()
+    let homeViewModel = HomeViewModel()
+    let loginViewModel = LoginViewModel()
     let disposedBag = DisposeBag()
     
     private enum HomeSections: Int {
@@ -24,6 +26,8 @@ class HomeViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+//        try! Auth.auth().signOut()
+//        UserData.sharedInstance.logout()
         self.setUpTableView()
         self.setUpViewModel()
         self.setUpView()
@@ -37,11 +41,15 @@ class HomeViewController: BaseViewController {
     }
     
     private func setUpViewModel() {
-        viewModel.error.subscribe(onNext: { (errorMessage) in
-            self.showAlert(title: "Errro", message: errorMessage, completion: nil)
+        loginViewModel.error.subscribe(onNext: { (errorMessage) in
+            self.showAlert(title: "Error", message: errorMessage, completion: nil)
         }).disposed(by: disposedBag)
         
-        viewModel.isLoading.subscribe(onNext: { (isLoading) in
+        homeViewModel.error.subscribe(onNext: { (errorMessage) in
+            self.showAlert(title: "Error", message: errorMessage, completion: nil)
+        }).disposed(by: disposedBag)
+        
+        loginViewModel.isLoading.subscribe(onNext: { (isLoading) in
             if isLoading {
                 self.showLoading()
             } else {
@@ -49,11 +57,26 @@ class HomeViewController: BaseViewController {
             }
         }).disposed(by: disposedBag)
         
-        viewModel.fetchAllPostCompleted.subscribe(onNext: { (isCompleted) in
+        homeViewModel.isLoading.subscribe(onNext: { (isLoading) in
+            if isLoading {
+                self.showLoading()
+            } else {
+                self.hideLoading()
+            }
+        }).disposed(by: disposedBag)
+        
+        loginViewModel.loginIsCompleted.subscribe(onNext: { (isCompleted) in
+            NotificationCenter.default.post(name: NSNotification.Name(BaseNavbarViewController.NOTI_PROFILE_IMAGE_CHANGE), object: nil)
+        }).disposed(by: disposedBag)
+        
+        homeViewModel.fetchAllPostCompleted.subscribe(onNext: { (isCompleted) in
             self.setUpView()
         }).disposed(by: disposedBag)
         
-        viewModel.fetchAllPost()
+        if UserData.sharedInstance.isLogin {
+            loginViewModel.loginWithUID()
+        }
+        homeViewModel.fetchAllPost()
     }
     
     private func setUpView() {
@@ -72,7 +95,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         case .createPost:
             return 1
         case .allPost:
-            return viewModel.posts.count
+            return homeViewModel.posts.count
         }
     }
     
@@ -83,7 +106,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             return cell
         case .allPost:
             let cell = tableView.dequeueReusableCell(withIdentifier: PostCell.identifier) as! PostCell
-            cell.setUpCell(post: viewModel.posts[indexPath.row], useFrame: true)
+            cell.setUpCell(post: homeViewModel.posts[indexPath.row], useFrame: true)
             return cell
         }
     }

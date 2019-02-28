@@ -27,9 +27,30 @@ class UserManager {
         }
     }
     
+    func signInWithFacebook(completion: @escaping () -> (), onFailure: @escaping (BaseError) -> ()) {
+        let credential = FacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
+        Auth.auth().signInAndRetrieveData(with: credential) { (result, error) in
+            if let error = error {
+                onFailure(BaseError(message: error.localizedDescription))
+            } else {
+                result?.user.getIDToken(completion: { (token, error) in
+                    print("|-------------------------------------------------")
+                    print("Facebook Firebase Token: \(token!)")
+                    print("Facebook Firebase Refresh Token: \((result?.user.refreshToken)!)")
+                    print("--------------------------------------------------|")
+                    UserData.sharedInstance.isLogin = true
+                    UserData.sharedInstance.token = token
+                    UserData.sharedInstance.uid = result?.user.uid
+                    completion()
+                })
+            }
+        }
+    }
+    
     func signOut(completion: @escaping () -> (), onFailure: @escaping (BaseError) -> ()) {
         do {
             try Auth.auth().signOut()
+            UserData.sharedInstance.logout()
             completion()
         } catch {
             onFailure(BaseError(message: error.localizedDescription))
@@ -46,22 +67,6 @@ class UserManager {
                     print("Firebase Token: \(token!)")
                     print("--------------------------------------------------|")
                     completion(token!)
-                })
-            }
-        }
-    }
-    
-    func signInWithFacebook(completion: @escaping (String, String) -> (), onFailure: @escaping (BaseError) -> ()) {
-        let credential = FacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
-        Auth.auth().signInAndRetrieveData(with: credential) { (result, error) in
-            if let error = error {
-                onFailure(BaseError(message: error.localizedDescription))
-            } else {
-                result?.user.getIDToken(completion: { (token, error) in
-                    print("|-------------------------------------------------")
-                    print("Facebook Firebase Token: \(token!)")
-                    print("--------------------------------------------------|")
-                    completion((result?.user.uid)!, token!)
                 })
             }
         }

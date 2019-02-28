@@ -54,6 +54,7 @@ class MyProfileViewController: BaseViewController {
         }).disposed(by: disposedBag)
         
         viewModel.logoutIsCompleted.subscribe(onNext: { (isCompleted) in
+            NotificationCenter.default.post(name: NSNotification.Name(BaseNavbarViewController.NOTI_PROFILE_IMAGE_CHANGE), object: nil)
             self.dismiss(animated: true, completion: nil)
         }).disposed(by: disposedBag)
         

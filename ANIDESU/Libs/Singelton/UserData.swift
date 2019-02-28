@@ -21,6 +21,14 @@ class UserData {
         }
     }
     
+    var token: String? {
+        get {
+            return UserDefaults.standard.string(forKey: "token")
+        } set {
+            UserDefaults.standard.set(newValue, forKey: "token")
+        }
+    }
+    
     var uid: String? {
         get {
             return UserDefaults.standard.string(forKey: "uid")
@@ -31,7 +39,8 @@ class UserData {
     
     func logout() {
         self.isLogin = false
-        self.uid = nil
         self.info = nil
+        self.token = nil
+        self.uid = nil
     }
 }

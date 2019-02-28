@@ -20,11 +20,9 @@ class LoginViewModel {
     
     func loginWithFacebook() {
         self.isLoading.onNext(true)
-        userManager.signInWithFacebook(completion: { (uid, token)  in
-            self.firebaseManager.getUserInfo(uid: uid, completion: { (response) in
-                UserData.sharedInstance.uid = response.uid
+        userManager.signInWithFacebook(completion: {
+            self.firebaseManager.getUserInfo(uid: UserData.sharedInstance.uid!, completion: { (response) in
                 UserData.sharedInstance.info = response
-                UserData.sharedInstance.isLogin = true
                 self.isLoading.onNext(false)
                 self.loginIsCompleted.onNext(true)
             }, onFailure: { (errorObj) in
@@ -35,5 +33,17 @@ class LoginViewModel {
             self.isLoading.onNext(false)
             self.error.onNext(errorObj.errorMessage)
         }
+    }
+    
+    func loginWithUID() {
+        self.isLoading.onNext(true)
+        self.firebaseManager.getUserInfo(uid: UserData.sharedInstance.uid!, completion: { (response) in
+            UserData.sharedInstance.info = response
+            self.isLoading.onNext(false)
+            self.loginIsCompleted.onNext(true)
+        }, onFailure: { (errorObj) in
+            self.isLoading.onNext(false)
+            self.error.onNext(errorObj.errorMessage)
+        })
     }
 }
