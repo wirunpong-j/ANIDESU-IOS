@@ -81,59 +81,60 @@ query {
             return ["query": query]
         case .getAnimeByID(let id):
             let query = """
-            query {
-                Media (id: \(id), type: ANIME) {
-                    id
-                    title {
-                        romaji
-                        english
-                        native
-                        userPreferred
-                    }
-                    type
-                    format
-                    season
-                    description
-                    startDate {
-                        year
-                        month
-                        day
-                    }
-                    endDate {
-                        year
-                        month
-                        day
-                    }
-                    coverImage {
-                        extraLarge
-                        large
-                        medium
-                        color
-                    }
-                    bannerImage
-                    characters {
-                        nodes {
-                            id
-                            name {
-                                first
-                                last
-                                native
-                            }
-                            image {
-                                large
-                                medium
-                            }
-                        }
-                    }
-                    studios {
-                        nodes {
-                            id
-                            name
-                        }
-                    }
+query {
+    Media (id: \(id), type: ANIME) {
+        id
+        title {
+            romaji
+            english
+            native
+            userPreferred
+        }
+        type
+        format
+        season
+        description
+        genres
+        startDate {
+            year
+            month
+            day
+        }
+        endDate {
+            year
+            month
+            day
+        }
+        coverImage {
+            extraLarge
+            large
+            medium
+            color
+        }
+        bannerImage
+        characters {
+            nodes {
+                id
+                name {
+                    first
+                    last
+                    native
+                }
+                image {
+                    large
+                    medium
                 }
             }
-            """
+        }
+        studios {
+            nodes {
+                id
+                name
+            }
+        }
+    }
+}
+"""
             return ["query": query]
         }
     }

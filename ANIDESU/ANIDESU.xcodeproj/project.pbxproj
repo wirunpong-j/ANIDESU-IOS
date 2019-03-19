@@ -97,6 +97,12 @@
 		43E7D344222291450004B385 /* UILabel+Underline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E7D343222291450004B385 /* UILabel+Underline.swift */; };
 		43E7D347222299380004B385 /* SignUpViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E7D345222299380004B385 /* SignUpViewCell.swift */; };
 		43E7D348222299380004B385 /* SignUpViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43E7D346222299380004B385 /* SignUpViewCell.xib */; };
+		43EC029F2240C1BF005E6CD6 /* AnimeGenresCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EC029D2240C1BF005E6CD6 /* AnimeGenresCell.swift */; };
+		43EC02A02240C1BF005E6CD6 /* AnimeGenresCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43EC029E2240C1BF005E6CD6 /* AnimeGenresCell.xib */; };
+		43EC02A32240C2D3005E6CD6 /* GenreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EC02A12240C2D3005E6CD6 /* GenreCell.swift */; };
+		43EC02A42240C2D3005E6CD6 /* GenreCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43EC02A22240C2D3005E6CD6 /* GenreCell.xib */; };
+		43EC02A62240C61F005E6CD6 /* AnimeResponseDiffable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EC02A52240C61F005E6CD6 /* AnimeResponseDiffable.swift */; };
+		43EC02A82240C720005E6CD6 /* AnimeGenresSectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EC02A72240C720005E6CD6 /* AnimeGenresSectionController.swift */; };
 		43F00B012213FAAE000D9111 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F00B002213FAAE000D9111 /* BaseViewController.swift */; };
 		43F00B062214048C000D9111 /* BaseTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F00B052214048C000D9111 /* BaseTabBarViewController.swift */; };
 		43F00B09221404FC000D9111 /* AnidesuColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F00B08221404FC000D9111 /* AnidesuColor.swift */; };
@@ -210,6 +216,12 @@
 		43E7D343222291450004B385 /* UILabel+Underline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Underline.swift"; sourceTree = "<group>"; };
 		43E7D345222299380004B385 /* SignUpViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewCell.swift; sourceTree = "<group>"; };
 		43E7D346222299380004B385 /* SignUpViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUpViewCell.xib; sourceTree = "<group>"; };
+		43EC029D2240C1BF005E6CD6 /* AnimeGenresCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimeGenresCell.swift; sourceTree = "<group>"; };
+		43EC029E2240C1BF005E6CD6 /* AnimeGenresCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnimeGenresCell.xib; sourceTree = "<group>"; };
+		43EC02A12240C2D3005E6CD6 /* GenreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreCell.swift; sourceTree = "<group>"; };
+		43EC02A22240C2D3005E6CD6 /* GenreCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GenreCell.xib; sourceTree = "<group>"; };
+		43EC02A52240C61F005E6CD6 /* AnimeResponseDiffable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimeResponseDiffable.swift; sourceTree = "<group>"; };
+		43EC02A72240C720005E6CD6 /* AnimeGenresSectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimeGenresSectionController.swift; sourceTree = "<group>"; };
 		43F00B002213FAAE000D9111 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		43F00B052214048C000D9111 /* BaseTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarViewController.swift; sourceTree = "<group>"; };
 		43F00B08221404FC000D9111 /* AnidesuColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnidesuColor.swift; sourceTree = "<group>"; };
@@ -353,6 +365,7 @@
 			isa = PBXGroup;
 			children = (
 				437CC234221D39B700F197C8 /* AnimePageDiffable.swift */,
+				43EC02A52240C61F005E6CD6 /* AnimeResponseDiffable.swift */,
 			);
 			path = ListDiffable;
 			sourceTree = "<group>";
@@ -362,6 +375,8 @@
 			children = (
 				437CC22D221D37BB00F197C8 /* AnimeCoverCell.xib */,
 				4374DB58221ECCCA0092DA6F /* AnimeHeaderCell.xib */,
+				43EC029E2240C1BF005E6CD6 /* AnimeGenresCell.xib */,
+				43EC02A22240C2D3005E6CD6 /* GenreCell.xib */,
 			);
 			path = DiscoverAnime;
 			sourceTree = "<group>";
@@ -371,6 +386,8 @@
 			children = (
 				437CC22C221D37BB00F197C8 /* AnimeCoverCell.swift */,
 				4374DB57221ECCCA0092DA6F /* AnimeHeaderCell.swift */,
+				43EC029D2240C1BF005E6CD6 /* AnimeGenresCell.swift */,
+				43EC02A12240C2D3005E6CD6 /* GenreCell.swift */,
 			);
 			path = DiscoverAnime;
 			sourceTree = "<group>";
@@ -379,6 +396,7 @@
 			isa = PBXGroup;
 			children = (
 				437CC232221D396200F197C8 /* AnimeListSectionController.swift */,
+				43EC02A72240C720005E6CD6 /* AnimeGenresSectionController.swift */,
 			);
 			path = SectionController;
 			sourceTree = "<group>";
@@ -433,8 +451,8 @@
 		4399B0B6221BF3EF0034F854 /* Router */ = {
 			isa = PBXGroup;
 			children = (
-				4399B0C7221BFAD60034F854 /* BaseRouter.swift */,
 				4399B0C9221BFD9F0034F854 /* AnilistRouter.swift */,
+				4399B0C7221BFAD60034F854 /* BaseRouter.swift */,
 				43E7D32A22225FED0004B385 /* FirestoreRouter.swift */,
 			);
 			path = Router;
@@ -758,6 +776,7 @@
 				434E1872221FD74E0041432F /* NotoSansThai-Medium.ttf in Resources */,
 				43E7D33E2222873B0004B385 /* SignInViewCell.xib in Resources */,
 				434E1873221FD74E0041432F /* NotoSansThai-Regular.ttf in Resources */,
+				43EC02A42240C2D3005E6CD6 /* GenreCell.xib in Resources */,
 				43E7D31D222258250004B385 /* PostCell.xib in Resources */,
 				434E1874221FD74E0041432F /* NotoSansThai-SemiBold.ttf in Resources */,
 				434E1875221FD74E0041432F /* NotoSansThaiUI-Thin.ttf in Resources */,
@@ -772,6 +791,7 @@
 				437CC22F221D37BB00F197C8 /* AnimeCoverCell.xib in Resources */,
 				432714252212C76900ACDDFF /* Assets.xcassets in Resources */,
 				4374DB5A221ECCCA0092DA6F /* AnimeHeaderCell.xib in Resources */,
+				43EC02A02240C1BF005E6CD6 /* AnimeGenresCell.xib in Resources */,
 				43757DCE22254734002E442C /* MyProfileHeaderViewCell.xib in Resources */,
 				432714232212C76800ACDDFF /* Main.storyboard in Resources */,
 				43F00B0D221408BE000D9111 /* Home.storyboard in Resources */,
@@ -933,7 +953,9 @@
 				4327141E2212C76800ACDDFF /* AppDelegate.swift in Sources */,
 				43757DCD22254734002E442C /* MyProfileHeaderViewCell.swift in Sources */,
 				43E7D3422222906C0004B385 /* AnidesuButton.swift in Sources */,
+				43EC02A82240C720005E6CD6 /* AnimeGenresSectionController.swift in Sources */,
 				4399B0BB221BF4570034F854 /* AnimeSeason.swift in Sources */,
+				43EC02A32240C2D3005E6CD6 /* GenreCell.swift in Sources */,
 				437CC224221D31C100F197C8 /* AnimeTitleResponse.swift in Sources */,
 				43E7D32722225CEB0004B385 /* UserResponse.swift in Sources */,
 				4399B0CF221C01BC0034F854 /* DiscoverAnimeViewModel.swift in Sources */,
@@ -952,7 +974,9 @@
 				437CC22E221D37BB00F197C8 /* AnimeCoverCell.swift in Sources */,
 				434E1877221FF3D00041432F /* AnimeDateResponse.swift in Sources */,
 				4399B0C8221BFAD60034F854 /* BaseRouter.swift in Sources */,
+				43EC02A62240C61F005E6CD6 /* AnimeResponseDiffable.swift in Sources */,
 				4399B0CA221BFD9F0034F854 /* AnilistRouter.swift in Sources */,
+				43EC029F2240C1BF005E6CD6 /* AnimeGenresCell.swift in Sources */,
 				43757DC62225419C002E442C /* MyProfileViewController.swift in Sources */,
 				43E7D332222275950004B385 /* LoginViewController.swift in Sources */,
 				4399B0BD221BF4D70034F854 /* MyAnimeListType.swift in Sources */,

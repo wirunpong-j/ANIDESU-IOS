@@ -9,6 +9,7 @@
 import UIKit
 import RxCocoa
 import RxSwift
+import IGListKit
 
 class AnimeDetailViewController: BaseViewController {
     static let identifier = "AnimeDetailViewController"
@@ -29,7 +30,7 @@ class AnimeDetailViewController: BaseViewController {
     }
     
     private enum Rows: Int {
-        case header
+        case header, genres
     }
     
     override func viewDidLoad() {
@@ -43,6 +44,7 @@ class AnimeDetailViewController: BaseViewController {
         self.detailTableView.delegate = self
         self.detailTableView.dataSource = self
         self.detailTableView.register(AnimeHeaderCell.nibFile, forCellReuseIdentifier: AnimeHeaderCell.identifier)
+        self.detailTableView.register(AnimeGenresCell.nibFile, forCellReuseIdentifier: AnimeGenresCell.identifier)
     }
     
     private func setUpViewModel() {
@@ -109,7 +111,7 @@ class AnimeDetailViewController: BaseViewController {
 
 extension AnimeDetailViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return 2
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -118,6 +120,15 @@ extension AnimeDetailViewController: UITableViewDelegate, UITableViewDataSource 
             if let cell = tableView.dequeueReusableCell(withIdentifier: AnimeHeaderCell.identifier) as? AnimeHeaderCell {
                 if let anime = self.viewModel.anime {
                     cell.setUpCell(anime: anime)
+                }
+                return cell
+            }
+            
+        case .genres:
+            if let cell = tableView.dequeueReusableCell(withIdentifier: AnimeGenresCell.identifier) as? AnimeGenresCell {
+                let adapter = ListAdapter(updater: ListAdapterUpdater(), viewController: self)
+                if let anime = self.viewModel.anime {
+                    cell.setUpCell(adapter: adapter, anime: anime)
                 }
                 return cell
             }
