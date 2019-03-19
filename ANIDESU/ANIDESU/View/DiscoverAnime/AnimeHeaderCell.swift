@@ -13,18 +13,17 @@ class AnimeHeaderCell: UITableViewCell {
     static let identifier = "AnimeHeaderCell"
 
     @IBOutlet weak var titleLabel: AnidesuLabel!
-    @IBOutlet weak var studioTitleLabel: AnidesuLabel!
     @IBOutlet weak var descLabel: AnidesuLabel!
     @IBOutlet weak var coverImageView: UIImageView!
     @IBOutlet weak var shadowCoverView: UIView!
     @IBOutlet weak var formatLabel: AnidesuLabel!
-    @IBOutlet weak var epLabel: AnidesuLabel!
+    @IBOutlet weak var addToListButton: AnidesuButton!
+    @IBOutlet weak var optionButton: UIButton!
     
     func setUpCell(anime: AnimeResponse) {
         titleLabel.text = anime.title?.romanjiTitle ?? "N/A"
         descLabel.text = anime.description ?? ""
         formatLabel.text = self.getAnimeType(anime: anime)
-        epLabel.text = (anime.episodes != nil) ? "\(anime.episodes!)" : "N/A"
         
         if let imageUrl = anime.coverImage?.sizeXLarge {
             coverImageView.setRoundImageView(urlStr: imageUrl, borderColor: .White, borderWidth: 2, radius: 5)
@@ -33,6 +32,10 @@ class AnimeHeaderCell: UITableViewCell {
             shadowCoverView.layer.shadowRadius = 5
             shadowCoverView.layer.shadowOpacity = 0.5
             shadowCoverView.layer.masksToBounds = false
+            if let color = anime.coverImage?.color {
+                addToListButton.changeBackgroundColor(color: UIColor().hexStringToUIColor(hex: (color)))
+                optionButton.tintColor = UIColor().hexStringToUIColor(hex: (color))
+            }
         }
     }
     
@@ -51,4 +54,9 @@ class AnimeHeaderCell: UITableViewCell {
         return type.joined(separator: " ・ ")
     }
     
+    @IBAction func addToListTapped(_ sender: Any) {
+    }
+    
+    @IBAction func optionButtonTapped(_ sender: Any) {
+    }
 }

@@ -170,7 +170,12 @@ class AnidesuButton: UIButton {
         self.isEnabled = isEnabled
     }
     
-    func changeRoundViewColor(color: AnidesuColor) {
-        self.layer.borderColor = color.color().cgColor
+    func changeRoundViewColor(color: UIColor) {
+        self.layer.borderColor = color.cgColor
+    }
+    
+    func changeBackgroundColor(color: UIColor) {
+        self.defaultColor = color
+        self.backgroundColor = color
     }
 }

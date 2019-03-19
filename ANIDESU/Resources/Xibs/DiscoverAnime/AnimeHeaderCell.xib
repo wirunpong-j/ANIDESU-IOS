@@ -66,64 +66,58 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="fontSize" value="tiny"/>
                                 </userDefinedRuntimeAttributes>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="tUL-d7-AvY">
-                                <rect key="frame" x="182" y="8" width="78.5" height="14.5"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EPISODES: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dPa-E1-C2q" customClass="AnidesuLabel" customModule="ANIDESU" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="65.5" height="14.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                        <color key="textColor" red="0.2784313725" green="0.41568627450000001" blue="0.58039215690000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <nil key="highlightedColor"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="fontSize" value="extratinybold"/>
-                                        </userDefinedRuntimeAttributes>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t5B-Kk-VgQ" customClass="AnidesuLabel" customModule="ANIDESU" customModuleProvider="target">
-                                        <rect key="frame" x="65.5" y="0.0" width="13" height="14.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                        <color key="textColor" red="0.098039215690000001" green="0.12941176469999999" blue="0.1764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="fontSize" value="extratinymed"/>
-                                        </userDefinedRuntimeAttributes>
-                                    </label>
-                                </subviews>
-                            </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="STUDIO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9hp-lz-ROj" customClass="AnidesuLabel" customModule="ANIDESU" customModuleProvider="target">
-                                <rect key="frame" x="182" y="26.5" width="219" height="14.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <color key="textColor" red="0.2784313725" green="0.41568627450000001" blue="0.58039215690000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <nil key="highlightedColor"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="isi-B9-XH6">
+                                <rect key="frame" x="360" y="18.5" width="25" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="MQF-yJ-5LI"/>
+                                    <constraint firstAttribute="width" constant="25" id="Olf-kq-MPJ"/>
+                                </constraints>
+                                <color key="tintColor" red="0.2784313725" green="0.41568627450000001" blue="0.58039215690000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" image="ic_dots"/>
+                                <connections>
+                                    <action selector="optionButtonTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="gM3-Lw-S3X"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WfJ-zS-dTf" customClass="AnidesuButton" customModule="ANIDESU" customModuleProvider="target">
+                                <rect key="frame" x="182" y="16" width="166" height="30"/>
+                                <color key="backgroundColor" red="0.13725490200000001" green="0.1843137255" blue="0.2470588235" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="0pw-0X-SXl"/>
+                                </constraints>
+                                <state key="normal" title="Add to List">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="fontSize" value="extratinybold"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="key" value="Add to List"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="defaultColor">
+                                        <color key="value" red="0.13725490200000001" green="0.1843137255" blue="0.2470588235" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="highlightColor">
+                                        <color key="value" red="0.13725490200000001" green="0.1843137255" blue="0.2470588235" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="fontSize" value="TinyMed"/>
                                 </userDefinedRuntimeAttributes>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Production" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Kf-Ji-pmV" customClass="AnidesuLabel" customModule="ANIDESU" customModuleProvider="target">
-                                <rect key="frame" x="182" y="41" width="219" height="14.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <color key="textColor" red="0.098039215690000001" green="0.12941176469999999" blue="0.1764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="fontSize" value="extratinymed"/>
-                                </userDefinedRuntimeAttributes>
-                            </label>
+                                <connections>
+                                    <action selector="addToListTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="tGb-OH-idS"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="9hp-lz-ROj" firstAttribute="top" secondItem="tUL-d7-AvY" secondAttribute="bottom" constant="4" id="7U8-dV-8fK"/>
-                            <constraint firstItem="tUL-d7-AvY" firstAttribute="top" secondItem="Tux-jN-SgJ" secondAttribute="top" constant="8" id="8L7-dB-IaT"/>
                             <constraint firstItem="deE-0Q-Q2X" firstAttribute="top" secondItem="myp-tp-JM9" secondAttribute="bottom" constant="16" id="8X0-EI-OtF"/>
                             <constraint firstAttribute="bottom" secondItem="deE-0Q-Q2X" secondAttribute="bottom" constant="16" id="BtN-a8-UtL"/>
-                            <constraint firstItem="tUL-d7-AvY" firstAttribute="leading" secondItem="myp-tp-JM9" secondAttribute="trailing" constant="16" id="Esq-Se-Pru"/>
-                            <constraint firstItem="8Kf-Ji-pmV" firstAttribute="trailing" secondItem="9hp-lz-ROj" secondAttribute="trailing" id="J3u-4d-RrT"/>
-                            <constraint firstAttribute="trailing" secondItem="9hp-lz-ROj" secondAttribute="trailing" constant="16" id="JdS-Jr-AVG"/>
-                            <constraint firstItem="8Kf-Ji-pmV" firstAttribute="leading" secondItem="9hp-lz-ROj" secondAttribute="leading" id="LnI-ha-zfe"/>
+                            <constraint firstItem="WfJ-zS-dTf" firstAttribute="leading" secondItem="myp-tp-JM9" secondAttribute="trailing" constant="16" id="DmZ-8S-wLX"/>
                             <constraint firstAttribute="trailing" secondItem="deE-0Q-Q2X" secondAttribute="trailing" constant="16" id="cCT-B0-dlm"/>
-                            <constraint firstItem="8Kf-Ji-pmV" firstAttribute="top" secondItem="9hp-lz-ROj" secondAttribute="bottom" id="hKG-6K-GWn"/>
-                            <constraint firstItem="9hp-lz-ROj" firstAttribute="leading" secondItem="myp-tp-JM9" secondAttribute="trailing" constant="16" id="kBk-Ho-pYY"/>
+                            <constraint firstItem="isi-B9-XH6" firstAttribute="centerY" secondItem="WfJ-zS-dTf" secondAttribute="centerY" id="gd1-vd-EVd"/>
                             <constraint firstItem="myp-tp-JM9" firstAttribute="top" secondItem="Tux-jN-SgJ" secondAttribute="top" constant="-120" id="kfw-2K-cwV"/>
                             <constraint firstItem="myp-tp-JM9" firstAttribute="leading" secondItem="Tux-jN-SgJ" secondAttribute="leading" constant="16" id="mvR-gd-ifa"/>
                             <constraint firstItem="deE-0Q-Q2X" firstAttribute="leading" secondItem="Tux-jN-SgJ" secondAttribute="leading" constant="16" id="pb3-jW-iRX"/>
+                            <constraint firstItem="isi-B9-XH6" firstAttribute="leading" secondItem="WfJ-zS-dTf" secondAttribute="trailing" constant="12" id="q5U-9b-dRo"/>
+                            <constraint firstAttribute="trailing" secondItem="isi-B9-XH6" secondAttribute="trailing" constant="32" id="sQZ-05-DdI"/>
+                            <constraint firstItem="WfJ-zS-dTf" firstAttribute="top" secondItem="Tux-jN-SgJ" secondAttribute="top" constant="16" id="vEr-hZ-ROi"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -144,15 +138,18 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="addToListButton" destination="WfJ-zS-dTf" id="JYx-z4-C4a"/>
                 <outlet property="coverImageView" destination="oQ9-iZ-x89" id="40b-SF-aXU"/>
                 <outlet property="descLabel" destination="deE-0Q-Q2X" id="xPw-G8-KM0"/>
-                <outlet property="epLabel" destination="t5B-Kk-VgQ" id="Fx5-dq-am2"/>
                 <outlet property="formatLabel" destination="3nB-F6-Gjq" id="qF1-1h-Knd"/>
+                <outlet property="optionButton" destination="isi-B9-XH6" id="0Gu-4a-Blc"/>
                 <outlet property="shadowCoverView" destination="myp-tp-JM9" id="RBG-fa-9vq"/>
-                <outlet property="studioTitleLabel" destination="8Kf-Ji-pmV" id="SQ2-bn-8P3"/>
                 <outlet property="titleLabel" destination="3Ax-s9-EJk" id="w17-ah-soA"/>
             </connections>
             <point key="canvasLocation" x="207.19999999999999" y="375.56221889055473"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="ic_dots" width="37.5" height="37.5"/>
+    </resources>
 </document>
