@@ -30,7 +30,7 @@ class AnimeDetailViewController: BaseViewController {
     }
     
     private enum Rows: Int {
-        case header, genres
+        case header, genres, menu
     }
     
     override func viewDidLoad() {
@@ -44,7 +44,7 @@ class AnimeDetailViewController: BaseViewController {
         self.detailTableView.delegate = self
         self.detailTableView.dataSource = self
         self.detailTableView.register(AnimeHeaderCell.nibFile, forCellReuseIdentifier: AnimeHeaderCell.identifier)
-        self.detailTableView.register(AnimeGenresCell.nibFile, forCellReuseIdentifier: AnimeGenresCell.identifier)
+        self.detailTableView.register(AnimeDetailCollectionViewCell.nibFile, forCellReuseIdentifier: AnimeDetailCollectionViewCell.identifier)
     }
     
     private func setUpViewModel() {
@@ -111,7 +111,7 @@ class AnimeDetailViewController: BaseViewController {
 
 extension AnimeDetailViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return 3
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -125,14 +125,33 @@ extension AnimeDetailViewController: UITableViewDelegate, UITableViewDataSource 
             }
             
         case .genres:
-            if let cell = tableView.dequeueReusableCell(withIdentifier: AnimeGenresCell.identifier) as? AnimeGenresCell {
+            if let cell = tableView.dequeueReusableCell(withIdentifier: AnimeDetailCollectionViewCell.identifier) as? AnimeDetailCollectionViewCell {
                 let adapter = ListAdapter(updater: ListAdapterUpdater(), viewController: self)
                 if let anime = self.viewModel.anime {
-                    cell.setUpCell(adapter: adapter, anime: anime)
+                    cell.setUpCell(adapter: adapter, anime: anime, isAnimeDetailMenu: false)
+                }
+                return cell
+            }
+        case .menu:
+            if let cell = tableView.dequeueReusableCell(withIdentifier: AnimeDetailCollectionViewCell.identifier) as? AnimeDetailCollectionViewCell {
+                let adapter = ListAdapter(updater: ListAdapterUpdater(), viewController: self)
+                if let anime = self.viewModel.anime {
+                    cell.setUpCell(adapter: adapter, anime: anime, isAnimeDetailMenu: true)
                 }
                 return cell
             }
         }
         return UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        switch Rows(rawValue: indexPath.row)! {
+        case .genres:
+            return AnimeGenreCell.height + 16
+        case .menu:
+            return AnimeDetailMenuCell.height + 16
+        default:
+            return UITableView.automaticDimension
+        }
     }
 }

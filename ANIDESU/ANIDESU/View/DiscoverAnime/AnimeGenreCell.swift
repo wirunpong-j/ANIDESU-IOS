@@ -8,9 +8,10 @@
 
 import UIKit
 
-class GenreCell: UICollectionViewCell {
-    static let nibFile = UINib(nibName: "GenreCell", bundle: .main)
-    static let identifier = "GenreCell"
+class AnimeGenreCell: UICollectionViewCell {
+    static let nibFile = UINib(nibName: "AnimeGenreCell", bundle: .main)
+    static let identifier = "AnimeGenreCell"
+    static let height = CGFloat(20)
     
     @IBOutlet weak var genreButton: UIButton!
     @IBOutlet weak var buttonWidthConstraint: NSLayoutConstraint!

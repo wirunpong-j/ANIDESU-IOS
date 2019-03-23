@@ -22,7 +22,7 @@ class AnimeGenresSectionController: ListSectionController {
     
     override init() {
         super.init()
-        self.inset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
+        self.inset = UIEdgeInsets(top: 0, left: 16, bottom: 16, right: 16)
     }
     
     override func numberOfItems() -> Int {
@@ -35,11 +35,11 @@ class AnimeGenresSectionController: ListSectionController {
             let nsTitle = NSString(string: text)
             width = nsTitle.size(withAttributes: [NSAttributedString.Key.font: AnidesuFontSize.ExtraTinyMed.getFont()]).width
         }
-        return CGSize(width: width + 16, height: 20)
+        return CGSize(width: width + 16, height: AnimeGenreCell.height)
     }
     
     override func cellForItem(at index: Int) -> UICollectionViewCell {
-        let cell = collectionContext?.dequeueReusableCell(withNibName: GenreCell.identifier, bundle: nil, for: self, at: index) as! GenreCell
+        let cell = collectionContext?.dequeueReusableCell(withNibName: AnimeGenreCell.identifier, bundle: nil, for: self, at: index) as! AnimeGenreCell
         
         if let genre = animeDiffable?.anime.genres?[index] {
             cell.setUpCell(text: genre, color: colors[index])
