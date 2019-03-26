@@ -1,0 +1,11 @@
+// Anime Detail
+"anime_summary_detail_title" = "รายละเอียด";
+"anime_summary_detail_studios" = "สตูดิโอ";
+"anime_summary_detail_ep" = "จำนวนตอน";
+"anime_summary_detail_status" = "สถานะ";
+"anime_summary_detail_premiered" = "กำหนดวันฉาย";
+"anime_summary_detail_age" = "เหมาะสำหรับอายุ";
+"anime_summary_detail_english_title" = "English";
+"anime_summary_detail_romanized_title" = "Romanji";
+"anime_summary_detail_japanese_title" = "Japanese";
+"anime_summary_detail_synonyms_title" = "Synonyms";

@@ -79,6 +79,9 @@
 		43C393D822212FA200FDC777 /* AnilistNameResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C393D722212FA200FDC777 /* AnilistNameResponse.swift */; };
 		43C393DA2221303A00FDC777 /* AnilistImageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C393D92221303A00FDC777 /* AnilistImageResponse.swift */; };
 		43C393DC222135AC00FDC777 /* AnimeDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C393DB222135AC00FDC777 /* AnimeDetailViewModel.swift */; };
+		43DAF9D92249FE3100A58361 /* AnimeSummaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DAF9D72249FE3100A58361 /* AnimeSummaryCell.swift */; };
+		43DAF9DA2249FE3100A58361 /* AnimeSummaryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43DAF9D82249FE3100A58361 /* AnimeSummaryCell.xib */; };
+		43DAF9DF224A01C000A58361 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 43DAF9DC224A01C000A58361 /* Localizable.strings */; };
 		43E7D31C222258250004B385 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E7D31A222258250004B385 /* PostCell.swift */; };
 		43E7D31D222258250004B385 /* PostCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43E7D31B222258250004B385 /* PostCell.xib */; };
 		43E7D31F22225B870004B385 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 43E7D31E22225B870004B385 /* GoogleService-Info.plist */; };
@@ -201,6 +204,10 @@
 		43C393D722212FA200FDC777 /* AnilistNameResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnilistNameResponse.swift; sourceTree = "<group>"; };
 		43C393D92221303A00FDC777 /* AnilistImageResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnilistImageResponse.swift; sourceTree = "<group>"; };
 		43C393DB222135AC00FDC777 /* AnimeDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimeDetailViewModel.swift; sourceTree = "<group>"; };
+		43DAF9D72249FE3100A58361 /* AnimeSummaryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimeSummaryCell.swift; sourceTree = "<group>"; };
+		43DAF9D82249FE3100A58361 /* AnimeSummaryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnimeSummaryCell.xib; sourceTree = "<group>"; };
+		43DAF9DD224A01C000A58361 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		43DAF9DE224A01C000A58361 /* th */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = th; path = th.lproj/Localizable.strings; sourceTree = "<group>"; };
 		43E7D31A222258250004B385 /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		43E7D31B222258250004B385 /* PostCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostCell.xib; sourceTree = "<group>"; };
 		43E7D31E22225B870004B385 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -384,6 +391,7 @@
 				43EC029E2240C1BF005E6CD6 /* AnimeDetailCollectionViewCell.xib */,
 				43159847224671FA001AE615 /* AnimeDetailMenuCell.xib */,
 				43EC02A22240C2D3005E6CD6 /* AnimeGenreCell.xib */,
+				43DAF9D82249FE3100A58361 /* AnimeSummaryCell.xib */,
 			);
 			path = DiscoverAnime;
 			sourceTree = "<group>";
@@ -396,6 +404,7 @@
 				43EC029D2240C1BF005E6CD6 /* AnimeDetailCollectionViewCell.swift */,
 				43EC02A12240C2D3005E6CD6 /* AnimeGenreCell.swift */,
 				43159846224671FA001AE615 /* AnimeDetailMenuCell.swift */,
+				43DAF9D72249FE3100A58361 /* AnimeSummaryCell.swift */,
 			);
 			path = DiscoverAnime;
 			sourceTree = "<group>";
@@ -507,6 +516,14 @@
 			path = MyAnimeList;
 			sourceTree = "<group>";
 		};
+		43DAF9DB224A01C000A58361 /* Localizable */ = {
+			isa = PBXGroup;
+			children = (
+				43DAF9DC224A01C000A58361 /* Localizable.strings */,
+			);
+			path = Localizable;
+			sourceTree = "<group>";
+		};
 		43E7D32022225C240004B385 /* Firebase */ = {
 			isa = PBXGroup;
 			children = (
@@ -586,6 +603,7 @@
 				4374DB68221ED0300092DA6F /* Fonts */,
 				43F00AFC2213F9D1000D9111 /* Xibs */,
 				43F00AFD2213F9D8000D9111 /* Storyboard */,
+				43DAF9DB224A01C000A58361 /* Localizable */,
 				43757DB722252032002E442C /* Video */,
 			);
 			path = Resources;
@@ -759,6 +777,7 @@
 			knownRegions = (
 				en,
 				Base,
+				th,
 			);
 			mainGroup = 432714112212C76800ACDDFF;
 			productRefGroup = 4327141B2212C76800ACDDFF /* Products */;
@@ -789,6 +808,7 @@
 				43E7D31D222258250004B385 /* PostCell.xib in Resources */,
 				434E1874221FD74E0041432F /* NotoSansThai-SemiBold.ttf in Resources */,
 				434E1875221FD74E0041432F /* NotoSansThaiUI-Thin.ttf in Resources */,
+				43DAF9DF224A01C000A58361 /* Localizable.strings in Resources */,
 				43E7D32F222275360004B385 /* Login.storyboard in Resources */,
 				4399B0C2221BF73D0034F854 /* MyAnimeList.storyboard in Resources */,
 				43757DB922252049002E442C /* anime-bg-vdo.mp4 in Resources */,
@@ -805,6 +825,7 @@
 				43159849224671FA001AE615 /* AnimeDetailMenuCell.xib in Resources */,
 				432714232212C76800ACDDFF /* Main.storyboard in Resources */,
 				43F00B0D221408BE000D9111 /* Home.storyboard in Resources */,
+				43DAF9DA2249FE3100A58361 /* AnimeSummaryCell.xib in Resources */,
 				43E7D33722227D390004B385 /* AuthOptionCell.xib in Resources */,
 				43E7D31F22225B870004B385 /* GoogleService-Info.plist in Resources */,
 			);
@@ -984,6 +1005,7 @@
 				43159848224671FA001AE615 /* AnimeDetailMenuCell.swift in Sources */,
 				437CC22E221D37BB00F197C8 /* AnimeCoverCell.swift in Sources */,
 				434E1877221FF3D00041432F /* AnimeDateResponse.swift in Sources */,
+				43DAF9D92249FE3100A58361 /* AnimeSummaryCell.swift in Sources */,
 				4399B0C8221BFAD60034F854 /* BaseRouter.swift in Sources */,
 				43EC02A62240C61F005E6CD6 /* AnimeResponseDiffable.swift in Sources */,
 				4399B0CA221BFD9F0034F854 /* AnilistRouter.swift in Sources */,
@@ -1058,6 +1080,15 @@
 				432714272212C76900ACDDFF /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		43DAF9DC224A01C000A58361 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				43DAF9DD224A01C000A58361 /* en */,
+				43DAF9DE224A01C000A58361 /* th */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
