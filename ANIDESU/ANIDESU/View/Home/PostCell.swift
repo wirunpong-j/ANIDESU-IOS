@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import WCLShineButton
 
 protocol PostCellDidTapDelegate {
     func likeBtnDidTap()
@@ -23,7 +22,7 @@ class PostCell: UITableViewCell {
     @IBOutlet weak var contentLabel: UILabel!
     @IBOutlet weak var displayNameLabel: UILabel!
     @IBOutlet weak var postDateLabel: UILabel!
-    @IBOutlet weak var likeButton: WCLShineButton!
+    @IBOutlet weak var likeButton: AnidesuButton!
     @IBOutlet weak var commentButton: UIButton!
     @IBOutlet weak var likeCountLabel: UILabel!
     @IBOutlet weak var seperatorView: UIView!
@@ -49,8 +48,6 @@ class PostCell: UITableViewCell {
             contentLabel.text = post.content ?? "-"
             likeCountLabel.text = "\(post.likeCount!) Likes"
         }
-        
-        likeButton.addTarget(self, action: #selector(likeBtnPressed), for: .valueChanged)
         seperatorView.isHidden = true
 
         if useFrame {
@@ -73,6 +70,9 @@ class PostCell: UITableViewCell {
 
     @objc func likeBtnPressed() {
         self.postCellDidTapDelegate?.likeBtnDidTap()
+    }
+    
+    @IBAction func likeButtonTapped(_ sender: Any) {
     }
     
     @IBAction func commentButtonTapped(_ sender: Any) {

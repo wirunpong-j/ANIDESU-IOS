@@ -7,7 +7,6 @@ target 'ANIDESU' do
 
   # Pods for ANIDESU
   pod 'Alamofire'
-  pod 'Apollo'
   pod 'Cosmos', '~> 16.0'
   pod 'ESTabBarController-swift'
   pod 'Eureka'
@@ -28,18 +27,12 @@ target 'ANIDESU' do
   pod 'RxSwift'
   pod 'Tabman', '~> 2.1'
   pod 'UITextView+Placeholder'
-  pod 'WCLShineButton'
   
   post_install do |installer|
       installer.pods_project.targets.each do |target|
           if ['MBProgressHUD', 'Hero'].include? target.name
               target.build_configurations.each do |config|
                   config.build_settings['SWIFT_VERSION'] = '4.0'
-              end
-          end
-          if ['WCLShineButton'].include? target.name
-              target.build_configurations.each do |config|
-                  config.build_settings['SWIFT_VERSION'] = '3.0'
               end
           end
       end
