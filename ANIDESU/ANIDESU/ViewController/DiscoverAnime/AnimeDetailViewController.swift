@@ -29,8 +29,8 @@ class AnimeDetailViewController: BaseViewController {
         return .lightContent
     }
     
-    private enum Rows: Int {
-        case header, genres, menu
+    private enum Sections: Int {
+        case header, genres, menu, detail
     }
     
     override func viewDidLoad() {
@@ -45,6 +45,7 @@ class AnimeDetailViewController: BaseViewController {
         self.detailTableView.dataSource = self
         self.detailTableView.register(AnimeHeaderCell.nibFile, forCellReuseIdentifier: AnimeHeaderCell.identifier)
         self.detailTableView.register(AnimeDetailCollectionViewCell.nibFile, forCellReuseIdentifier: AnimeDetailCollectionViewCell.identifier)
+        self.detailTableView.register(AnimeSummaryDetailCell.nibFile, forCellReuseIdentifier: AnimeSummaryDetailCell.identifier)
     }
     
     private func setUpViewModel() {
@@ -110,12 +111,21 @@ class AnimeDetailViewController: BaseViewController {
 }
 
 extension AnimeDetailViewController: UITableViewDelegate, UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 4
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        switch Sections(rawValue: section)! {
+        case .detail:
+            return 9
+        default:
+            return 1
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        switch Rows(rawValue: indexPath.row)! {
+        switch Sections(rawValue: indexPath.section)! {
         case .header:
             if let cell = tableView.dequeueReusableCell(withIdentifier: AnimeHeaderCell.identifier) as? AnimeHeaderCell {
                 if let anime = self.viewModel.anime {
@@ -140,18 +150,67 @@ extension AnimeDetailViewController: UITableViewDelegate, UITableViewDataSource 
                 }
                 return cell
             }
+        case .detail:
+            let summaryDetailRow = AnimeDetailViewModel.SummaryDetailRows(rawValue: indexPath.row)!
+            var descTitle = ""
+            
+            switch summaryDetailRow {
+            case .studios:
+                descTitle = "Studios"
+            case .ep:
+                descTitle = (self.viewModel.anime?.episodes == nil) ? "TBD" : "\((self.viewModel.anime?.episodes)!)"
+            case .status:
+                descTitle = (self.viewModel.anime?.status == nil) ? "N/A" : (self.viewModel.anime?.status)!
+            case .premiered:
+                descTitle = "Premiered"
+            case .ageRating:
+                descTitle = "Age Rating"
+            case .eng:
+                descTitle = (self.viewModel.anime?.title?.englishTitle == nil) ? "N/A" : (self.viewModel.anime?.title?.englishTitle)!
+            case .rmj:
+                descTitle = (self.viewModel.anime?.title?.romanjiTitle == nil) ? "N/A" : (self.viewModel.anime?.title?.romanjiTitle)!
+            case .jp:
+                descTitle = (self.viewModel.anime?.title?.nativeTitle == nil) ? "N/A" : (self.viewModel.anime?.title?.nativeTitle)!
+            case .synonyms:
+                descTitle = "Synonyms"
+            }
+            
+            if let cell = tableView.dequeueReusableCell(withIdentifier: AnimeSummaryDetailCell.identifier) as? AnimeSummaryDetailCell {
+                cell.setUpCell(subjectTitle: summaryDetailRow.getTitle(), descTtitle: descTitle)
+                return cell
+            }
         }
         return UITableViewCell()
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        switch Rows(rawValue: indexPath.row)! {
+        switch Sections(rawValue: indexPath.section)! {
         case .genres:
             return AnimeGenreCell.height + 16
         case .menu:
             return AnimeDetailMenuCell.height + 16
+        case .detail:
+            return 30
         default:
             return UITableView.automaticDimension
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        switch Sections(rawValue: section)! {
+        case .detail:
+            return AnimeDetailSectionHeaderView.loadViewFormNib(title: Localize.main(key: "Details"))
+        default:
+            return nil
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        switch Sections(rawValue: section)! {
+        case .detail:
+            return 30
+        default:
+            return 0
         }
     }
 }
