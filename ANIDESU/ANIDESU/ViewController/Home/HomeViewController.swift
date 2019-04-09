@@ -82,10 +82,29 @@ class HomeViewController: BaseViewController {
     private func setUpView() {
         feedTableView.reloadData()
     }
-
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.identifier {
+        case PostDetailViewController.identifier:
+            if let vc = segue.destination as? PostDetailViewController {
+                vc.postID = sender as? String
+            }
+        default:
+            break
+        }
+    }
 }
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch HomeSections(rawValue: indexPath.section)! {
+        case .createPost:
+            break
+        case .allPost:
+            self.performSegue(withIdentifier: PostDetailViewController.identifier, sender: homeViewModel.posts[indexPath.row].key)
+        }
+    }
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2
     }

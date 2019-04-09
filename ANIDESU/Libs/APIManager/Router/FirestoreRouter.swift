@@ -12,10 +12,11 @@ import FirebaseFirestore
 enum FirestoreRouter {
     case fetchUserData(uid: String)
     case setUpProfile(uid: String, displayName: String, email: String, imageURL: String)
+    case fetchPost(id: String)
     case fetchAllPost
     case createPost(message: String)
-    case fetchAllComment(postKey: String)
-    case addComment(postKey: String, message: String)
+    case fetchAllComment(postID: String)
+    case addComment(postID: String, message: String)
     case fetchAllMyAnimeList
     case fetchMyAnimeList(animeID: Int)
     case updateMyAnimeList(animeID: Int, note: String, status: String, progress: Int, score: Int)
@@ -36,14 +37,17 @@ extension FirestoreRouter {
         case .setUpProfile(let params):
             return "users/\(params.uid)"
             
+        case .fetchPost(let id):
+            return "posts/\(id)"
+            
         case .createPost, .fetchAllPost:
             return "posts"
             
-        case .fetchAllComment(let postKey):
-            return "posts/\(postKey)/comment"
+        case .fetchAllComment(let postID):
+            return "posts/\(postID)/comment"
             
         case .addComment(let params):
-            return "posts/\(params.postKey)/comment"
+            return "posts/\(params.postID)/comment"
             
         case .fetchMyAnimeList(let animeID):
 //            return "users/\(MyProfileModel.instance.uid)/list_anime/\(animeID)"

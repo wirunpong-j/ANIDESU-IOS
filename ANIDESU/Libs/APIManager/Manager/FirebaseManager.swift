@@ -27,6 +27,33 @@ class FirebaseManager {
 //        }
 //    }
     
+    func fetchPost(id: String, completion: @escaping (PostResponse) -> (), onFailure: @escaping (BaseError) -> ()) {
+        let db = Firestore.firestore()
+        let router = FirestoreRouter.fetchPost(id: id)
+        
+        db.document(router.path).getDocument { (data, error) in
+            if let error = error {
+                onFailure(BaseError(message: error.localizedDescription))
+            } else {
+                if let data = data {
+                    self.showLog(path: router.path, data: data.data())
+                    let jsonData = try! JSONSerialization.data(withJSONObject: data.data())
+                    let post = try! JSONDecoder().decode(PostResponse.self, from: jsonData)
+                    post.key = data.documentID
+                    
+                    self.getUserInfo(uid: post.uid!, completion: { (userResponse) in
+                        post.user = userResponse
+                        completion(post)
+                    }, onFailure: { (error) in
+                        onFailure(BaseError(message: error.localizedDescription))
+                    })
+                } else {
+                    onFailure(BaseError(message: "Fetch Post Error"))
+                }
+            }
+        }
+    }
+    
     func fetchAllPost(completion: @escaping ([PostResponse]) -> (), onFailure: @escaping (BaseError) -> ()) {
         let db = Firestore.firestore()
         let router = FirestoreRouter.fetchAllPost
@@ -38,6 +65,7 @@ class FirebaseManager {
                 var allPost = [PostResponse]()
                 
                 if let allData = allData, !allData.isEmpty {
+                    self.showLog(path: router.path, allData: allData.documents)
                     for data in allData.documents {
                         let jsonData = try! JSONSerialization.data(withJSONObject: data.data())
                         let post = try! JSONDecoder().decode(PostResponse.self, from: jsonData)
@@ -62,6 +90,43 @@ class FirebaseManager {
         }
     }
     
+    func fetchAllComment(postID: String, completion: @escaping ([CommentResponse]) -> (), onFailure: @escaping (BaseError) -> ()) {
+        let db = Firestore.firestore()
+        let router = FirestoreRouter.fetchAllComment(postID: postID)
+        
+        db.collection(router.path).getDocuments { (allData, error) in
+            if let error = error {
+                onFailure(BaseError(message: error.localizedDescription))
+            } else {
+                var allComment = [CommentResponse]()
+                
+                if let allData = allData, !allData.isEmpty {
+                    self.showLog(path: router.path, allData: allData.documents)
+                    for data in allData.documents {
+                        let jsonData = try! JSONSerialization.data(withJSONObject: data.data())
+                        let comment = try! JSONDecoder().decode(CommentResponse.self, from: jsonData)
+                        comment.key = data.documentID
+                        
+                        self.getUserInfo(uid: comment.uid!, completion: { (userResponse) in
+                            comment.user = userResponse
+                            allComment.append(comment)
+                            
+                            if allComment.count == allData.count {
+                                allComment = allComment.sorted(by: { $0.date! < $1.date! })
+                                completion(allComment)
+                            }
+                        }, onFailure: { (error) in
+                            onFailure(BaseError(message: error.localizedDescription))
+                        })
+                    }
+                    
+                } else {
+                    completion(allComment)
+                }
+            }
+        }
+    }
+    
     func getUserInfo(uid: String, completion: @escaping (UserResponse) -> (), onFailure: @escaping (BaseError) -> ()) {
         let db = Firestore.firestore()
         let router = FirestoreRouter.fetchUserData(uid: uid)
@@ -81,7 +146,9 @@ class FirebaseManager {
             }
         }
     }
-    
+}
+
+extension FirebaseManager {
     func showLog(path: String, data: [String: Any]?) {
         print("|-------------------------------------------------")
         print("RESPONSE: \(path)")
@@ -91,6 +158,21 @@ class FirebaseManager {
             }
         } else {
             print("ERROR: Couldn't create json object from returned data")
+        }
+        print("-------------------------------------------------|")
+    }
+    
+    func showLog(path: String, allData: [QueryDocumentSnapshot]) {
+        print("|-------------------------------------------------")
+        print("RESPONSE: \(path)")
+        for data in allData {
+            if let pretty = try? JSONSerialization.data(withJSONObject: data.data(), options: .prettyPrinted) {
+                if let string = String(data: pretty, encoding: .utf8) {
+                    print("JSON: \(string)")
+                }
+            } else {
+                print("ERROR: Couldn't create json object from returned data")
+            }
         }
         print("-------------------------------------------------|")
     }
